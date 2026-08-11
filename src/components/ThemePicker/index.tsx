@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import styles from './styles.module.css';
 
 const storageKey = 'computer-technician-tools-theme';
-const themes = ['default', 'catppuccin', 'nord', 'dracula', 'custom'] as const;
+const themes = ['default', 'catppuccin', 'nord', 'dracula', 'TKOD' , 'custom'] as const;
 type ThemeName = (typeof themes)[number];
 
 export default function ThemePicker() {
@@ -26,7 +26,9 @@ export default function ThemePicker() {
         <option value="catppuccin">Catppuccin</option>
         <option value="nord">Nord</option>
         <option value="dracula">Dracula</option>
+        <option value="TKOD">TKOD</option>
         <option value="custom">Custom</option>
+  
       </select>
     </label>
   );

@@ -111,6 +111,33 @@ html[data-theme='dark'][data-tech-theme='dracula'] {
   --ifm-color-primary-lightest: #ecddfe;
 }
 
+html[data-tech-theme='TKOD'] {
+  --ifm-background-color: #0d0022;
+  --ifm-background-surface-color: #23003f;
+  --ifm-color-content: #981ed1;
+  --ifm-color-primary: #c343ff;
+  --ifm-color-primary-dark: #e90000;
+  --ifm-color-primary-darker: #ff0a2a;
+  --ifm-color-primary-darkest: #fa0202;
+  --ifm-color-primary-light: #ff1c1c;
+  --ifm-color-primary-lighter: #ff1c1c;
+  --ifm-color-primary-lightest: #ff1c1c;
+}
+
+html[data-theme='dark'][data-tech-theme='TKOD'] {
+  --ifm-background-color: #0d0022;
+  --ifm-background-surface-color: #23003f;
+  --ifm-color-content: #981ed1;
+  --ifm-color-content-secondary: #c343ff;
+  --ifm-color-primary: #e90000;
+  --ifm-color-primary-dark: #ff0a2a;
+  --ifm-color-primary-darker: #fa0202;
+  --ifm-color-primary-darkest: #ff1c1c;
+  --ifm-color-primary-light: #ff1c1c;
+  --ifm-color-primary-lighter: #ff1c1c;
+  --ifm-color-primary-lightest: #ff1c1c;
+}
+
 html[data-tech-theme='custom'] {
   --ifm-background-color: #f7fbff;
   --ifm-background-surface-color: #eaf4ff;
