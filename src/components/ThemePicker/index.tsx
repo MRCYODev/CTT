@@ -28,8 +28,7 @@ export default function ThemePicker() {
         <option value="dracula">Dracula</option>
         <option value="TKOD">TKOD</option>
         <option value="custom">Custom</option>
-  
       </select>
     </label>
-  );
+  )
 }
