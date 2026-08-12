@@ -58,6 +58,7 @@ DISM /Online /Cleanup-Image /RestoreHealth
 ```
 
 :::details
+
 This command is mostly used to check the integrity of the windows system image (the files that make up the windows OS, like the system DLLs and components in WinSxS).
 
 What it does: It checks and searches for any corrupted or missing system files, it repairs them or replaces them by using clean copies from Windows Update or from a local source. 
