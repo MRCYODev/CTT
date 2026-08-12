@@ -41,9 +41,9 @@ Make sure the build finishes without errors.
 
 ## 6. Configure Git
 
-:::note
+<note>
 Configure Git with the name and email associated with your GitHub account so GitHub can correctly attribute your commits to you.
-:::
+</note>
 
 Set your Git username:
 
