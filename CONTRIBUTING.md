@@ -1,6 +1,6 @@
 # Contributing to CTT
 
-Thanks for helping with CTT!
+Thanks for helping with CTT it means a lot to me ❤️ god bless you! ☦️
 
 ## 1. Clone the repo
 

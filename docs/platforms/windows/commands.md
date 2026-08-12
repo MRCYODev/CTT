@@ -45,19 +45,24 @@ Description: System File Checker, aka sfc, It scans and verifies the integrity o
 diskpart
 ```
 
-:::details
+<details>
+<summary>Details</summary>
+
 The specific command allows you to manage the computer's drives such as (disks, partitions, volumes, and virtual hard disks).
 
 Although for any of the following commands to work you'll need to first give an object focus (meaning that any commands you enter will work only on the focused object).
 
 However some commands change the focus automatically (like creating a new partition).
-:::
+
+</details>
 
 ```
 DISM /Online /Cleanup-Image /RestoreHealth
 ```
 
-:::details
+<details>
+<summary>Details</summary>
+
 
 This command is mostly used to check the integrity of the windows system image (the files that make up the windows OS, like the system DLLs and components in WinSxS).
 
@@ -74,7 +79,8 @@ If you just want to check without repairing use:
 
 **DISM /Online /Cleanup-Image /CheckHealth**
 
-:::
+
+</details>
 
 ## Network and connectivity issues
 
@@ -88,17 +94,23 @@ ipconfig
 netsh winsock reset
 ```
 
-:::details
+<details>
+<summary>Details</summary>
+
 This command restores the Winsock catalog back to its default clean state. It fixes internet connection failures caused by corrupted network settings, bad malware removal or leftover and persistent data from removed VPNs and firewalls.
-:::
+
+</details>
 
 
 ```
 netsh int ip reset
 ```
-:::details
+<details>
+<summary>Details</summary>
+
 This command is as simply as it just tries to reset the TCP/IP in case you have any connection issues
-:::
+
+</details>
 
 ```
 ping

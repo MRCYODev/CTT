@@ -9,13 +9,23 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">{siteConfig.title}</Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <Heading as="h1" className="hero__title">
+          {siteConfig.title}
+        </Heading>
+
+        <p className="hero__subtitle">
+          {siteConfig.tagline}
+        </p>
+
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/getting-started">
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/getting-started"
+          >
             Open the knowledge base
           </Link>
         </div>
@@ -26,15 +36,57 @@ function HomepageHeader() {
 
 export default function Home(): ReactNode {
   return (
-    <Layout title="Computer technician tool collection" description="Tools for diagnosing, repairing, and optimizing computers.">
+    <Layout
+      title="Computer Technician Tool Collection"
+      description="Tools for diagnosing, repairing, securing, and optimizing computers."
+    >
       <HomepageHeader />
+
       <main>
         <section className={styles.quickLinks}>
           <div className="container">
             <div className="row">
-              <article className="col col--4"><h2>Hardware</h2><p>Diagnostic tools for system information, sensors, storage, memory, and components.</p><Link to="/docs/tools/hardware-diagnostics">Browse hardware tools →</Link></article>
-              <article className="col col--4"><h2>Software</h2><p>Windows diagnostics, utilities, recovery, security, and benchmarking resources.</p><Link to="/docs/tools/software-diagnostics">Browse software tools →</Link></article>
-              <article className="col col--4"><h2>Platforms</h2><p>Windows commands plus Linux and Android reference material.</p><Link to="/docs/platforms/windows/commands">Browse platforms →</Link></article>
+              {/* Diagnostics */}
+              <article className="col col--4">
+                <h2>Hardware & Software Diagnostics</h2>
+
+                <p>
+                  Diagnostic tools for system information, sensors, storage,
+                  memory, components, operating systems, and troubleshooting.
+                </p>
+
+                <Link to="/docs/tools/hardware-software-diagnostics">
+                  Browse diagnostics →
+                </Link>
+              </article>
+
+              {/* Utilities */}
+              <article className="col col--4">
+                <h2>Utilities & Recovery</h2>
+
+                <p>
+                  Utilities for system maintenance, recovery, security,
+                  conversion, bootable media, and everyday technician tasks.
+                </p>
+
+                <Link to="/docs/tools/utilities">
+                  Browse utilities →
+                </Link>
+              </article>
+
+              {/* Platforms */}
+              <article className="col col--4">
+                <h2>Platforms</h2>
+
+                <p>
+                  Windows, Linux, and Android reference material, commands,
+                  repair information, networking, and troubleshooting.
+                </p>
+
+                <Link to="/docs/platforms/windows/commands">
+                  Browse platforms →
+                </Link>
+              </article>
             </div>
           </div>
         </section>

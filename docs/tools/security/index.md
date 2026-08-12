@@ -4,6 +4,8 @@ sidebar_position: 6
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
 
+# Index
+
 # Anti-Virus
 
 | Logo | Anti Virus | Description | Supported platforms |
@@ -18,10 +20,10 @@ Tools for scanning files, URLs, websites, and other online resources for malware
 
 | Logo | File & URL Scanner | Description | Supported platforms |
 |--- | --- | --- | --- |
-| <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/img/logos/triage.svg" alt="Triage logo" width="64" /></div>  | [Triage](https://tria.ge/) | Malware analysis and sandboxing service that allows suspicious files and URLs to be analyzed in an isolated environment to help identify malicious behavior and threats. | <PlatformBadges items={['web', 'online']} /> |
+| <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/img/logos/triage.svg" alt="Triage logo" width="64" /></div> | [Triage](https://tria.ge/) | Malware analysis and sandboxing service that allows suspicious files and URLs to be analyzed in an isolated environment to help identify malicious behavior and threats. | <PlatformBadges items={['web', 'online']} /> |
 | <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><BrandLogo name="virustotal" size={37} /></div> | [VirusTotal](https://www.virustotal.com/) | Online service that analyzes files, URLs, domains, and IP addresses using multiple antivirus engines and security tools to help identify malicious or suspicious content. | <PlatformBadges items={['web', 'online']} /> |
-|  | [URLVoid](https://www.urlvoid.com/) | Website reputation checker that analyzes websites against multiple blocklists and reputation services to help identify potentially suspicious or malicious websites. | <PlatformBadges items={['web', 'online']} /> |
-|  | [URLScan](https://urlscan.io/) | Website scanning and analysis service that records how a webpage behaves, including its requests, resources, domains, and other security-relevant information. | <PlatformBadges items={['web', 'online']} /> |
+| <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/img/logos/urlvoid.svg" alt="Triage logo" width="32" /></div> | [URLVoid](https://www.urlvoid.com/) | Website reputation checker that analyzes websites against multiple blocklists and reputation services to help identify potentially suspicious or malicious websites. | <PlatformBadges items={['web', 'online']} /> |
+| <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/img/logos/urlscan.svg" alt="Triage logo" width="60" /></div> | [URLScan](https://urlscan.io/) | Website scanning and analysis service that records how a webpage behaves, including its requests, resources, domains, and other security-relevant information. | <PlatformBadges items={['web', 'online']} /> |
 
 # Virus Removers
 

@@ -1,0 +1,69 @@
+/*
+ * CTT Theme Effects
+ *
+ * The canvas is a fixed visual layer only. It never participates in
+ * document layout and it never changes the navbar's position rules.
+ */
+
+.ctt-theme-effects-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.ctt-theme-effects {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Site content stays above the effect canvas. */
+html.ctt-theme-effects-active #__docusaurus > .main-wrapper,
+html.ctt-theme-effects-active #__docusaurus > .footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* Only set z-index on the navbar; preserve Docusaurus's sticky/fixed position. */
+html.ctt-theme-effects-active .navbar {
+  z-index: 100;
+}
+
+html.ctt-theme-effects-active .theme-doc-sidebar-container {
+  z-index: 3;
+}
+
+/* Menus, dialogs, search and other floating UI always win. */
+html.ctt-theme-effects-active .navbar-sidebar,
+html.ctt-theme-effects-active .modal,
+html.ctt-theme-effects-active .dropdown,
+html.ctt-theme-effects-active .search-local-container,
+html.ctt-theme-effects-active .theme-back-to-top-button,
+html.ctt-theme-effects-active [role='dialog'] {
+  z-index: 1000;
+}
+
+/* Disable old CSS-based animated layers while Canvas is active. */
+html.ctt-theme-effects-active[data-tech-theme='galaxy'] body::before,
+html.ctt-theme-effects-active[data-tech-theme='galaxy'] body::after,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .main-wrapper::before,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .main-wrapper::after,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .navbar::before,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .navbar::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctt-theme-effects-layer {
+    display: none;
+  }
+}

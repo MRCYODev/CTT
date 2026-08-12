@@ -2,7 +2,9 @@
 sidebar_position: 1
 ---
 
-# Computer Technician Tools
+# CTT
+
+## Welcome to Computer Technician Tools
 
 Tools to help computer technicians diagnose, repair, and optimize computers. Choose a category from the sidebar or begin with the platform that you support.
 

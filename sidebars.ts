@@ -16,12 +16,12 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Tools',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
 
       items: [
-        // -------------------------
-        // Diagnostics
-        // -------------------------
+        // ==========================================================
+        // DIAGNOSTICS
+        // ==========================================================
 
         {
           type: 'category',
@@ -37,31 +37,37 @@ const sidebars: SidebarsConfig = {
           },
 
           items: [
-            'tools/hardware-diagnostics',
-            'tools/software-diagnostics',
+            'tools/hardware-software-diagnostics',
           ],
         },
 
-        // -------------------------
-        // Utilities & Recovery
-        // -------------------------
+        // ==========================================================
+        // UTILITIES & RECOVERY
+        // ==========================================================
 
         {
           type: 'category',
           label: 'Utilities & Recovery',
+          description:
+            'Utilities for system maintenance, recovery, conversion, and other technician tasks.',
           collapsible: true,
           collapsed: true,
 
+          link: {
+            type: 'doc',
+            id: 'tools/utilities/index',
+          },
+
           items: [
-            'tools/utilities',
-            'tools/file-recovery',
-            'tools/bootable-usb',
+            'tools/utilities/bootable-usb',
+            'tools/utilities/convert',
+            'tools/utilities/file-recovery',
           ],
         },
 
-        // -------------------------
-        // Security
-        // -------------------------
+        // ==========================================================
+        // SECURITY
+        // ==========================================================
 
         {
           type: 'category',
@@ -69,15 +75,17 @@ const sidebars: SidebarsConfig = {
           collapsible: true,
           collapsed: true,
 
-          items: [
-            'tools/antivirus',
-            'tools/convert',
-          ],
+          link: {
+            type: 'doc',
+            id: 'tools/security/index',
+          },
+
+          items: [],
         },
 
-        // -------------------------
-        // Performance & Reference
-        // -------------------------
+        // ==========================================================
+        // PERFORMANCE & REFERENCE
+        // ==========================================================
 
         {
           type: 'category',
@@ -85,12 +93,19 @@ const sidebars: SidebarsConfig = {
           collapsible: true,
           collapsed: true,
 
-          items: [
-            'tools/benchmark-software',
-            'tools/benchmark-results',
-            'tools/guides',
-          ],
+          link: {
+            type: 'doc',
+            id: 'tools/benchmark/index',
+          },
+
+          items: [],
         },
+
+        // ==========================================================
+        // GUIDES
+        // ==========================================================
+
+        'tools/guides',
       ],
     },
 
@@ -105,9 +120,9 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
 
       items: [
-        // -------------------------
-        // Windows
-        // -------------------------
+        // ==========================================================
+        // WINDOWS
+        // ==========================================================
 
         {
           type: 'category',
@@ -124,9 +139,9 @@ const sidebars: SidebarsConfig = {
           ],
         },
 
-        // -------------------------
-        // Linux
-        // -------------------------
+        // ==========================================================
+        // LINUX
+        // ==========================================================
 
         {
           type: 'category',
@@ -143,9 +158,9 @@ const sidebars: SidebarsConfig = {
           ],
         },
 
-        // -------------------------
-        // Android
-        // -------------------------
+        // ==========================================================
+        // ANDROID
+        // ==========================================================
 
         {
           type: 'category',

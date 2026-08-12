@@ -1,10 +1,40 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+/*
+ * ============================================================
+ * CTT GLOBAL THEME SYSTEM
+ * ============================================================
+ *
+ * Themes:
+ *   - Default
+ *   - Catppuccin
+ *   - Nord
+ *   - Dracula
+ *   - TKOD
+ *   - Surprice
+ *   - AMOLED
+ *   - Halloween
+ *   - Christmas
+ *   - Galaxy
+ *   - Custom
+ *
+ * Theme selector values:
+ *   default
+ *   catppuccin
+ *   nord
+ *   dracula
+ *   TKOD
+ *   Surprice
+ *   amoled
+ *   halloween
+ *   christmas
+ *   galaxy
+ *   custom
  */
 
-/* You can override the default Infima variables here. */
+
+/* ============================================================
+   DEFAULT CTT THEME
+   ============================================================ */
+
 :root {
   --ifm-color-primary: #1261a0;
   --ifm-color-primary-dark: #10578f;
@@ -13,11 +43,17 @@
   --ifm-color-primary-light: #146bb1;
   --ifm-color-primary-lighter: #1670b9;
   --ifm-color-primary-lightest: #2a7fbd;
+
   --ifm-code-font-size: 95%;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ctt-border: #d9dce1;
+  --ctt-surface: #ffffff;
+  --ctt-surface-secondary: #f5f6f8;
+  --ctt-muted: #68707d;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #5daee9;
   --ifm-color-primary-dark: #45a2e5;
@@ -26,28 +62,51 @@
   --ifm-color-primary-light: #75baed;
   --ifm-color-primary-lighter: #84c0ef;
   --ifm-color-primary-lightest: #add5f5;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ctt-border: #30333a;
+  --ctt-surface: #1b1c1f;
+  --ctt-surface-secondary: #23252a;
+  --ctt-muted: #a7adb7;
 }
+
+
+/* ============================================================
+   CATPPUCCIN
+   Latte / Mocha inspired
+   ============================================================ */
 
 html[data-tech-theme='catppuccin'] {
   --ifm-background-color: #eff1f5;
   --ifm-background-surface-color: #e6e9ef;
+
   --ifm-color-content: #4c4f69;
   --ifm-color-content-secondary: #6c6f85;
+
   --ifm-color-primary: #8839ef;
   --ifm-color-primary-dark: #7a2cdd;
-  --ifm-color-primary-darker: #7329d1;
+  --ifm-color-primary-darker: #6d25c7;
   --ifm-color-primary-darkest: #5f22ac;
   --ifm-color-primary-light: #9648f1;
-  --ifm-color-primary-lighter: #9d54f2;
+  --ifm-color-primary-lighter: #a15af3;
   --ifm-color-primary-lightest: #b77af6;
+
+  --ctt-border: #ccd0da;
+  --ctt-surface: #ffffff;
+  --ctt-surface-secondary: #e6e9ef;
+  --ctt-muted: #6c6f85;
+
+  --docusaurus-highlighted-code-line-bg: rgba(136, 57, 239, 0.10);
 }
 
 html[data-theme='dark'][data-tech-theme='catppuccin'] {
   --ifm-background-color: #1e1e2e;
-  --ifm-background-surface-color: #313244;
+  --ifm-background-surface-color: #181825;
+
   --ifm-color-content: #cdd6f4;
-  --ifm-color-content-secondary: #bac2de;
+  --ifm-color-content-secondary: #a6adc8;
+
   --ifm-color-primary: #cba6f7;
   --ifm-color-primary-dark: #bd91f4;
   --ifm-color-primary-darker: #b486f2;
@@ -55,26 +114,50 @@ html[data-theme='dark'][data-tech-theme='catppuccin'] {
   --ifm-color-primary-light: #d9bbfa;
   --ifm-color-primary-lighter: #e0c6fb;
   --ifm-color-primary-lightest: #f5edfe;
+
+  --ctt-border: #45475a;
+  --ctt-surface: #313244;
+  --ctt-surface-secondary: #181825;
+  --ctt-muted: #a6adc8;
+
+  --docusaurus-highlighted-code-line-bg: rgba(203, 166, 247, 0.12);
 }
+
+
+/* ============================================================
+   NORD
+   ============================================================ */
 
 html[data-tech-theme='nord'] {
   --ifm-background-color: #eceff4;
   --ifm-background-surface-color: #e5e9f0;
+
   --ifm-color-content: #2e3440;
-  --ifm-color-primary: #3b6e88;
-  --ifm-color-primary-dark: #35637a;
-  --ifm-color-primary-darker: #325d73;
-  --ifm-color-primary-darkest: #294c5f;
-  --ifm-color-primary-light: #41799a;
-  --ifm-color-primary-lighter: #4780a1;
-  --ifm-color-primary-lightest: #5c91af;
+  --ifm-color-content-secondary: #4c566a;
+
+  --ifm-color-primary: #5e81ac;
+  --ifm-color-primary-dark: #52749d;
+  --ifm-color-primary-darker: #4c6d95;
+  --ifm-color-primary-darkest: #405b7d;
+  --ifm-color-primary-light: #6b8db5;
+  --ifm-color-primary-lighter: #7799be;
+  --ifm-color-primary-lightest: #8fbcbb;
+
+  --ctt-border: #d8dee9;
+  --ctt-surface: #eceff4;
+  --ctt-surface-secondary: #e5e9f0;
+  --ctt-muted: #4c566a;
+
+  --docusaurus-highlighted-code-line-bg: rgba(94, 129, 172, 0.12);
 }
 
 html[data-theme='dark'][data-tech-theme='nord'] {
   --ifm-background-color: #2e3440;
   --ifm-background-surface-color: #3b4252;
+
   --ifm-color-content: #eceff4;
   --ifm-color-content-secondary: #d8dee9;
+
   --ifm-color-primary: #88c0d0;
   --ifm-color-primary-dark: #71b5c8;
   --ifm-color-primary-darker: #66b0c4;
@@ -82,26 +165,50 @@ html[data-theme='dark'][data-tech-theme='nord'] {
   --ifm-color-primary-light: #9fcbd8;
   --ifm-color-primary-lighter: #aad1dc;
   --ifm-color-primary-lightest: #d0e7ed;
+
+  --ctt-border: #4c566a;
+  --ctt-surface: #3b4252;
+  --ctt-surface-secondary: #434c5e;
+  --ctt-muted: #d8dee9;
+
+  --docusaurus-highlighted-code-line-bg: rgba(136, 192, 208, 0.12);
 }
+
+
+/* ============================================================
+   DRACULA
+   ============================================================ */
 
 html[data-tech-theme='dracula'] {
   --ifm-background-color: #f8f8f2;
-  --ifm-background-surface-color: #f0f0ea;
+  --ifm-background-surface-color: #efeddf;
+
   --ifm-color-content: #282a36;
-  --ifm-color-primary: #8b57c6;
-  --ifm-color-primary-dark: #7d49b8;
-  --ifm-color-primary-darker: #7644ae;
-  --ifm-color-primary-darkest: #61388f;
-  --ifm-color-primary-light: #9968cf;
-  --ifm-color-primary-lighter: #a373d4;
-  --ifm-color-primary-lightest: #bb96df;
+  --ifm-color-content-secondary: #6272a4;
+
+  --ifm-color-primary: #7c5ab8;
+  --ifm-color-primary-dark: #704da9;
+  --ifm-color-primary-darker: #67479c;
+  --ifm-color-primary-darkest: #543b80;
+  --ifm-color-primary-light: #8b6bc2;
+  --ifm-color-primary-lighter: #997bc9;
+  --ifm-color-primary-lightest: #b7a1df;
+
+  --ctt-border: #d7d5ca;
+  --ctt-surface: #f8f8f2;
+  --ctt-surface-secondary: #efeddf;
+  --ctt-muted: #6272a4;
+
+  --docusaurus-highlighted-code-line-bg: rgba(98, 114, 164, 0.12);
 }
 
 html[data-theme='dark'][data-tech-theme='dracula'] {
   --ifm-background-color: #282a36;
-  --ifm-background-surface-color: #44475a;
+  --ifm-background-surface-color: #21222c;
+
   --ifm-color-content: #f8f8f2;
-  --ifm-color-content-secondary: #d8d8d2;
+  --ifm-color-content-secondary: #bdc0d0;
+
   --ifm-color-primary: #bd93f9;
   --ifm-color-primary-dark: #ad7ff6;
   --ifm-color-primary-darker: #a372f4;
@@ -109,39 +216,1180 @@ html[data-theme='dark'][data-tech-theme='dracula'] {
   --ifm-color-primary-light: #cdaafa;
   --ifm-color-primary-lighter: #d6b7fb;
   --ifm-color-primary-lightest: #ecddfe;
+
+  --ctt-border: #44475a;
+  --ctt-surface: #343746;
+  --ctt-surface-secondary: #21222c;
+  --ctt-muted: #bdc0d0;
+
+  --docusaurus-highlighted-code-line-bg: rgba(189, 147, 249, 0.20);
 }
+
+
+/* ============================================================
+   TKOD
+   Purple-focused cyberpunk theme
+   ============================================================ */
 
 html[data-tech-theme='TKOD'] {
   --ifm-background-color: #0d0022;
   --ifm-background-surface-color: #23003f;
-  --ifm-color-content: #981ed1;
+
+  --ifm-color-content: #f5eaff;
+  --ifm-color-content-secondary: #d5bce8;
+
   --ifm-color-primary: #c343ff;
-  --ifm-color-primary-dark: #e90000;
-  --ifm-color-primary-darker: #ff0a2a;
-  --ifm-color-primary-darkest: #fa0202;
-  --ifm-color-primary-light: #ff1c1c;
-  --ifm-color-primary-lighter: #ff1c1c;
-  --ifm-color-primary-lightest: #ff1c1c;
+  --ifm-color-primary-dark: #b12eef;
+  --ifm-color-primary-darker: #a525e3;
+  --ifm-color-primary-darkest: #8617bd;
+  --ifm-color-primary-light: #ce5cff;
+  --ifm-color-primary-lighter: #d775ff;
+  --ifm-color-primary-lightest: #e5a8ff;
+
+  --ctt-border: #54206f;
+  --ctt-surface: #23003f;
+  --ctt-surface-secondary: #310052;
+  --ctt-muted: #cbb0df;
+
+  --docusaurus-highlighted-code-line-bg: rgba(195, 67, 255, 0.16);
 }
 
 html[data-theme='dark'][data-tech-theme='TKOD'] {
   --ifm-background-color: #0d0022;
   --ifm-background-surface-color: #23003f;
-  --ifm-color-content: #981ed1;
-  --ifm-color-content-secondary: #c343ff;
-  --ifm-color-primary: #e90000;
-  --ifm-color-primary-dark: #ff0a2a;
-  --ifm-color-primary-darker: #fa0202;
-  --ifm-color-primary-darkest: #ff1c1c;
-  --ifm-color-primary-light: #ff1c1c;
-  --ifm-color-primary-lighter: #ff1c1c;
-  --ifm-color-primary-lightest: #ff1c1c;
+
+  --ifm-color-content: #f5eaff;
+  --ifm-color-content-secondary: #d5bce8;
+
+  --ifm-color-primary: #c343ff;
+  --ifm-color-primary-dark: #b12eef;
+  --ifm-color-primary-darker: #a525e3;
+  --ifm-color-primary-darkest: #8617bd;
+  --ifm-color-primary-light: #ce5cff;
+  --ifm-color-primary-lighter: #d775ff;
+  --ifm-color-primary-lightest: #e5a8ff;
+
+  --ctt-border: #5a2375;
+  --ctt-surface: #23003f;
+  --ctt-surface-secondary: #310052;
+  --ctt-muted: #cbb0df;
+
+  --docusaurus-highlighted-code-line-bg: rgba(195, 67, 255, 0.18);
 }
+
+
+/* ============================================================
+   TKOD ALERTS / ADMONITIONS
+   ============================================================ */
+
+html[data-tech-theme='TKOD'] .alert {
+  color: #f5eaff !important;
+  background: #23003f !important;
+  border-color: #c343ff !important;
+}
+
+html[data-tech-theme='TKOD'] .alert__title {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+html[data-tech-theme='TKOD'] .alert p,
+html[data-tech-theme='TKOD'] .alert li,
+html[data-tech-theme='TKOD'] .alert strong,
+html[data-tech-theme='TKOD'] .alert em {
+  color: #f5eaff !important;
+}
+
+html[data-tech-theme='TKOD'] .alert a {
+  color: #e5a8ff !important;
+}
+
+html[data-tech-theme='TKOD'] .alert a:hover {
+  color: #ffffff !important;
+}
+
+html[data-tech-theme='TKOD'] .alert svg {
+  fill: currentColor;
+}
+
+
+/* Warning */
+
+html[data-tech-theme='TKOD'] .alert--warning {
+  --ifm-alert-background-color: #2d1640;
+  --ifm-alert-background-color-highlight: #3b1d52;
+  --ifm-alert-foreground-color: #fff1c2;
+  --ifm-alert-border-color: #ffbf3f;
+
+  color: #fff1c2 !important;
+  background: #2d1640 !important;
+  border-color: #ffbf3f !important;
+}
+
+html[data-tech-theme='TKOD'] .alert--warning .alert__title {
+  color: #ffd866 !important;
+}
+
+html[data-tech-theme='TKOD'] .alert--warning svg {
+  color: #ffd866 !important;
+}
+
+
+/* Info */
+
+html[data-tech-theme='TKOD'] .alert--info {
+  --ifm-alert-background-color: #21113d;
+  --ifm-alert-background-color-highlight: #2d1852;
+  --ifm-alert-foreground-color: #f1ddff;
+  --ifm-alert-border-color: #9d5cff;
+
+  color: #f1ddff !important;
+  background: #21113d !important;
+  border-color: #9d5cff !important;
+}
+
+html[data-tech-theme='TKOD'] .alert--info .alert__title {
+  color: #d9aaff !important;
+}
+
+
+/* Success */
+
+html[data-tech-theme='TKOD'] .alert--success {
+  --ifm-alert-background-color: #122d27;
+  --ifm-alert-background-color-highlight: #193d34;
+  --ifm-alert-foreground-color: #d4fff1;
+  --ifm-alert-border-color: #42d6ad;
+
+  color: #d4fff1 !important;
+  background: #122d27 !important;
+  border-color: #42d6ad !important;
+}
+
+html[data-tech-theme='TKOD'] .alert--success .alert__title {
+  color: #72e8c5 !important;
+}
+
+
+/* Danger */
+
+html[data-tech-theme='TKOD'] .alert--danger {
+  --ifm-alert-background-color: #351324;
+  --ifm-alert-background-color-highlight: #48182e;
+  --ifm-alert-foreground-color: #ffe0e7;
+  --ifm-alert-border-color: #ff4664;
+
+  color: #ffe0e7 !important;
+  background: #351324 !important;
+  border-color: #ff4664 !important;
+}
+
+html[data-tech-theme='TKOD'] .alert--danger .alert__title {
+  color: #ff7188 !important;
+}
+
+
+/* ============================================================
+   SURPRICE
+   TKOD-inspired red / crimson premium theme
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] {
+  --ifm-background-color: #11090b;
+
+  --ifm-color-content: #f7e9eb;
+  --ifm-color-content-secondary: #d1afb5;
+
+  --ifm-color-primary: #ff3347;
+  --ifm-color-primary-dark: #ed263b;
+  --ifm-color-primary-darker: #d91e32;
+  --ifm-color-primary-darkest: #b91629;
+
+  --ifm-color-primary-light: #ff5969;
+  --ifm-color-primary-lighter: #ff7583;
+  --ifm-color-primary-lightest: #ffadb6;
+
+  --ctt-border: #4b252b;
+  --ctt-surface: #1c0d10;
+  --ctt-surface-secondary: #281216;
+  --ctt-muted: #d1afb5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 51, 71, 0.14);
+}
+
+html[data-theme='dark'][data-tech-theme='Surprice'] {
+  --ifm-background-color: #11090b;
+  --ifm-background-surface-color: #1c0d10;
+
+  --ifm-color-content: #f7e9eb;
+  --ifm-color-content-secondary: #d1afb5;
+
+  --ifm-color-primary: #ff3347;
+  --ifm-color-primary-dark: #ed263b;
+  --ifm-color-primary-darker: #d91e32;
+  --ifm-color-primary-darkest: #b91629;
+
+  --ifm-color-primary-light: #ff5969;
+  --ifm-color-primary-lighter: #ff7583;
+  --ifm-color-primary-lightest: #ffadb6;
+
+  --ctt-border: #4b252b;
+  --ctt-surface: #1c0d10;
+  --ctt-surface-secondary: #281216;
+  --ctt-muted: #d1afb5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 51, 71, 0.16);
+}
+
+
+/* ============================================================
+   SURPRICE READABILITY
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] body {
+  color: #f7e9eb;
+  background: #11090b;
+}
+
+html[data-tech-theme='Surprice'] p,
+html[data-tech-theme='Surprice'] li,
+html[data-tech-theme='Surprice'] td,
+html[data-tech-theme='Surprice'] th {
+  color: #f7e9eb;
+}
+
+html[data-tech-theme='Surprice'] h1,
+html[data-tech-theme='Surprice'] h2,
+html[data-tech-theme='Surprice'] h3,
+html[data-tech-theme='Surprice'] h4,
+html[data-tech-theme='Surprice'] h5,
+html[data-tech-theme='Surprice'] h6 {
+  color: #ffffff;
+}
+
+
+/* ============================================================
+   SURPRICE LINKS
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] a {
+  color: #ff5969;
+  transition:
+    color 160ms ease,
+    text-shadow 160ms ease;
+}
+
+html[data-tech-theme='Surprice'] a:hover {
+  color: #ffadb6;
+  text-shadow:
+    0 0 12px rgba(255, 51, 71, 0.24);
+}
+
+
+/* ============================================================
+   SURPRICE NAVBAR
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] .navbar {
+  background: #170b0e;
+  border-bottom: 1px solid #4b252b;
+}
+
+html[data-tech-theme='Surprice'] .navbar__title,
+html[data-tech-theme='Surprice'] .navbar__link {
+  color: #f7e9eb;
+}
+
+html[data-tech-theme='Surprice'] .navbar__link:hover {
+  color: #ff5969;
+}
+
+
+/* ============================================================
+   SURPRICE SIDEBAR
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] .menu {
+  background: #11090b;
+}
+
+html[data-tech-theme='Surprice'] .menu__link {
+  color: #d1afb5;
+}
+
+html[data-tech-theme='Surprice'] .menu__link:hover {
+  color: #ffffff;
+  
+}
+
+html[data-tech-theme='Surprice'] .menu__link--active {
+  color: #ff7583;
+  background: rgba(255, 51, 71, 0.12);
+  border-left: 3px solid #ff3347;
+}
+
+
+/* ============================================================
+   SURPRICE BREADCRUMBS / TOC
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] .breadcrumbs__link,
+html[data-tech-theme='Surprice'] .table-of-contents__link {
+  color: #d1afb5;
+}
+
+html[data-tech-theme='Surprice'] .breadcrumbs__link:hover,
+html[data-tech-theme='Surprice'] .table-of-contents__link:hover,
+html[data-tech-theme='Surprice'] .table-of-contents__link--active {
+  color: #ff5969;
+}
+
+
+/* ============================================================
+   SURPRICE TABLES
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] table {
+  border-color: #4b252b;
+  
+}
+
+html[data-tech-theme='Surprice'] table th {
+  background: #281216;
+  color: #ffffff;
+}
+
+html[data-tech-theme='Surprice'] table td {
+  color: #f7e9eb;
+  border-color: #4b252b;
+}
+
+html[data-tech-theme='Surprice'] table tr:nth-child(2n) {
+  background: rgba(255, 51, 71, 0.05);
+}
+
+
+/* ============================================================
+   SURPRICE CODE
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] code {
+  background: #281216;
+  border: 1px solid #4b252b;
+  color: #ffadb6;
+}
+
+html[data-tech-theme='Surprice'] pre code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+}
+
+
+/* ============================================================
+   SURPRICE BLOCKQUOTES
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] blockquote {
+  border-left-color: #ff3347;
+  background: rgba(255, 51, 71, 0.07);
+  color: #d1afb5;
+}
+
+
+/* ============================================================
+   SURPRICE PAGINATION
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] .pagination-nav__link {
+  
+  border-color: #4b252b;
+}
+
+html[data-tech-theme='Surprice'] .pagination-nav__link:hover {
+  border-color: #ff3347;
+  box-shadow:
+    0 0 18px rgba(255, 51, 71, 0.08);
+}
+
+
+/* ============================================================
+   SURPRICE ADMONITIONS
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] .alert {
+  color: #f7e9eb !important;
+  background: #1c0d10 !important;
+  border-color: #ff3347 !important;
+}
+
+html[data-tech-theme='Surprice'] .alert p,
+html[data-tech-theme='Surprice'] .alert li,
+html[data-tech-theme='Surprice'] .alert strong,
+html[data-tech-theme='Surprice'] .alert em {
+  color: #f7e9eb !important;
+}
+
+html[data-tech-theme='Surprice'] .alert__title {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+html[data-tech-theme='Surprice'] .alert a {
+  color: #ffadb6 !important;
+}
+
+html[data-tech-theme='Surprice'] .alert a:hover {
+  color: #ffffff !important;
+}
+
+html[data-tech-theme='Surprice'] .alert--warning {
+  --ifm-alert-background-color: #321b12;
+  --ifm-alert-background-color-highlight: #462319;
+  --ifm-alert-foreground-color: #fff1c2;
+  --ifm-alert-border-color: #ffbf3f;
+
+  color: #fff1c2 !important;
+  background: #321b12 !important;
+  border-color: #ffbf3f !important;
+}
+
+html[data-tech-theme='Surprice'] .alert--warning .alert__title,
+html[data-tech-theme='Surprice'] .alert--warning svg {
+  color: #ffd866 !important;
+}
+
+html[data-tech-theme='Surprice'] .alert--info {
+  --ifm-alert-background-color: #24121b;
+  --ifm-alert-background-color-highlight: #351827;
+  --ifm-alert-foreground-color: #ffe2e8;
+  --ifm-alert-border-color: #ff5969;
+
+  color: #ffe2e8 !important;
+  background: #24121b !important;
+  border-color: #ff5969 !important;
+}
+
+html[data-tech-theme='Surprice'] .alert--success {
+  --ifm-alert-background-color: #122d27;
+  --ifm-alert-background-color-highlight: #193d34;
+  --ifm-alert-foreground-color: #d4fff1;
+  --ifm-alert-border-color: #42d6ad;
+
+  color: #d4fff1 !important;
+  background: #122d27 !important;
+  border-color: #42d6ad !important;
+}
+
+html[data-tech-theme='Surprice'] .alert--danger {
+  --ifm-alert-background-color: #351018;
+  --ifm-alert-background-color-highlight: #4a1420;
+  --ifm-alert-foreground-color: #ffe0e7;
+  --ifm-alert-border-color: #ff4664;
+
+  color: #ffe0e7 !important;
+  background: #351018 !important;
+  border-color: #ff4664 !important;
+}
+
+html[data-tech-theme='Surprice'] .alert--danger .alert__title {
+  color: #ff7583 !important;
+}
+
+
+/* ============================================================
+   SURPRICE FOOTER
+   ============================================================ */
+
+html[data-tech-theme='Surprice'] .footer {
+  background: #0b0708;
+  color: #d1afb5;
+}
+
+html[data-tech-theme='Surprice'] .footer__title {
+  color: #ffffff;
+}
+
+html[data-tech-theme='Surprice'] .footer__link-item {
+  color: #d1afb5;
+}
+
+html[data-tech-theme='Surprice'] .footer__link-item:hover {
+  color: #ff5969;
+}
+
+
+/* ============================================================
+   SURPRICE SEARCH
+   ============================================================ */
+
+html[data-tech-theme='Surprice']
+.search-local-container
+.search-local-modal {
+  
+  border-color: #4b252b;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.72),
+    0 0 30px rgba(255, 51, 71, 0.10);
+}
+
+html[data-tech-theme='Surprice']
+.search-local-container
+.search-local-input {
+  color: #f7e9eb;
+  
+  border-bottom-color: #4b252b;
+}
+
+html[data-tech-theme='Surprice']
+.search-local-container
+.search-local-input::placeholder {
+  color: #d1afb5;
+}
+
+html[data-tech-theme='Surprice']
+.search-local-container
+.search-local-result:hover,
+html[data-tech-theme='Surprice']
+.search-local-container
+.search-local-result[aria-selected='true'] {
+  background: #281216;
+}
+
+html[data-tech-theme='Surprice']
+.search-local-container
+.search-local-result-title {
+  color: #ffffff;
+}
+
+html[data-tech-theme='Surprice']
+.search-local-container
+.search-local-result-content {
+  color: #d1afb5;
+}
+
+
+/* ============================================================
+   SURPRICE ACCENTS
+   ============================================================ */
+
+html[data-tech-theme='Surprice']
+.theme-doc-markdown
+strong {
+  color: #ff5969;
+}
+
+html[data-tech-theme='Surprice']
+.theme-doc-markdown
+hr {
+  border-color: #4b252b;
+}
+
+
+/* ============================================================
+   SURPRICE MOBILE
+   ============================================================ */
+
+@media screen and (max-width: 996px) {
+  html[data-tech-theme='Surprice'] .navbar {
+    background: #170b0e;
+  }
+
+  html[data-tech-theme='Surprice'] .menu {
+    background: #11090b;
+  }
+}
+
+/* ============================================================
+   AMOLED
+   ============================================================ */
+
+html[data-tech-theme='amoled'] {
+  --ifm-background-color: #000000;
+  --ifm-background-surface-color: #050505;
+
+  --ifm-color-content: #f5f5f5;
+  --ifm-color-content-secondary: #bdbdbd;
+
+  --ifm-color-primary: #7db7ff;
+  --ifm-color-primary-dark: #5ca3ff;
+  --ifm-color-primary-darker: #3f93ff;
+  --ifm-color-primary-darkest: #247fe8;
+  --ifm-color-primary-light: #98c7ff;
+  --ifm-color-primary-lighter: #b4d6ff;
+  --ifm-color-primary-lightest: #d5e7ff;
+
+  --ctt-border: #202020;
+  --ctt-surface: #050505;
+  --ctt-surface-secondary: #101010;
+  --ctt-muted: #a5a5a5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ============================================================
+   HALLOWEEN
+   ============================================================ */
+
+html[data-tech-theme='halloween'] {
+  --ifm-background-color: #100b12;
+  --ifm-background-surface-color: #19101d;
+
+  --ifm-color-content: #fff4df;
+  --ifm-color-content-secondary: #d7c6b0;
+
+  --ifm-color-primary: #ff7518;
+  --ifm-color-primary-dark: #e85f08;
+  --ifm-color-primary-darker: #d65300;
+  --ifm-color-primary-darkest: #b74400;
+  --ifm-color-primary-light: #ff8e3d;
+  --ifm-color-primary-lighter: #ffa967;
+  --ifm-color-primary-lightest: #ffc497;
+
+  --ctt-border: #4a273d;
+  --ctt-surface: #19101d;
+  --ctt-surface-secondary: #251629;
+  --ctt-muted: #cbb9c9;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 117, 24, 0.13);
+}
+
+html[data-tech-theme='halloween'] .navbar {
+  box-shadow: 0 1px 0 #ff7518;
+}
+
+
+/* ============================================================
+   CHRISTMAS
+   Green + red + snow
+   ============================================================ */
+
+html[data-tech-theme='christmas'] {
+  --ifm-background-color: #f5f8f5;
+  --ifm-background-surface-color: #ffffff;
+
+  --ifm-color-content: #17351f;
+  --ifm-color-content-secondary: #496052;
+
+  --ifm-color-primary: #b21f2d;
+  --ifm-color-primary-dark: #9e1b27;
+  --ifm-color-primary-darker: #8c1823;
+  --ifm-color-primary-darkest: #74121c;
+  --ifm-color-primary-light: #c53542;
+  --ifm-color-primary-lighter: #d2505b;
+  --ifm-color-primary-lightest: #e27b83;
+
+  --ctt-border: #d5dfd7;
+  --ctt-surface: #ffffff;
+  --ctt-surface-secondary: #edf4ef;
+  --ctt-muted: #55705d;
+
+  --docusaurus-highlighted-code-line-bg: rgba(178, 31, 45, 0.10);
+}
+
+html[data-theme='dark'][data-tech-theme='christmas'] {
+  --ifm-background-color: #07120b;
+  --ifm-background-surface-color: #0d1d12;
+
+  --ifm-color-content: #f2fff5;
+  --ifm-color-content-secondary: #b8d0bd;
+
+  --ifm-color-primary: #ff4b5c;
+  --ifm-color-primary-dark: #ef3548;
+  --ifm-color-primary-darker: #db2639;
+  --ifm-color-primary-darkest: #bd1c2d;
+  --ifm-color-primary-light: #ff6c79;
+  --ifm-color-primary-lighter: #ff8c96;
+  --ifm-color-primary-lightest: #ffb8bf;
+
+  --ctt-border: #21442c;
+  --ctt-surface: #0d1d12;
+  --ctt-surface-secondary: #12291a;
+  --ctt-muted: #abc4b1;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 75, 92, 0.13);
+}
+
+
+/* ============================================================
+   CHRISTMAS LIGHTS
+   ============================================================ */
+
+html[data-tech-theme='christmas'] .navbar {
+  position: relative;
+}
+
+html[data-tech-theme='christmas'] .navbar::before {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 2px;
+
+  background: #183b22;
+
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.25);
+
+  z-index: 10;
+}
+
+html[data-tech-theme='christmas'] .navbar::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 8px;
+
+  pointer-events: none;
+  z-index: 11;
+
+  background:
+    radial-gradient(circle at 4% 50%, #ff3548 0 3px, transparent 4px),
+    radial-gradient(circle at 12% 50%, #3dcc72 0 3px, transparent 4px),
+    radial-gradient(circle at 20% 50%, #ffd447 0 3px, transparent 4px),
+    radial-gradient(circle at 28% 50%, #4ea1ff 0 3px, transparent 4px),
+    radial-gradient(circle at 36% 50%, #ff3548 0 3px, transparent 4px),
+    radial-gradient(circle at 44% 50%, #3dcc72 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 50%, #ffd447 0 3px, transparent 4px),
+    radial-gradient(circle at 60% 50%, #4ea1ff 0 3px, transparent 4px),
+    radial-gradient(circle at 68% 50%, #ff3548 0 3px, transparent 4px),
+    radial-gradient(circle at 76% 50%, #3dcc72 0 3px, transparent 4px),
+    radial-gradient(circle at 84% 50%, #ffd447 0 3px, transparent 4px),
+    radial-gradient(circle at 92% 50%, #4ea1ff 0 3px, transparent 4px);
+
+  animation: christmas-lights-glow 2.6s ease-in-out infinite;
+}
+
+@keyframes christmas-lights-glow {
+  0%,
+  100% {
+    opacity: 0.78;
+    filter: brightness(0.92);
+  }
+
+  25% {
+    opacity: 1;
+    filter: brightness(1.15);
+  }
+
+  50% {
+    opacity: 0.82;
+    filter: brightness(0.96);
+  }
+
+  75% {
+    opacity: 1;
+    filter: brightness(1.18);
+  }
+}
+
+
+/* ============================================================
+   CHRISTMAS SNOW
+   ============================================================ */
+
+html[data-tech-theme='christmas'] .main-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+html[data-tech-theme='christmas'] .main-wrapper::before,
+html[data-tech-theme='christmas'] .main-wrapper::after {
+  content: '';
+
+  position: fixed;
+  inset: -150px 0 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  background-repeat: repeat;
+
+  will-change: transform;
+}
+
+
+/* Distant snow */
+
+html[data-tech-theme='christmas'] .main-wrapper::before {
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.90) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,255,255,.68) 0 1.3px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,.48) 0 .8px, transparent 1.5px);
+
+  background-size:
+    90px 120px,
+    150px 180px,
+    230px 260px;
+
+  background-position:
+    10px 0,
+    50px -30px,
+    100px -60px;
+
+  opacity: 0.55;
+
+  animation: christmas-snow-far 18s linear infinite;
+}
+
+
+/* Foreground snow */
+
+html[data-tech-theme='christmas'] .main-wrapper::after {
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.96) 0 2px, transparent 3px),
+    radial-gradient(circle, rgba(255,255,255,.85) 0 1.6px, transparent 3px),
+    radial-gradient(circle, rgba(255,255,255,.70) 0 1.2px, transparent 2.5px);
+
+  background-size:
+    180px 220px,
+    260px 310px,
+    120px 190px;
+
+  background-position:
+    20px -50px,
+    80px -120px,
+    120px -80px;
+
+  opacity: 0.72;
+
+  animation: christmas-snow-near 11s linear infinite;
+}
+
+@keyframes christmas-snow-far {
+  from {
+    transform: translate3d(0, -120px, 0);
+  }
+
+  to {
+    transform: translate3d(45px, 110vh, 0);
+  }
+}
+
+@keyframes christmas-snow-near {
+  from {
+    transform: translate3d(-35px, -150px, 0);
+  }
+
+  to {
+    transform: translate3d(70px, 110vh, 0);
+  }
+}
+
+html[data-tech-theme='christmas'] .navbar,
+html[data-tech-theme='christmas'] .theme-doc-sidebar-container,
+html[data-tech-theme='christmas'] .container,
+html[data-tech-theme='christmas'] .footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Christmas cards */
+
+html[data-tech-theme='christmas'] .card,
+html[data-tech-theme='christmas'] .pagination-nav__link {
+  border-color: var(--ctt-border);
+  background: var(--ctt-surface);
+}
+
+html[data-tech-theme='christmas'] .card:hover,
+html[data-tech-theme='christmas'] .pagination-nav__link:hover {
+  border-color: #b21f2d;
+
+  box-shadow:
+    0 6px 22px rgba(178, 31, 45, 0.10);
+}
+
+
+/* ============================================================
+   AMOLED
+   ============================================================ */
+
+html[data-tech-theme='amoled'] {
+  --ifm-background-color: #000000;
+  --ifm-background-surface-color: #050505;
+
+  --ifm-color-content: #f5f5f5;
+  --ifm-color-content-secondary: #bdbdbd;
+
+  --ifm-color-primary: #7db7ff;
+  --ifm-color-primary-dark: #5ca3ff;
+  --ifm-color-primary-darker: #3f93ff;
+  --ifm-color-primary-darkest: #247fe8;
+  --ifm-color-primary-light: #98c7ff;
+  --ifm-color-primary-lighter: #b4d6ff;
+  --ifm-color-primary-lightest: #d5e7ff;
+
+  --ctt-border: #202020;
+  --ctt-surface: #050505;
+  --ctt-surface-secondary: #101010;
+  --ctt-muted: #a5a5a5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+}
+
+html[data-tech-theme='amoled'] body,
+html[data-tech-theme='amoled'] .navbar,
+html[data-tech-theme='amoled'] .footer {
+  background: #000000;
+}
+
+html[data-tech-theme='amoled'] .card,
+html[data-tech-theme='amoled'] .pagination-nav__link {
+  background: #050505;
+  border-color: #202020;
+}
+
+
+/* ============================================================
+   GALAXY
+   Deep space + smooth multi-layer star animation
+   ============================================================ */
+
+html[data-tech-theme='galaxy'] {
+  --ifm-background-color: #05060d;
+  --ifm-background-surface-color: #0a0c18;
+
+  --ifm-color-content: #eef1ff;
+  --ifm-color-content-secondary: #b7bdd8;
+
+  --ifm-color-primary: #8ea7ff;
+  --ifm-color-primary-dark: #7894ff;
+  --ifm-color-primary-darker: #6684ff;
+  --ifm-color-primary-darkest: #526fff;
+  --ifm-color-primary-light: #a8baff;
+  --ifm-color-primary-lighter: #bdcaff;
+  --ifm-color-primary-lightest: #d8e0ff;
+
+  --ctt-border: #202641;
+  --ctt-surface: #0a0c18;
+  --ctt-surface-secondary: #101426;
+  --ctt-muted: #969fbd;
+
+  --docusaurus-highlighted-code-line-bg: rgba(142, 167, 255, 0.12);
+}
+
+
+/* Deep-space backdrop */
+
+html[data-tech-theme='galaxy'] body {
+  position: relative;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(92, 77, 220, 0.14),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(72, 98, 255, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 85% 65%,
+      rgba(151, 92, 255, 0.06),
+      transparent 40%
+    ),
+    #05060d;
+}
+
+
+/* Distant stars */
+
+html[data-tech-theme='galaxy'] body::before {
+  content: '';
+
+  position: fixed;
+  inset: -25%;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.80) 0 0.7px,
+      transparent 1.3px
+    ),
+    radial-gradient(
+      circle,
+      rgba(180, 195, 255, 0.55) 0 0.7px,
+      transparent 1.4px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.35) 0 0.6px,
+      transparent 1.2px
+    );
+
+  background-size:
+    89px 107px,
+    137px 151px,
+    193px 211px;
+
+  background-position:
+    17px 31px,
+    73px 103px,
+    121px 51px;
+
+  opacity: 0.58;
+
+  animation: galaxy-stars-far 120s linear infinite;
+}
+
+
+/* Foreground stars */
+
+html[data-tech-theme='galaxy'] body::after {
+  content: '';
+
+  position: fixed;
+  inset: -30%;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.95) 0 1px,
+      rgba(185, 201, 255, 0.55) 1px,
+      transparent 2.4px
+    ),
+    radial-gradient(
+      circle,
+      rgba(157, 176, 255, 0.85) 0 0.8px,
+      transparent 2px
+    );
+
+  background-size:
+    173px 191px,
+    251px 269px;
+
+  background-position:
+    41px 61px,
+    117px 29px;
+
+  opacity: 0.48;
+
+  animation:
+    galaxy-stars-near 75s linear infinite,
+    galaxy-stars-twinkle 8s ease-in-out infinite alternate;
+}
+
+
+/* Keep website above stars */
+
+html[data-tech-theme='galaxy'] .navbar,
+html[data-tech-theme='galaxy'] .main-wrapper,
+html[data-tech-theme='galaxy'] .footer,
+html[data-tech-theme='galaxy'] .theme-doc-sidebar-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Galaxy UI */
+
+html[data-tech-theme='galaxy'] .navbar {
+  background: rgba(7, 8, 17, 0.86);
+  border-bottom: 1px solid rgba(142, 167, 255, 0.14);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+html[data-tech-theme='galaxy'] .menu {
+  background: rgba(5, 6, 13, 0.78);
+}
+
+html[data-tech-theme='galaxy'] .card,
+html[data-tech-theme='galaxy'] .pagination-nav__link {
+  background: rgba(10, 12, 24, 0.82);
+  border-color: rgba(142, 167, 255, 0.16);
+}
+
+html[data-tech-theme='galaxy'] .card:hover,
+html[data-tech-theme='galaxy'] .pagination-nav__link:hover {
+  border-color: rgba(142, 167, 255, 0.36);
+
+  box-shadow:
+    0 0 28px rgba(101, 124, 255, 0.08);
+}
+
+html[data-tech-theme='galaxy'] a {
+  transition:
+    color 160ms ease,
+    text-shadow 160ms ease;
+}
+
+html[data-tech-theme='galaxy'] a:hover {
+  color: #bdcaff;
+  text-shadow:
+    0 0 12px rgba(142, 167, 255, 0.28);
+}
+
+
+/* Keyframes for the CSS starfield fallback (used when JavaScript is
+   unavailable, or paused by the browser via prefers-reduced-motion).
+   These were referenced above but never defined, so the stars never
+   actually drifted. */
+
+@keyframes galaxy-stars-far {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-40px, 160px, 0);
+  }
+}
+
+@keyframes galaxy-stars-near {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(60px, 220px, 0);
+  }
+}
+
+@keyframes galaxy-stars-twinkle {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 0.62;
+  }
+}
+
+
+/* ============================================================
+   CUSTOM
+   ============================================================ */
 
 html[data-tech-theme='custom'] {
   --ifm-background-color: #f7fbff;
   --ifm-background-surface-color: #eaf4ff;
+
   --ifm-color-content: #102a43;
+  --ifm-color-content-secondary: #486581;
+
   --ifm-color-primary: #0b7285;
   --ifm-color-primary-dark: #096778;
   --ifm-color-primary-darker: #086171;
@@ -149,13 +1397,22 @@ html[data-tech-theme='custom'] {
   --ifm-color-primary-light: #0d7d92;
   --ifm-color-primary-lighter: #0e8399;
   --ifm-color-primary-lightest: #159bb3;
+
+  --ctt-border: #c8dbea;
+  --ctt-surface: #ffffff;
+  --ctt-surface-secondary: #eaf4ff;
+  --ctt-muted: #486581;
+
+  --docusaurus-highlighted-code-line-bg: rgba(11, 114, 133, 0.10);
 }
 
 html[data-theme='dark'][data-tech-theme='custom'] {
   --ifm-background-color: #102a43;
   --ifm-background-surface-color: #173f5f;
+
   --ifm-color-content: #e5f4ff;
   --ifm-color-content-secondary: #bcd8ee;
+
   --ifm-color-primary: #4fd1c5;
   --ifm-color-primary-dark: #35c7ba;
   --ifm-color-primary-darker: #29c2b4;
@@ -163,8 +1420,332 @@ html[data-theme='dark'][data-tech-theme='custom'] {
   --ifm-color-primary-light: #69d9cf;
   --ifm-color-primary-lighter: #76ddd5;
   --ifm-color-primary-lightest: #9ae8e2;
+
+  --ctt-border: #285476;
+  --ctt-surface: #173f5f;
+  --ctt-surface-secondary: #1d496d;
+  --ctt-muted: #bcd8ee;
+
+  --docusaurus-highlighted-code-line-bg: rgba(79, 209, 197, 0.12);
 }
 
+
+/* ============================================================
+   UNIVERSAL THEME STYLING
+   ============================================================ */
+
+html[data-tech-theme] body {
+  color: var(--ifm-color-content);
+  background-color: var(--ifm-background-color);
+}
+
+html[data-tech-theme] p,
+html[data-tech-theme] li,
+html[data-tech-theme] td,
+html[data-tech-theme] th {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] h1,
+html[data-tech-theme] h2,
+html[data-tech-theme] h3,
+html[data-tech-theme] h4,
+html[data-tech-theme] h5,
+html[data-tech-theme] h6 {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] a {
+  color: var(--ifm-color-primary);
+}
+
+html[data-tech-theme] a:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+html[data-tech-theme] .navbar {
+  background: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ctt-border);
+}
+
+html[data-tech-theme] .navbar__title,
+html[data-tech-theme] .navbar__link {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] .navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+html[data-tech-theme] .menu {
+  background: var(--ifm-background-color);
+}
+
+html[data-tech-theme] .menu__link {
+  color: var(--ifm-color-content-secondary);
+}
+
+html[data-tech-theme] .menu__link:hover {
+  color: var(--ifm-color-content);
+  background: var(--ifm-background-surface-color);
+}
+
+html[data-tech-theme] .menu__link--active {
+  color: var(--ifm-color-primary);
+
+  background: color-mix(
+    in srgb,
+    var(--ifm-color-primary) 12%,
+    transparent
+  );
+}
+
+
+/* ============================================================
+   BREADCRUMBS / TOC
+   ============================================================ */
+
+html[data-tech-theme] .breadcrumbs__link,
+html[data-tech-theme] .table-of-contents__link {
+  color: var(--ifm-color-content-secondary);
+}
+
+html[data-tech-theme] .breadcrumbs__link:hover,
+html[data-tech-theme] .table-of-contents__link:hover,
+html[data-tech-theme] .table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+html[data-tech-theme] table {
+  border-color: var(--ctt-border);
+}
+
+html[data-tech-theme] table th {
+  background: var(--ctt-surface-secondary);
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] table td {
+  color: var(--ifm-color-content);
+  border-color: var(--ctt-border);
+}
+
+html[data-tech-theme] table tr:nth-child(2n) {
+  background: color-mix(
+    in srgb,
+    var(--ifm-color-primary) 4%,
+    transparent
+  );
+}
+
+
+/* ============================================================
+   INLINE CODE
+   ============================================================ */
+
+html[data-tech-theme] code {
+  background: var(--ctt-surface-secondary);
+  border: 1px solid var(--ctt-border);
+  color: var(--ifm-color-primary);
+}
+
+html[data-tech-theme] pre code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+}
+
+
+/* ============================================================
+   BLOCKQUOTES
+   ============================================================ */
+
+html[data-tech-theme] blockquote {
+  border-left-color: var(--ifm-color-primary);
+
+  color: var(--ifm-color-content-secondary);
+
+  background: color-mix(
+    in srgb,
+    var(--ifm-color-primary) 6%,
+    transparent
+  );
+}
+
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+
+html[data-tech-theme] .pagination-nav__link {
+  border-color: var(--ctt-border);
+  background: var(--ctt-surface);
+}
+
+html[data-tech-theme] .pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+html[data-tech-theme] .footer {
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-content-secondary);
+}
+
+html[data-tech-theme] .footer__title {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] .footer__link-item {
+  color: var(--ifm-color-content-secondary);
+}
+
+html[data-tech-theme] .footer__link-item:hover {
+  color: var(--ifm-color-primary);
+}
+
+
+/* ============================================================
+   ADMONITIONS
+   ============================================================ */
+
+html[data-tech-theme] .alert {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] .alert p,
+html[data-tech-theme] .alert li,
+html[data-tech-theme] .alert strong,
+html[data-tech-theme] .alert em {
+  color: inherit;
+}
+
+
+/* ============================================================
+   SEARCH POPUP
+   ============================================================ */
+
+html[data-tech-theme] .search-local-container {
+  --search-local-modal-width: min(720px, calc(100vw - 32px));
+}
+
+html[data-tech-theme] .search-local-container .search-local-modal {
+  width: var(--search-local-modal-width);
+
+  max-height:
+    min(720px, calc(100vh - 80px));
+
+  background: var(--ctt-surface);
+
+  border: 1px solid var(--ctt-border);
+  border-radius: 10px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 8px 24px rgba(0, 0, 0, 0.20);
+
+  overflow: hidden;
+}
+
+html[data-tech-theme] .search-local-container .search-local-input {
+  color: var(--ifm-color-content);
+  background: var(--ctt-surface);
+  border-bottom: 1px solid var(--ctt-border);
+}
+
+html[data-tech-theme]
+.search-local-container
+.search-local-input::placeholder {
+  color: var(--ctt-muted);
+}
+
+html[data-tech-theme]
+.search-local-container
+.search-local-result {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme]
+.search-local-container
+.search-local-result:hover,
+html[data-tech-theme]
+.search-local-container
+.search-local-result[aria-selected='true'] {
+  background: color-mix(
+    in srgb,
+    var(--ifm-color-primary) 10%,
+    var(--ctt-surface)
+  );
+}
+
+html[data-tech-theme]
+.search-local-container
+.search-local-result-title {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme]
+.search-local-container
+.search-local-result-content {
+  color: var(--ifm-color-content-secondary);
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media screen and (max-width: 996px) {
+  html[data-tech-theme]
+  .search-local-container
+  .search-local-modal {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 40px);
+    border-radius: 8px;
+  }
+}
+
+
+/* ============================================================
+   TABLE RESPONSIVENESS
+   ============================================================ */
+
 @media screen and (max-width: 576px) {
-  .table-wrapper { font-size: 0.88rem; }
+  .table-wrapper {
+    font-size: 0.88rem;
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-tech-theme='galaxy'] body::before,
+  html[data-tech-theme='galaxy'] body::after,
+  html[data-tech-theme='christmas'] .main-wrapper::before,
+  html[data-tech-theme='christmas'] .main-wrapper::after,
+  html[data-tech-theme='christmas'] .navbar::after {
+    animation: none !important;
+  }
 }
