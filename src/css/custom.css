@@ -9,7 +9,7 @@
  *   - Nord
  *   - Dracula
  *   - TKOD
- *   - Surprice
+ *   - Suprise
  *   - AMOLED
  *   - Halloween
  *   - Christmas
@@ -22,7 +22,7 @@
  *   nord
  *   dracula
  *   TKOD
- *   Surprice
+ *   Suprise
  *   amoled
  *   halloween
  *   christmas
@@ -390,11 +390,11 @@ html[data-tech-theme='TKOD'] .alert--danger .alert__title {
 
 
 /* ============================================================
-   SURPRICE
+   Suprise
    TKOD-inspired red / crimson premium theme
    ============================================================ */
 
-html[data-tech-theme='Surprice'] {
+html[data-tech-theme='Suprise'] {
   --ifm-background-color: #11090b;
 
   --ifm-color-content: #f7e9eb;
@@ -417,7 +417,7 @@ html[data-tech-theme='Surprice'] {
   --docusaurus-highlighted-code-line-bg: rgba(255, 51, 71, 0.14);
 }
 
-html[data-theme='dark'][data-tech-theme='Surprice'] {
+html[data-theme='dark'][data-tech-theme='Suprise'] {
   --ifm-background-color: #11090b;
   --ifm-background-surface-color: #1c0d10;
 
@@ -443,43 +443,43 @@ html[data-theme='dark'][data-tech-theme='Surprice'] {
 
 
 /* ============================================================
-   SURPRICE READABILITY
+   Suprise READABILITY
    ============================================================ */
 
-html[data-tech-theme='Surprice'] body {
+html[data-tech-theme='Suprise'] body {
   color: #f7e9eb;
   background: #11090b;
 }
 
-html[data-tech-theme='Surprice'] p,
-html[data-tech-theme='Surprice'] li,
-html[data-tech-theme='Surprice'] td,
-html[data-tech-theme='Surprice'] th {
+html[data-tech-theme='Suprise'] p,
+html[data-tech-theme='Suprise'] li,
+html[data-tech-theme='Suprise'] td,
+html[data-tech-theme='Suprise'] th {
   color: #f7e9eb;
 }
 
-html[data-tech-theme='Surprice'] h1,
-html[data-tech-theme='Surprice'] h2,
-html[data-tech-theme='Surprice'] h3,
-html[data-tech-theme='Surprice'] h4,
-html[data-tech-theme='Surprice'] h5,
-html[data-tech-theme='Surprice'] h6 {
+html[data-tech-theme='Suprise'] h1,
+html[data-tech-theme='Suprise'] h2,
+html[data-tech-theme='Suprise'] h3,
+html[data-tech-theme='Suprise'] h4,
+html[data-tech-theme='Suprise'] h5,
+html[data-tech-theme='Suprise'] h6 {
   color: #ffffff;
 }
 
 
 /* ============================================================
-   SURPRICE LINKS
+   Suprise LINKS
    ============================================================ */
 
-html[data-tech-theme='Surprice'] a {
+html[data-tech-theme='Suprise'] a {
   color: #ff5969;
   transition:
     color 160ms ease,
     text-shadow 160ms ease;
 }
 
-html[data-tech-theme='Surprice'] a:hover {
+html[data-tech-theme='Suprise'] a:hover {
   color: #ffadb6;
   text-shadow:
     0 0 12px rgba(255, 51, 71, 0.24);
@@ -487,42 +487,42 @@ html[data-tech-theme='Surprice'] a:hover {
 
 
 /* ============================================================
-   SURPRICE NAVBAR
+   Suprise NAVBAR
    ============================================================ */
 
-html[data-tech-theme='Surprice'] .navbar {
+html[data-tech-theme='Suprise'] .navbar {
   background: #170b0e;
   border-bottom: 1px solid #4b252b;
 }
 
-html[data-tech-theme='Surprice'] .navbar__title,
-html[data-tech-theme='Surprice'] .navbar__link {
+html[data-tech-theme='Suprise'] .navbar__title,
+html[data-tech-theme='Suprise'] .navbar__link {
   color: #f7e9eb;
 }
 
-html[data-tech-theme='Surprice'] .navbar__link:hover {
+html[data-tech-theme='Suprise'] .navbar__link:hover {
   color: #ff5969;
 }
 
 
 /* ============================================================
-   SURPRICE SIDEBAR
+   Suprise SIDEBAR
    ============================================================ */
 
-html[data-tech-theme='Surprice'] .menu {
+html[data-tech-theme='Suprise'] .menu {
   background: #11090b;
 }
 
-html[data-tech-theme='Surprice'] .menu__link {
+html[data-tech-theme='Suprise'] .menu__link {
   color: #d1afb5;
 }
 
-html[data-tech-theme='Surprice'] .menu__link:hover {
+html[data-tech-theme='Suprise'] .menu__link:hover {
   color: #ffffff;
   
 }
 
-html[data-tech-theme='Surprice'] .menu__link--active {
+html[data-tech-theme='Suprise'] .menu__link--active {
   color: #ff7583;
   background: rgba(255, 51, 71, 0.12);
   border-left: 3px solid #ff3347;
@@ -530,56 +530,56 @@ html[data-tech-theme='Surprice'] .menu__link--active {
 
 
 /* ============================================================
-   SURPRICE BREADCRUMBS / TOC
+   Suprise BREADCRUMBS / TOC
    ============================================================ */
 
-html[data-tech-theme='Surprice'] .breadcrumbs__link,
-html[data-tech-theme='Surprice'] .table-of-contents__link {
+html[data-tech-theme='Suprise'] .breadcrumbs__link,
+html[data-tech-theme='Suprise'] .table-of-contents__link {
   color: #d1afb5;
 }
 
-html[data-tech-theme='Surprice'] .breadcrumbs__link:hover,
-html[data-tech-theme='Surprice'] .table-of-contents__link:hover,
-html[data-tech-theme='Surprice'] .table-of-contents__link--active {
+html[data-tech-theme='Suprise'] .breadcrumbs__link:hover,
+html[data-tech-theme='Suprise'] .table-of-contents__link:hover,
+html[data-tech-theme='Suprise'] .table-of-contents__link--active {
   color: #ff5969;
 }
 
 
 /* ============================================================
-   SURPRICE TABLES
+   Suprise TABLES
    ============================================================ */
 
-html[data-tech-theme='Surprice'] table {
+html[data-tech-theme='Suprise'] table {
   border-color: #4b252b;
   
 }
 
-html[data-tech-theme='Surprice'] table th {
+html[data-tech-theme='Suprise'] table th {
   background: #281216;
   color: #ffffff;
 }
 
-html[data-tech-theme='Surprice'] table td {
+html[data-tech-theme='Suprise'] table td {
   color: #f7e9eb;
   border-color: #4b252b;
 }
 
-html[data-tech-theme='Surprice'] table tr:nth-child(2n) {
+html[data-tech-theme='Suprise'] table tr:nth-child(2n) {
   background: rgba(255, 51, 71, 0.05);
 }
 
 
 /* ============================================================
-   SURPRICE CODE
+   Suprise CODE
    ============================================================ */
 
-html[data-tech-theme='Surprice'] code {
+html[data-tech-theme='Suprise'] code {
   background: #281216;
   border: 1px solid #4b252b;
   color: #ffadb6;
 }
 
-html[data-tech-theme='Surprice'] pre code {
+html[data-tech-theme='Suprise'] pre code {
   background: transparent;
   border: 0;
   color: inherit;
@@ -587,10 +587,10 @@ html[data-tech-theme='Surprice'] pre code {
 
 
 /* ============================================================
-   SURPRICE BLOCKQUOTES
+   Suprise BLOCKQUOTES
    ============================================================ */
 
-html[data-tech-theme='Surprice'] blockquote {
+html[data-tech-theme='Suprise'] blockquote {
   border-left-color: #ff3347;
   background: rgba(255, 51, 71, 0.07);
   color: #d1afb5;
@@ -598,15 +598,15 @@ html[data-tech-theme='Surprice'] blockquote {
 
 
 /* ============================================================
-   SURPRICE PAGINATION
+   Suprise PAGINATION
    ============================================================ */
 
-html[data-tech-theme='Surprice'] .pagination-nav__link {
+html[data-tech-theme='Suprise'] .pagination-nav__link {
   
   border-color: #4b252b;
 }
 
-html[data-tech-theme='Surprice'] .pagination-nav__link:hover {
+html[data-tech-theme='Suprise'] .pagination-nav__link:hover {
   border-color: #ff3347;
   box-shadow:
     0 0 18px rgba(255, 51, 71, 0.08);
@@ -614,36 +614,36 @@ html[data-tech-theme='Surprice'] .pagination-nav__link:hover {
 
 
 /* ============================================================
-   SURPRICE ADMONITIONS
+   Suprise ADMONITIONS
    ============================================================ */
 
-html[data-tech-theme='Surprice'] .alert {
+html[data-tech-theme='Suprise'] .alert {
   color: #f7e9eb !important;
   background: #1c0d10 !important;
   border-color: #ff3347 !important;
 }
 
-html[data-tech-theme='Surprice'] .alert p,
-html[data-tech-theme='Surprice'] .alert li,
-html[data-tech-theme='Surprice'] .alert strong,
-html[data-tech-theme='Surprice'] .alert em {
+html[data-tech-theme='Suprise'] .alert p,
+html[data-tech-theme='Suprise'] .alert li,
+html[data-tech-theme='Suprise'] .alert strong,
+html[data-tech-theme='Suprise'] .alert em {
   color: #f7e9eb !important;
 }
 
-html[data-tech-theme='Surprice'] .alert__title {
+html[data-tech-theme='Suprise'] .alert__title {
   color: #ffffff !important;
   font-weight: 700;
 }
 
-html[data-tech-theme='Surprice'] .alert a {
+html[data-tech-theme='Suprise'] .alert a {
   color: #ffadb6 !important;
 }
 
-html[data-tech-theme='Surprice'] .alert a:hover {
+html[data-tech-theme='Suprise'] .alert a:hover {
   color: #ffffff !important;
 }
 
-html[data-tech-theme='Surprice'] .alert--warning {
+html[data-tech-theme='Suprise'] .alert--warning {
   --ifm-alert-background-color: #321b12;
   --ifm-alert-background-color-highlight: #462319;
   --ifm-alert-foreground-color: #fff1c2;
@@ -654,12 +654,12 @@ html[data-tech-theme='Surprice'] .alert--warning {
   border-color: #ffbf3f !important;
 }
 
-html[data-tech-theme='Surprice'] .alert--warning .alert__title,
-html[data-tech-theme='Surprice'] .alert--warning svg {
+html[data-tech-theme='Suprise'] .alert--warning .alert__title,
+html[data-tech-theme='Suprise'] .alert--warning svg {
   color: #ffd866 !important;
 }
 
-html[data-tech-theme='Surprice'] .alert--info {
+html[data-tech-theme='Suprise'] .alert--info {
   --ifm-alert-background-color: #24121b;
   --ifm-alert-background-color-highlight: #351827;
   --ifm-alert-foreground-color: #ffe2e8;
@@ -670,7 +670,7 @@ html[data-tech-theme='Surprice'] .alert--info {
   border-color: #ff5969 !important;
 }
 
-html[data-tech-theme='Surprice'] .alert--success {
+html[data-tech-theme='Suprise'] .alert--success {
   --ifm-alert-background-color: #122d27;
   --ifm-alert-background-color-highlight: #193d34;
   --ifm-alert-foreground-color: #d4fff1;
@@ -681,7 +681,7 @@ html[data-tech-theme='Surprice'] .alert--success {
   border-color: #42d6ad !important;
 }
 
-html[data-tech-theme='Surprice'] .alert--danger {
+html[data-tech-theme='Suprise'] .alert--danger {
   --ifm-alert-background-color: #351018;
   --ifm-alert-background-color-highlight: #4a1420;
   --ifm-alert-foreground-color: #ffe0e7;
@@ -692,38 +692,38 @@ html[data-tech-theme='Surprice'] .alert--danger {
   border-color: #ff4664 !important;
 }
 
-html[data-tech-theme='Surprice'] .alert--danger .alert__title {
+html[data-tech-theme='Suprise'] .alert--danger .alert__title {
   color: #ff7583 !important;
 }
 
 
 /* ============================================================
-   SURPRICE FOOTER
+   Suprise FOOTER
    ============================================================ */
 
-html[data-tech-theme='Surprice'] .footer {
+html[data-tech-theme='Suprise'] .footer {
   background: #0b0708;
   color: #d1afb5;
 }
 
-html[data-tech-theme='Surprice'] .footer__title {
+html[data-tech-theme='Suprise'] .footer__title {
   color: #ffffff;
 }
 
-html[data-tech-theme='Surprice'] .footer__link-item {
+html[data-tech-theme='Suprise'] .footer__link-item {
   color: #d1afb5;
 }
 
-html[data-tech-theme='Surprice'] .footer__link-item:hover {
+html[data-tech-theme='Suprise'] .footer__link-item:hover {
   color: #ff5969;
 }
 
 
 /* ============================================================
-   SURPRICE SEARCH
+   Suprise SEARCH
    ============================================================ */
 
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .search-local-container
 .search-local-modal {
   
@@ -734,7 +734,7 @@ html[data-tech-theme='Surprice']
     0 0 30px rgba(255, 51, 71, 0.10);
 }
 
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .search-local-container
 .search-local-input {
   color: #f7e9eb;
@@ -742,28 +742,28 @@ html[data-tech-theme='Surprice']
   border-bottom-color: #4b252b;
 }
 
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .search-local-container
 .search-local-input::placeholder {
   color: #d1afb5;
 }
 
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .search-local-container
 .search-local-result:hover,
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .search-local-container
 .search-local-result[aria-selected='true'] {
   background: #281216;
 }
 
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .search-local-container
 .search-local-result-title {
   color: #ffffff;
 }
 
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .search-local-container
 .search-local-result-content {
   color: #d1afb5;
@@ -771,16 +771,16 @@ html[data-tech-theme='Surprice']
 
 
 /* ============================================================
-   SURPRICE ACCENTS
+   Suprise ACCENTS
    ============================================================ */
 
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .theme-doc-markdown
 strong {
   color: #ff5969;
 }
 
-html[data-tech-theme='Surprice']
+html[data-tech-theme='Suprise']
 .theme-doc-markdown
 hr {
   border-color: #4b252b;
@@ -788,15 +788,15 @@ hr {
 
 
 /* ============================================================
-   SURPRICE MOBILE
+   Suprise MOBILE
    ============================================================ */
 
 @media screen and (max-width: 996px) {
-  html[data-tech-theme='Surprice'] .navbar {
+  html[data-tech-theme='Suprise'] .navbar {
     background: #170b0e;
   }
 
-  html[data-tech-theme='Surprice'] .menu {
+  html[data-tech-theme='Suprise'] .menu {
     background: #11090b;
   }
 }
@@ -1381,54 +1381,56 @@ html[data-tech-theme='galaxy'] a:hover {
 
 /* ============================================================
    CUSTOM
+   Suprise red / crimson palette moved here
    ============================================================ */
 
 html[data-tech-theme='custom'] {
-  --ifm-background-color: #f7fbff;
-  --ifm-background-surface-color: #eaf4ff;
+  --ifm-background-color: #11090b;
+  --ifm-background-surface-color: #1c0d10;
 
-  --ifm-color-content: #102a43;
-  --ifm-color-content-secondary: #486581;
+  --ifm-color-content: #f7e9eb;
+  --ifm-color-content-secondary: #d1afb5;
 
-  --ifm-color-primary: #0b7285;
-  --ifm-color-primary-dark: #096778;
-  --ifm-color-primary-darker: #086171;
-  --ifm-color-primary-darkest: #064f5d;
-  --ifm-color-primary-light: #0d7d92;
-  --ifm-color-primary-lighter: #0e8399;
-  --ifm-color-primary-lightest: #159bb3;
+  --ifm-color-primary: #ff3347;
+  --ifm-color-primary-dark: #ed263b;
+  --ifm-color-primary-darker: #d91e32;
+  --ifm-color-primary-darkest: #b91629;
 
-  --ctt-border: #c8dbea;
-  --ctt-surface: #ffffff;
-  --ctt-surface-secondary: #eaf4ff;
-  --ctt-muted: #486581;
+  --ifm-color-primary-light: #ff5969;
+  --ifm-color-primary-lighter: #ff7583;
+  --ifm-color-primary-lightest: #ffadb6;
 
-  --docusaurus-highlighted-code-line-bg: rgba(11, 114, 133, 0.10);
+  --ctt-border: #4b252b;
+  --ctt-surface: #1c0d10;
+  --ctt-surface-secondary: #281216;
+  --ctt-muted: #d1afb5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 51, 71, 0.14);
 }
 
 html[data-theme='dark'][data-tech-theme='custom'] {
-  --ifm-background-color: #102a43;
-  --ifm-background-surface-color: #173f5f;
+  --ifm-background-color: #11090b;
+  --ifm-background-surface-color: #1c0d10;
 
-  --ifm-color-content: #e5f4ff;
-  --ifm-color-content-secondary: #bcd8ee;
+  --ifm-color-content: #f7e9eb;
+  --ifm-color-content-secondary: #d1afb5;
 
-  --ifm-color-primary: #4fd1c5;
-  --ifm-color-primary-dark: #35c7ba;
-  --ifm-color-primary-darker: #29c2b4;
-  --ifm-color-primary-darkest: #1d9b91;
-  --ifm-color-primary-light: #69d9cf;
-  --ifm-color-primary-lighter: #76ddd5;
-  --ifm-color-primary-lightest: #9ae8e2;
+  --ifm-color-primary: #ff3347;
+  --ifm-color-primary-dark: #ed263b;
+  --ifm-color-primary-darker: #d91e32;
+  --ifm-color-primary-darkest: #b91629;
 
-  --ctt-border: #285476;
-  --ctt-surface: #173f5f;
-  --ctt-surface-secondary: #1d496d;
-  --ctt-muted: #bcd8ee;
+  --ifm-color-primary-light: #ff5969;
+  --ifm-color-primary-lighter: #ff7583;
+  --ifm-color-primary-lightest: #ffadb6;
 
-  --docusaurus-highlighted-code-line-bg: rgba(79, 209, 197, 0.12);
+  --ctt-border: #4b252b;
+  --ctt-surface: #1c0d10;
+  --ctt-surface-secondary: #281216;
+  --ctt-muted: #d1afb5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 51, 71, 0.16);
 }
-
 
 /* ============================================================
    UNIVERSAL THEME STYLING
@@ -1709,32 +1711,458 @@ html[data-tech-theme]
   color: var(--ifm-color-content-secondary);
 }
 
-
 /* ============================================================
-   MOBILE
+   MOBILE / RESPONSIVE
    ============================================================ */
 
 @media screen and (max-width: 996px) {
-  html[data-tech-theme]
-  .search-local-container
-  .search-local-modal {
+
+  html[data-tech-theme] .search-local-container .search-local-modal {
     width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
     max-height: calc(100vh - 40px);
-    border-radius: 8px;
+    border-radius: 10px;
+  }
+
+  /* Prevent normal content from creating horizontal overflow.
+     IMPORTANT: do NOT put overflow-x:hidden on .main-wrapper.
+     Tables need to be able to scroll independently. */
+
+  html[data-tech-theme] .main-wrapper {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  html[data-tech-theme] pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  html[data-tech-theme] img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
 
 /* ============================================================
-   TABLE RESPONSIVENESS
+   MOBILE TABLES
    ============================================================ */
 
-@media screen and (max-width: 576px) {
-  .table-wrapper {
-    font-size: 0.88rem;
+@media screen and (max-width: 768px) {
+
+  /*
+   * Docusaurus/Infima has its own table styles.
+   * We explicitly override them here.
+   */
+
+  html[data-tech-theme] .table-wrapper {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    -webkit-overflow-scrolling: touch;
+
+    margin: 1.25rem 0;
+
+    /*
+     * This creates a proper independent scrolling area.
+     */
+    overscroll-behavior-x: contain;
+
+    /*
+     * Make the scrollbar visible on browsers that support it.
+     */
+    scrollbar-width: thin;
+  }
+
+
+  /*
+   * THE IMPORTANT PART
+   *
+   * Do not allow Infima to force the table to 100% width.
+   */
+  html[data-tech-theme] .table-wrapper table,
+  html[data-tech-theme] .markdown .table-wrapper table {
+    display: table !important;
+
+    width: max-content !important;
+
+    /*
+     * Prevent Infima from shrinking the table.
+     */
+    min-width: 760px !important;
+    max-width: none !important;
+
+    table-layout: auto !important;
+
+    margin: 0 !important;
+  }
+
+
+  /*
+   * Cells
+   */
+  html[data-tech-theme] .table-wrapper th,
+  html[data-tech-theme] .table-wrapper td,
+  html[data-tech-theme] .markdown .table-wrapper th,
+  html[data-tech-theme] .markdown .table-wrapper td {
+
+    white-space: normal !important;
+
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+
+    vertical-align: middle;
+
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    padding: 0.85rem 1rem;
+  }
+
+
+  /* ==========================================================
+     COLUMN WIDTHS
+     ========================================================== */
+
+  /*
+   * Logo
+   */
+  html[data-tech-theme] .table-wrapper th:nth-child(1),
+  html[data-tech-theme] .table-wrapper td:nth-child(1) {
+    width: 100px !important;
+    min-width: 100px !important;
+  }
+
+
+  /*
+   * Anti Virus / Software name
+   */
+  html[data-tech-theme] .table-wrapper th:nth-child(2),
+  html[data-tech-theme] .table-wrapper td:nth-child(2) {
+    width: 190px !important;
+    min-width: 190px !important;
+  }
+
+
+  /*
+   * Description
+   *
+   * This is deliberately wide.
+   */
+  html[data-tech-theme] .table-wrapper th:nth-child(3),
+  html[data-tech-theme] .table-wrapper td:nth-child(3) {
+    width: 360px !important;
+    min-width: 360px !important;
+    max-width: 360px !important;
+  }
+
+
+  /*
+   * Supported platforms
+   */
+  html[data-tech-theme] .table-wrapper th:nth-child(4),
+  html[data-tech-theme] .table-wrapper td:nth-child(4) {
+    width: 210px !important;
+    min-width: 210px !important;
   }
 }
 
+
+/* ============================================================
+   SMALL PHONES
+   ============================================================ */
+
+@media screen and (max-width: 480px) {
+
+  html[data-tech-theme] h1 {
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+
+  html[data-tech-theme] h2 {
+    font-size: 1.85rem;
+    line-height: 1.15;
+  }
+
+  html[data-tech-theme] h3 {
+    font-size: 1.45rem;
+    line-height: 1.2;
+  }
+
+  html[data-tech-theme] p,
+  html[data-tech-theme] li {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+
+  /*
+   * Keep the table large enough to be readable.
+   * User can swipe left/right.
+   */
+  html[data-tech-theme] .table-wrapper table,
+  html[data-tech-theme] .markdown .table-wrapper table {
+    min-width: 760px !important;
+  }
+
+
+  html[data-tech-theme] .table-wrapper th,
+  html[data-tech-theme] .table-wrapper td {
+    font-size: 0.95rem;
+    padding: 0.75rem 0.85rem;
+  }
+}
+
+
+/* ============================================================
+   VERY SMALL PHONES
+   ============================================================ */
+
+@media screen and (max-width: 360px) {
+
+  html[data-tech-theme] h1 {
+    font-size: 2rem;
+  }
+
+  html[data-tech-theme] h2 {
+    font-size: 1.65rem;
+  }
+
+  html[data-tech-theme] .table-wrapper table,
+  html[data-tech-theme] .markdown .table-wrapper table {
+    min-width: 760px !important;
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html[data-tech-theme='galaxy'] *,
+  html[data-tech-theme='christmas'] * {
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   CTT RESPONSIVE / LAYERING FIXES
+   ============================================================
+
+/*
+ * Theme effects are decoration only. They must never create a
+ * stacking context above the Docusaurus UI or interfere with scrolling.
+ */
+html[data-tech-theme='galaxy'] body::before,
+html[data-tech-theme='galaxy'] body::after,
+html[data-tech-theme='christmas'] .main-wrapper::before,
+html[data-tech-theme='christmas'] .main-wrapper::after {
+  pointer-events: none !important;
+}
+
+/* Keep the actual Docusaurus application above animated backgrounds. */
+html[data-tech-theme='galaxy'] #__docusaurus,
+html[data-tech-theme='christmas'] #__docusaurus {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   NAVBAR — DO NOT LET THEME EFFECTS BREAK STICKY BEHAVIOUR
+   ============================================================ */
+
+html[data-tech-theme='galaxy'] .navbar,
+html[data-tech-theme='christmas'] .navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+html[data-tech-theme='galaxy'] .navbar__inner,
+html[data-tech-theme='christmas'] .navbar__inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile navigation drawer must always sit above the theme effects. */
+html[data-tech-theme='galaxy'] .navbar-sidebar,
+html[data-tech-theme='christmas'] .navbar-sidebar {
+  position: fixed !important;
+  z-index: 1100 !important;
+}
+
+html[data-tech-theme='galaxy'] .navbar-sidebar__backdrop,
+html[data-tech-theme='christmas'] .navbar-sidebar__backdrop {
+  z-index: 1090 !important;
+}
+
+/* Prevent the Christmas pseudo-element from changing navbar layout. */
+html[data-tech-theme='christmas'] .navbar::before,
+html[data-tech-theme='christmas'] .navbar::after {
+  pointer-events: none !important;
+}
+
+/* ============================================================
+   CHRISTMAS — SNOW MUST NOT CLIP THE PAGE
+   ============================================================ */
+
+html[data-tech-theme='christmas'] .main-wrapper {
+  position: relative !important;
+  overflow: visible !important;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* The snow is fixed to the viewport, not to the document's width. */
+html[data-tech-theme='christmas'] .main-wrapper::before,
+html[data-tech-theme='christmas'] .main-wrapper::after {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: visible;
+  z-index: 0 !important;
+}
+
+/* ============================================================
+   GALAXY — STARS STAY BEHIND THE SITE
+   ============================================================ */
+
+html[data-tech-theme='galaxy'] body {
+  overflow-x: hidden;
+}
+
+html[data-tech-theme='galaxy'] body::before,
+html[data-tech-theme='galaxy'] body::after {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  z-index: 0 !important;
+}
+
+html[data-tech-theme='galaxy'] .main-wrapper,
+html[data-tech-theme='galaxy'] .theme-doc-sidebar-container,
+html[data-tech-theme='galaxy'] .footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   MOBILE PAGE WIDTH
+   ============================================================ */
+
+@media screen and (max-width: 996px) {
+  html[data-tech-theme] .main-wrapper,
+  html[data-tech-theme] .container,
+  html[data-tech-theme] .row,
+  html[data-tech-theme] .theme-doc-markdown,
+  html[data-tech-theme] .theme-doc-markdown > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  html[data-tech-theme] .theme-doc-markdown {
+    width: 100%;
+    overflow: visible;
+  }
+
+  html[data-tech-theme] pre,
+  html[data-tech-theme] .codeBlockContainer {
+    max-width: 100%;
+  }
+
+  html[data-tech-theme] img,
+  html[data-tech-theme] video,
+  html[data-tech-theme] iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ============================================================
+   MOBILE TABLES — HORIZONTAL SWIPE, NEVER SQUEEZE
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+  html[data-tech-theme] .table-wrapper,
+  html[data-tech-theme] .markdown .table-wrapper {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    margin: 1rem 0 1.5rem;
+  }
+
+  html[data-tech-theme] .table-wrapper table,
+  html[data-tech-theme] .markdown .table-wrapper table {
+    display: table !important;
+    width: max-content !important;
+    min-width: 760px !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    margin: 0 !important;
+  }
+
+  html[data-tech-theme] .table-wrapper th,
+  html[data-tech-theme] .table-wrapper td,
+  html[data-tech-theme] .markdown .table-wrapper th,
+  html[data-tech-theme] .markdown .table-wrapper td {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    vertical-align: middle;
+  }
+}
+
+/* Smaller phones: preserve the table's readable width and let the user swipe. */
+@media screen and (max-width: 480px) {
+  html[data-tech-theme] .table-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html[data-tech-theme] .table-wrapper table,
+  html[data-tech-theme] .markdown .table-wrapper table {
+    min-width: 760px !important;
+  }
+}
+
+/* ============================================================
+   THEME EFFECTS — MOBILE PERFORMANCE
+   ============================================================ */
+
+@media screen and (max-width: 768px) {
+  html[data-tech-theme='galaxy'] body::before,
+  html[data-tech-theme='galaxy'] body::after,
+  html[data-tech-theme='christmas'] .main-wrapper::before,
+  html[data-tech-theme='christmas'] .main-wrapper::after {
+    will-change: transform;
+  }
+}
 
 /* ============================================================
    REDUCED MOTION
@@ -1747,5 +2175,12 @@ html[data-tech-theme]
   html[data-tech-theme='christmas'] .main-wrapper::after,
   html[data-tech-theme='christmas'] .navbar::after {
     animation: none !important;
+    transform: none !important;
+  }
+
+  html[data-tech-theme='galaxy'] *,
+  html[data-tech-theme='christmas'] * {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

@@ -50,6 +50,11 @@ html.ctt-theme-effects-active [role='dialog'] {
   z-index: 1000;
 }
 
+.theme-back-to-top-button {
+  background-color: #15192a !important;
+}
+
+
 /* Disable old CSS-based animated layers while Canvas is active. */
 html.ctt-theme-effects-active[data-tech-theme='galaxy'] body::before,
 html.ctt-theme-effects-active[data-tech-theme='galaxy'] body::after,

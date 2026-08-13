@@ -134,13 +134,15 @@ const config: Config = {
   // THEME CONFIGURATION
   // ============================================================
 
-  themeConfig: {
+    themeConfig: {
+
     // ----------------------------------------------------------
     // COLOR MODE
     // ----------------------------------------------------------
 
+    
     colorMode: {
-      respectPrefersColorScheme: true,
+      respectPrefersColorScheme: false,
       disableSwitch: false,
     },
 
