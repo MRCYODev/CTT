@@ -228,7 +228,7 @@ html[data-theme='dark'][data-tech-theme='dracula'] {
 
 /* ============================================================
    TKOD
-   Purple-focused cyberpunk theme
+   Purple-focused theme
    ============================================================ */
 
 html[data-tech-theme='TKOD'] {
@@ -238,7 +238,7 @@ html[data-tech-theme='TKOD'] {
   --ifm-color-content: #f5eaff;
   --ifm-color-content-secondary: #d5bce8;
 
-  --ifm-color-primary: #c343ff;
+  --ifm-color-primary: #b12eef;
   --ifm-color-primary-dark: #b12eef;
   --ifm-color-primary-darker: #a525e3;
   --ifm-color-primary-darkest: #8617bd;
@@ -254,6 +254,55 @@ html[data-tech-theme='TKOD'] {
   --docusaurus-highlighted-code-line-bg: rgba(195, 67, 255, 0.16);
 }
 
+/* ============================================================
+   TKOD HERO
+   ============================================================ */
+
+html[data-tech-theme='TKOD'] .hero--primary {
+  --ifm-hero-background-color: #23003f !important;
+}
+
+/* ============================================================
+   TKOD SIDEBAR
+   ============================================================ */
+
+/* Sidebar link hover */
+html[data-tech-theme='TKOD'] .menu__link:hover {
+  color: #FFD700 !important;
+}
+
+/* Sidebar active link */
+html[data-tech-theme='TKOD'] .menu__link--active {
+  color: #FFD700 !important;
+}
+
+/* Sidebar category text when hovered */
+html[data-tech-theme='TKOD'] .menu__caret:hover {
+  color: #FFD700 !important;
+}
+
+/* ============================================================
+   TKOD TABLE OF CONTENTS
+   ============================================================ */
+
+html[data-tech-theme='TKOD'] .table-of-contents__link:hover,
+html[data-tech-theme='TKOD'] .table-of-contents__link--active {
+  color: #FFD700 !important;
+}
+
+/* ============================================================
+   TKOD BREADCRUMBS
+   ============================================================ */
+
+html[data-tech-theme='TKOD'] .breadcrumbs__link:hover {
+  color: #FFD700 !important;
+}
+
+
+/* ============================================================
+   TKOD DARK MODE
+   ============================================================ */
+
 html[data-theme='dark'][data-tech-theme='TKOD'] {
   --ifm-background-color: #0d0022;
   --ifm-background-surface-color: #23003f;
@@ -261,7 +310,7 @@ html[data-theme='dark'][data-tech-theme='TKOD'] {
   --ifm-color-content: #f5eaff;
   --ifm-color-content-secondary: #d5bce8;
 
-  --ifm-color-primary: #c343ff;
+  --ifm-color-primary: #b12eef;
   --ifm-color-primary-dark: #b12eef;
   --ifm-color-primary-darker: #a525e3;
   --ifm-color-primary-darkest: #8617bd;
@@ -276,7 +325,6 @@ html[data-theme='dark'][data-tech-theme='TKOD'] {
 
   --docusaurus-highlighted-code-line-bg: rgba(195, 67, 255, 0.18);
 }
-
 
 /* ============================================================
    TKOD ALERTS / ADMONITIONS

@@ -6,7 +6,7 @@ import PlatformBadges from '@site/src/components/PlatformBadges';
 
 # Index
 
-# Anti-Virus
+## Anti-Virus
 
 | Logo | Anti Virus | Description | Supported platforms |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@ import PlatformBadges from '@site/src/components/PlatformBadges';
 | <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><BrandLogo name="malwarebytes" size={43} /></div> | [Malwarebytes](https://www.malwarebytes.com/) | Security software focused on detecting and removing malware, ransomware, spyware, and other potentially unwanted threats. | <PlatformBadges items={['windows', 'macos', 'android']} /> |
 | <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/img/logos/clamav.svg" alt="ClamAV logo" width="52" /></div> | [ClamAV](https://www.clamav.net/) | Open-source antivirus engine designed to detect viruses, malware, trojans, and other malicious software, commonly used for scanning files and mail servers. | <PlatformBadges items={['windows', 'macos', 'linux']} /> |
 
-# File & URL Scanners
+## File & URL Scanners
 
 Tools for scanning files, URLs, websites, and other online resources for malware, phishing, suspicious content, and other potential security threats.
 
@@ -25,7 +25,7 @@ Tools for scanning files, URLs, websites, and other online resources for malware
 | <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/img/logos/urlvoid.svg" alt="Triage logo" width="32" /></div> | [URLVoid](https://www.urlvoid.com/) | Website reputation checker that analyzes websites against multiple blocklists and reputation services to help identify potentially suspicious or malicious websites. | <PlatformBadges items={['web', 'online']} /> |
 | <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><img src="/img/logos/urlscan.svg" alt="Triage logo" width="60" /></div> | [URLScan](https://urlscan.io/) | Website scanning and analysis service that records how a webpage behaves, including its requests, resources, domains, and other security-relevant information. | <PlatformBadges items={['web', 'online']} /> |
 
-# Virus Removers
+## Virus Removers
 
 Tools designed to detect, remove, and clean malware, viruses, potentially unwanted programs, and other threats from affected systems.
 
@@ -37,3 +37,4 @@ Tools designed to detect, remove, and clean malware, viruses, potentially unwant
 | [Housecall Launcher](https://www.trendmicro.com/en_us/forHome/products/housecall.html) | On-demand security scanner designed to detect and remove viruses, malware, trojans, spyware, and other threats from a Windows system. | <PlatformBadges items={['windows', 'free']} /> |
 | [Kaspersky Virus Removal Tool](https://www.kaspersky.com/downloads/free-virus-removal-tool) | On-demand malware removal utility designed to scan a system for viruses, trojans, rootkits, and other malicious software. | <PlatformBadges items={['windows', 'free']} /> |
 | [Norton Power Eraser](https://support.norton.com/sp/en/us/home/current/solutions/kb20100824120155EN) | Aggressive malware removal tool designed to detect and remove threats that may be difficult for traditional antivirus software to identify. | <PlatformBadges items={['windows', 'free']} /> |
+| [TronScript](https://www.reddit.com/r/TronScript/comments/1hxpp3d/tron_v1208_20250109_disable_windows_recall/) - for Advanced Users | |
