@@ -18,6 +18,10 @@ const themes = [
   'custom',
 ] as const;
 
+// 'custom' is a code-defined local theme. It is not a user theme editor.
+
+// ThemeName is intentionally derived from the list above so the picker and
+// early theme bootstrap cannot drift apart.
 type ThemeName = (typeof themes)[number];
 
 function isThemeName(value: string | null): value is ThemeName {

@@ -2184,3 +2184,100 @@ html[data-tech-theme='galaxy'] .footer {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* ============================================================
+   FINAL RESPONSIVE SAFETY OVERRIDES
+   ============================================================ */
+
+/* Keep the document column shrinkable on narrow screens. */
+@media screen and (max-width: 996px) {
+  html[data-tech-theme] #__docusaurus,
+  html[data-tech-theme] .main-wrapper,
+  html[data-tech-theme] main,
+  html[data-tech-theme] .container,
+  html[data-tech-theme] .row,
+  html[data-tech-theme] [class*="docItemContainer"],
+  html[data-tech-theme] .theme-doc-markdown {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  html[data-tech-theme] .theme-doc-markdown {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  html[data-tech-theme] .theme-doc-markdown > * {
+    min-width: 0;
+  }
+
+  html[data-tech-theme] .theme-doc-markdown pre {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html[data-tech-theme] .theme-doc-markdown img,
+  html[data-tech-theme] .theme-doc-markdown video,
+  html[data-tech-theme] .theme-doc-markdown iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Theme picker must never force the page wider or cover the mobile navbar. */
+  html[data-tech-theme] .ctt-theme-picker,
+  html[data-tech-theme] .theme-picker {
+    max-width: calc(100vw - 1.5rem);
+  }
+}
+
+/* Tables are intentionally horizontally scrollable on phones.
+   This keeps multi-column technical tables readable instead of squeezing
+   every column into an unusably narrow layout. */
+@media screen and (max-width: 768px) {
+  html[data-tech-theme] .theme-doc-markdown .table-wrapper,
+  html[data-tech-theme] .markdown .table-wrapper,
+  html[data-tech-theme] .table-wrapper {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 1rem 0 1.5rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-inline: contain;
+    scrollbar-gutter: stable;
+    box-sizing: border-box;
+  }
+
+  html[data-tech-theme] .theme-doc-markdown .table-wrapper > table,
+  html[data-tech-theme] .markdown .table-wrapper > table,
+  html[data-tech-theme] .table-wrapper > table {
+    display: table !important;
+    width: max-content !important;
+    min-width: 680px !important;
+    max-width: none !important;
+    margin: 0 !important;
+    table-layout: auto !important;
+  }
+
+  html[data-tech-theme] .theme-doc-markdown .table-wrapper th,
+  html[data-tech-theme] .theme-doc-markdown .table-wrapper td,
+  html[data-tech-theme] .markdown .table-wrapper th,
+  html[data-tech-theme] .markdown .table-wrapper td {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html[data-tech-theme] .theme-doc-markdown .table-wrapper > table,
+  html[data-tech-theme] .markdown .table-wrapper > table,
+  html[data-tech-theme] .table-wrapper > table {
+    min-width: 640px !important;
+  }
+}

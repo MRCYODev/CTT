@@ -1,4 +1,4 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type {SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   technicianSidebar: [
@@ -19,10 +19,6 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
 
       items: [
-        // ==========================================================
-        // DIAGNOSTICS
-        // ==========================================================
-
         {
           type: 'category',
           label: 'Diagnostics',
@@ -41,13 +37,9 @@ const sidebars: SidebarsConfig = {
           ],
         },
 
-        // ==========================================================
-        // UTILITIES & RECOVERY
-        // ==========================================================
-
         {
           type: 'category',
-          label: 'Utilities & Recovery',
+          label: 'Utilities',
           description:
             'Utilities for system maintenance, recovery, conversion, and other technician tasks.',
           collapsible: true,
@@ -58,16 +50,8 @@ const sidebars: SidebarsConfig = {
             id: 'tools/utilities/index',
           },
 
-          items: [
-            'tools/utilities/bootable-usb',
-            'tools/utilities/convert',
-            'tools/utilities/file-recovery',
-          ],
+          items: [],
         },
-
-        // ==========================================================
-        // SECURITY
-        // ==========================================================
 
         {
           type: 'category',
@@ -83,10 +67,6 @@ const sidebars: SidebarsConfig = {
           items: [],
         },
 
-        // ==========================================================
-        // PERFORMANCE & REFERENCE
-        // ==========================================================
-
         {
           type: 'category',
           label: 'Performance & Reference',
@@ -101,13 +81,35 @@ const sidebars: SidebarsConfig = {
           items: [],
         },
 
-        // ==========================================================
-        // GUIDES
-        // ==========================================================
-
         'tools/guides',
       ],
     },
+
+    // ============================================================
+    // TESTING
+    // ============================================================
+
+    /*
+    {
+      type: 'category',
+      label: 'Testing',
+      collapsible: true,
+      collapsed: true,
+
+      items: [
+        {
+          type: 'category',
+          label: 'Documentation Tests',
+          collapsible: true,
+          collapsed: true,
+
+          items: [
+            'tests/index',
+          ],
+        },
+      ],
+    },
+    */
 
     // ============================================================
     // PLATFORMS
@@ -120,10 +122,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
 
       items: [
-        // ==========================================================
-        // WINDOWS
-        // ==========================================================
-
+        // Windows
         {
           type: 'category',
           label: 'Windows',
@@ -139,10 +138,7 @@ const sidebars: SidebarsConfig = {
           ],
         },
 
-        // ==========================================================
-        // LINUX
-        // ==========================================================
-
+        // Linux
         {
           type: 'category',
           label: 'Linux',
@@ -158,10 +154,7 @@ const sidebars: SidebarsConfig = {
           ],
         },
 
-        // ==========================================================
-        // ANDROID
-        // ==========================================================
-
+        // Android
         {
           type: 'category',
           label: 'Android',

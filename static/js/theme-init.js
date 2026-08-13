@@ -8,7 +8,7 @@
     'nord': true,
     'dracula': true,
     'TKOD': true,
-    'Surprice': true,
+    'Suprise': true,
     'amoled': true,
     'halloween': true,
     'christmas': true,
