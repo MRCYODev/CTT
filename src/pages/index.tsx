@@ -55,7 +55,7 @@ export default function Home(): ReactNode {
                   memory, components, operating systems, and troubleshooting.
                 </p>
 
-                <Link to="/docs/tools/hardware-software-diagnostics">
+                <Link to="/docs/tools/diagnostics/">
                   Browse diagnostics →
                 </Link>
               </article>
@@ -69,7 +69,7 @@ export default function Home(): ReactNode {
                   conversion, bootable media, and everyday technician tasks.
                 </p>
 
-                <Link to="/docs/tools/utilities">
+                <Link to="/docs/tools/utilities/">
                   Browse utilities →
                 </Link>
               </article>

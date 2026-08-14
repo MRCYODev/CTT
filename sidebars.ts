@@ -1,4 +1,4 @@
-import type {SidebarsConfig } from '@docusaurus/plugin-content-docs';
+import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   technicianSidebar: [
@@ -21,24 +21,6 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
-          label: 'Diagnostics',
-          description: 'Hardware and software diagnostic tools.',
-          collapsible: true,
-          collapsed: true,
-
-          link: {
-            type: 'generated-index',
-            title: 'Diagnostics',
-            description: 'Tools for identifying hardware and software issues.',
-          },
-
-          items: [
-            'tools/hardware-software-diagnostics',
-          ],
-        },
-
-        {
-          type: 'category',
           label: 'Utilities',
           description:
             'Utilities for system maintenance, recovery, conversion, and other technician tasks.',
@@ -48,6 +30,22 @@ const sidebars: SidebarsConfig = {
           link: {
             type: 'doc',
             id: 'tools/utilities/index',
+          },
+
+          items: [],
+        },
+
+        {
+          type: 'category',
+          label: 'Diagnostics',
+          description:
+            'Hardware, software, system, and troubleshooting diagnostic tools.',
+          collapsible: true,
+          collapsed: true,
+
+          link: {
+            type: 'doc',
+            id: 'tools/diagnostics/index',
           },
 
           items: [],
@@ -81,35 +79,30 @@ const sidebars: SidebarsConfig = {
           items: [],
         },
 
-        'tools/guides',
+        {
+          type: 'doc',
+          id: 'tools/guides/index',
+        },
       ],
     },
 
     // ============================================================
-    // TESTING
+    // OPTICAL DEVICES
     // ============================================================
 
-    /*
     {
       type: 'category',
-      label: 'Testing',
+      label: 'Optical Devices',
       collapsible: true,
       collapsed: true,
 
       items: [
         {
-          type: 'category',
-          label: 'Documentation Tests',
-          collapsible: true,
-          collapsed: true,
-
-          items: [
-            'tests/index',
-          ],
+          type: 'doc',
+          id: 'optical-media/index',
         },
       ],
     },
-    */
 
     // ============================================================
     // PLATFORMS
@@ -122,7 +115,6 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
 
       items: [
-        // Windows
         {
           type: 'category',
           label: 'Windows',
@@ -138,7 +130,6 @@ const sidebars: SidebarsConfig = {
           ],
         },
 
-        // Linux
         {
           type: 'category',
           label: 'Linux',
@@ -154,7 +145,32 @@ const sidebars: SidebarsConfig = {
           ],
         },
 
-        // Android
+        {
+          type: 'category',
+          label: 'Browser',
+          collapsible: true,
+          collapsed: true,
+
+          items: [
+            'platforms/browser/extensions',
+            'platforms/browser/settings',
+          ],
+        },
+
+        {
+          type: 'category',
+          label: 'Emulators',
+          collapsible: true,
+          collapsed: true,
+
+          items: [
+            {
+              type: 'doc',
+              id: 'platforms/emulators/index',
+            },
+          ],
+        },
+
         {
           type: 'category',
           label: 'Android',

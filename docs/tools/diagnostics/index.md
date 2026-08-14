@@ -4,7 +4,9 @@ sidebar_position: 2
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
 
-# Hardware Diagnostic Tools
+# Diagnostics
+
+## Hardware Diagnostic Tools
 
 | Tool | Supported platforms |
 | --- | --- |
@@ -21,7 +23,7 @@ import PlatformBadges from '@site/src/components/PlatformBadges';
 | [Speccy](https://www.ccleaner.com/speccy) | <PlatformBadges items={['windows']} /> |
 | [Prime95](https://www.mersenne.org/download/) | <PlatformBadges items={['windows', 'linux', 'macos']} /> |
 
-# Software Diagnostic Tools
+## Software Diagnostic Tools
 
 | Tool | Supported platforms |
 | --- | --- |

@@ -194,17 +194,17 @@ const config: Config = {
           items: [
             {
               label: 'Hardware & Software Diagnostics',
-              to: '/docs/tools/hardware-software-diagnostics',
+              to: '/docs/tools/diagnostics/',
             },
 
             {
               label: 'Utilities',
-              to: '/docs/tools/utilities',
+              to: '/docs/tools/utilities/',
             },
 
             {
               label: 'Guides',
-              to: '/docs/tools/guides',
+              to: '/docs/tools/guides/',
             },
           ],
         },

@@ -6,7 +6,6 @@ import PlatformBadges from '@site/src/components/PlatformBadges';
 
 # Android MMI Codes
 
-<PlatformBadges items={['android']} />
 
 MMI codes are combinations of numbers, asterisks, and hash symbols entered in the dialer to access device or network information. Availability varies by manufacturer, Android version, carrier, and region.
 
