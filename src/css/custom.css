@@ -1203,9 +1203,12 @@ html[data-tech-theme='amoled'] .pagination-nav__link {
 /* ============================================================
    GALAXY
    Deep space + smooth multi-layer star animation
+   Dark-only theme
    ============================================================ */
 
 html[data-tech-theme='galaxy'] {
+  color-scheme: dark;
+
   --ifm-background-color: #05060d;
   --ifm-background-surface-color: #0a0c18;
 
@@ -1228,12 +1231,59 @@ html[data-tech-theme='galaxy'] {
   --docusaurus-highlighted-code-line-bg: rgba(142, 167, 255, 0.12);
 }
 
+/*
+ * Galaxy is intentionally dark-only.
+ * Keep the same palette whether Docusaurus reports light or dark mode.
+ */
+html[data-tech-theme='galaxy'][data-theme='light'],
+html[data-tech-theme='galaxy'][data-theme='dark'] {
+  color-scheme: dark;
+
+  --ifm-background-color: #05060d;
+  --ifm-background-surface-color: #0a0c18;
+
+  --ifm-color-content: #eef1ff;
+  --ifm-color-content-secondary: #b7bdd8;
+
+  --ifm-color-primary: #8ea7ff;
+  --ifm-color-primary-dark: #7894ff;
+  --ifm-color-primary-darker: #6684ff;
+  --ifm-color-primary-darkest: #526fff;
+  --ifm-color-primary-light: #a8baff;
+  --ifm-color-primary-lighter: #bdcaff;
+  --ifm-color-primary-lightest: #d8e0ff;
+
+  --ctt-border: #202641;
+  --ctt-surface: #0a0c18;
+  --ctt-surface-secondary: #101426;
+  --ctt-muted: #969fbd;
+
+  --docusaurus-highlighted-code-line-bg: rgba(142, 167, 255, 0.12);
+}
 
 /* Deep-space backdrop */
-
 html[data-tech-theme='galaxy'] body {
   position: relative;
+  min-height: 100%;
+  overflow-x: clip;
+  background: #05060d;
+}
+
+/*
+ * One continuous fixed galaxy layer.
+ * Background gradients and distant stars live on the same layer so
+ * there is no horizontal seam between document sections.
+ */
+html[data-tech-theme='galaxy'] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
   min-height: 100vh;
+  pointer-events: none;
+  z-index: 0;
 
   background:
     radial-gradient(
@@ -1251,22 +1301,6 @@ html[data-tech-theme='galaxy'] body {
       rgba(151, 92, 255, 0.06),
       transparent 40%
     ),
-    #05060d;
-}
-
-
-/* Distant stars */
-
-html[data-tech-theme='galaxy'] body::before {
-  content: '';
-
-  position: fixed;
-  inset: -25%;
-
-  pointer-events: none;
-  z-index: 0;
-
-  background-image:
     radial-gradient(
       circle,
       rgba(255, 255, 255, 0.80) 0 0.7px,
@@ -1283,30 +1317,34 @@ html[data-tech-theme='galaxy'] body::before {
       transparent 1.2px
     );
 
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat, repeat;
   background-size:
+    cover,
+    cover,
+    cover,
     89px 107px,
     137px 151px,
     193px 211px;
-
   background-position:
+    center,
+    center,
+    center,
     17px 31px,
     73px 103px,
     121px 51px;
 
-  opacity: 0.58;
-
-  animation: galaxy-stars-far 120s linear infinite;
+  opacity: 1;
 }
 
-
 /* Foreground stars */
-
 html[data-tech-theme='galaxy'] body::after {
   content: '';
-
   position: fixed;
-  inset: -30%;
-
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   pointer-events: none;
   z-index: 0;
 
@@ -1323,35 +1361,33 @@ html[data-tech-theme='galaxy'] body::after {
       transparent 2px
     );
 
+  background-repeat: repeat;
   background-size:
     173px 191px,
     251px 269px;
-
   background-position:
     41px 61px,
     117px 29px;
 
   opacity: 0.48;
-
-  animation:
-    galaxy-stars-near 75s linear infinite,
-    galaxy-stars-twinkle 8s ease-in-out infinite alternate;
+  animation: none;
 }
 
-
 /* Keep website above stars */
-
 html[data-tech-theme='galaxy'] .navbar,
 html[data-tech-theme='galaxy'] .main-wrapper,
 html[data-tech-theme='galaxy'] .footer,
-html[data-tech-theme='galaxy'] .theme-doc-sidebar-container {
+html[data-tech-theme='galaxy'] .theme-doc-sidebar-container,
+html[data-tech-theme='galaxy'] #__docusaurus {
   position: relative;
   z-index: 1;
 }
 
+html[data-tech-theme='galaxy'] #__docusaurus {
+  isolation: isolate;
+}
 
 /* Galaxy UI */
-
 html[data-tech-theme='galaxy'] .navbar {
   background: rgba(7, 8, 17, 0.86);
   border-bottom: 1px solid rgba(142, 167, 255, 0.14);
@@ -1390,42 +1426,13 @@ html[data-tech-theme='galaxy'] a:hover {
     0 0 12px rgba(142, 167, 255, 0.28);
 }
 
-
-/* Keyframes for the CSS starfield fallback (used when JavaScript is
-   unavailable, or paused by the browser via prefers-reduced-motion).
-   These were referenced above but never defined, so the stars never
-   actually drifted. */
-
-@keyframes galaxy-stars-far {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-40px, 160px, 0);
-  }
+/* Galaxy always uses the dark color scheme for native controls. */
+html[data-tech-theme='galaxy'] select,
+html[data-tech-theme='galaxy'] input,
+html[data-tech-theme='galaxy'] textarea,
+html[data-tech-theme='galaxy'] button {
+  color-scheme: dark;
 }
-
-@keyframes galaxy-stars-near {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(60px, 220px, 0);
-  }
-}
-
-@keyframes galaxy-stars-twinkle {
-  from {
-    opacity: 0.3;
-  }
-
-  to {
-    opacity: 0.62;
-  }
-}
-
 
 /* ============================================================
    CUSTOM

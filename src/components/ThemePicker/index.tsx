@@ -18,25 +18,33 @@ const themes = [
   'custom',
 ] as const;
 
-// 'custom' is a code-defined local theme. It is not a user theme editor.
-
-// ThemeName is intentionally derived from the list above so the picker and
-// early theme bootstrap cannot drift apart.
 type ThemeName = (typeof themes)[number];
 
-function isThemeName(value: string | null): value is ThemeName {
-  return value !== null && (themes as readonly string[]).includes(value);
+function isThemeName(
+  value: string | null | undefined,
+): value is ThemeName {
+  return (
+    value !== null &&
+    value !== undefined &&
+    (themes as readonly string[]).includes(value)
+  );
 }
 
 function getInitialTheme(): ThemeName {
   if (typeof document !== 'undefined') {
     const domTheme = document.documentElement.dataset.techTheme;
-    if (isThemeName(domTheme)) return domTheme;
+
+    if (isThemeName(domTheme)) {
+      return domTheme;
+    }
   }
 
   if (typeof window !== 'undefined') {
     const storedTheme = window.localStorage.getItem(storageKey);
-    if (isThemeName(storedTheme)) return storedTheme;
+
+    if (isThemeName(storedTheme)) {
+      return storedTheme;
+    }
   }
 
   return 'default';
@@ -52,17 +60,12 @@ export default function ThemePicker() {
 
   const handleThemeChange = (nextTheme: ThemeName) => {
     if (nextTheme === 'Suprise') {
-      // Reset CTT to the Default theme.
       setTheme('default');
 
-      // Force Docusaurus to Light mode.
       document.documentElement.dataset.theme = 'light';
       window.localStorage.setItem(colorModeKey, 'light');
-
-      // Make sure Default is what gets restored on refresh.
       window.localStorage.setItem(storageKey, 'default');
 
-      // Open the surprise in a new tab.
       window.open(
         'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         '_blank',
@@ -78,6 +81,7 @@ export default function ThemePicker() {
   return (
     <label className={styles.picker}>
       <span>Theme</span>
+
       <select
         aria-label="Choose color theme"
         value={theme}
