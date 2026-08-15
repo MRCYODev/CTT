@@ -23,6 +23,7 @@
     "@fortawesome/free-brands-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
     "@iconify-json/fluent-mdl2": "^1.2.1",
+    "@iconify-json/logos": "^1.2.12",
     "@iconify-json/material-symbols": "^1.2.88",
     "@iconify-json/qlementine-icons": "^1.2.15",
     "@iconify-json/simple-icons": "^1.2.93",
