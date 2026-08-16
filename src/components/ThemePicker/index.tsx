@@ -60,12 +60,34 @@ export default function ThemePicker() {
 
   const handleThemeChange = (nextTheme: ThemeName) => {
     if (nextTheme === 'Suprise') {
+      const root = document.documentElement;
+
+      // Return CTT to the normal Default theme.
       setTheme('default');
 
-      document.documentElement.dataset.theme = 'light';
-      window.localStorage.setItem(colorModeKey, 'light');
-      window.localStorage.setItem(storageKey, 'default');
+      root.dataset.techTheme = 'default';
+      root.dataset.theme = 'light';
+      root.style.colorScheme = 'light';
 
+      // Persist Default + Light mode.
+      window.localStorage.setItem(storageKey, 'default');
+      window.localStorage.setItem(colorModeKey, 'light');
+
+      // Docusaurus may update its color mode after the React state change.
+      // Re-apply the desired Default + Light state after the update cycle.
+      requestAnimationFrame(() => {
+        root.dataset.techTheme = 'default';
+        root.dataset.theme = 'light';
+        root.style.colorScheme = 'light';
+
+        requestAnimationFrame(() => {
+          root.dataset.techTheme = 'default';
+          root.dataset.theme = 'light';
+          root.style.colorScheme = 'light';
+        });
+      });
+
+      // Open the surprise in a new tab.
       window.open(
         'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         '_blank',
