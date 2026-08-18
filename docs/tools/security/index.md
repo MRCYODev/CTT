@@ -44,4 +44,15 @@ Tools designed to detect, remove, and clean malware, viruses, potentially unwant
 | [TronScript](https://www.reddit.com/r/TronScript/) | Advanced Windows cleanup and repair toolkit intended for experienced users. | <PlatformBadges items={['windows']} /> |
 
 ## Password Managers
+
+| Tool | Description | Supported platforms |
+| --- | --- | --- |
 | [KeePassXC](https://keepassxc.org/) | Cross-platform password manager for storing passwords in encrypted databases. | <PlatformBadges items={['windows', 'linux', 'macos']} /> |
+
+## Two-factor authentication (2FA)
+
+| Tool | Description | Supported platforms |
+| --- | --- | --- |
+| [KeePassXC](https://keepassxc.org/) | Cross-platform password manager for storing passwords in encrypted databases. | <PlatformBadges items={['windows', 'linux', 'macos']} /> |
+
+> **Is safer to use offline Password Manager, and 2FA so KeePassXC does support them both, Also KeePassXC Does support yubi-key too.**
