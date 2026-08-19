@@ -53,7 +53,7 @@ const sidebars: SidebarsConfig = {
 
         {
           type: 'category',
-          label: 'Security',
+          label: 'Privacy & Security',
           collapsible: true,
           collapsed: true,
 
