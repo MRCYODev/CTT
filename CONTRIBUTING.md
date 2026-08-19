@@ -35,7 +35,10 @@ You can add guides, fix bugs, improve the website, add tools, or add new informa
 
 ```bash
 npm run build
+npm run serve
 ```
+> [!NOTE]
+> **``npm run serve``** does not show updates in real time. If you change anything and save it after running **``npm run serve``**, the changes will not appear automatically. If you want to see real-time updates while developing, you have to use **``npm run start``**.
 
 Make sure the build finishes without errors.
 
