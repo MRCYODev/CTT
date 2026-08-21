@@ -3,37 +3,54 @@ sidebar_position: 2
 ---
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
+import SourceBadge from '@site/src/components/SourceBadge';
 
 # Diagnostics
 
+Hardware, software, system, and troubleshooting diagnostic tools.
+
 ## Hardware Diagnostic Tools
 
-| Tool | Supported platforms |
-| --- | --- |
-| [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html) | <PlatformBadges items={['windows']} /> |
-| [CrystalDiskInfo](https://crystalmark.info/en/software/crystaldiskinfo/) | <PlatformBadges items={['windows']} /> |
-| [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html) | <PlatformBadges items={['windows']} /> |
-| [GPU-Z](https://www.techpowerup.com/gpuz/) | <PlatformBadges items={['windows']} /> |
-| [Performance Monitor](https://techcommunity.microsoft.com/t5/ask-the-performance-team/windows-performance-monitor-overview/ba-p/375481) | <PlatformBadges items={['windows']} /> |
-| [Open Hardware Monitor](https://openhardwaremonitor.org/) — discontinued | <PlatformBadges items={['windows']} /> |
-| [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) | <PlatformBadges items={['windows']} /> |
-| [MemTest86+](https://www.memtest86.com/) | <PlatformBadges items={['bootable']} /> |
-| [AIDA64](https://www.aida64.com/downloads) | <PlatformBadges items={['windows']} /> |
-| [HWiNFO](https://www.hwinfo.com/) | <PlatformBadges items={['windows']} /> |
-| [Speccy](https://www.ccleaner.com/speccy) | <PlatformBadges items={['windows']} /> |
-| [Prime95](https://www.mersenne.org/download/) | <PlatformBadges items={['windows', 'linux', 'macos']} /> |
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html) | System information software that gathers information about the processor, mainboard, memory, and other major system components. | <PlatformBadges items={['windows', 'android']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.cpuid.com/softwares/cpu-z.html" /> |
+| [CrystalDiskInfo](https://crystalmark.info/en/download/#CrystalDiskInfo) | HDD/SSD utility software for monitoring drive health and supporting USB, Intel RAID, and NVMe devices. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://crystalmark.info/en/software/crystaldiskinfo/" github="https://github.com/hiyohiyo/CrystalDiskInfo" /> |
+| [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html) | Hardware monitoring software that reads PC systems' main health sensors, including temperatures, voltages, fan speeds, and power consumption. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.cpuid.com/softwares/hwmonitor.html" /> |
+| [GPU-Z](https://www.techpowerup.com/download/techpowerup-gpu-z/) | Lightweight graphics card information utility designed to provide detailed information about a graphics card and GPU. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.techpowerup.com/gpuz/" /> |
+| [Open Hardware Monitor](https://openhardwaremonitor.org/downloads/) - [Discontinued](https://github.com/openhardwaremonitor/openhardwaremonitor/issues/1471) | Free and open-source hardware monitoring program that monitors temperature sensors, fan speeds, voltages, load and clock speeds of your computer. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://openhardwaremonitor.org/" github="https://github.com/openhardwaremonitor/openhardwaremonitor" /> |
+| [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor/releases/) | Libre Hardware Monitor, a fork of [Open Hardware Monitor](https://github.com/openhardwaremonitor/openhardwaremonitor), is free software that can monitor the temperature sensors, fan speeds, voltages, load and clock speeds of your computer. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://github.com/LibreHardwareMonitor/LibreHardwareMonitor" /> |
+| [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) | Graphics card overclocking and monitoring software with real-time hardware monitoring, fan control, on-screen display, and overclocking tools. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.msi.com/Landing/afterburner/graphics-cards" /> |
+| [MemTest86+](https://memtest.org/) | Free, open-source, standalone memory tester that performs detailed memory checks independently of the operating system. | <PlatformBadges items={['bootable']} /> | <PlatformBadges items={['opensource', 'free']} /> <SourceBadge url="https://memtest.org/" github="https://github.com/memtest86plus/memtest86plus" /> |
+| [MemTest86](https://www.memtest86.com/download.htm) | Stand-alone memory testing software for x86 and ARM computers that boots from USB to test RAM for faults using comprehensive test algorithms and patterns. | <PlatformBadges items={['bootable']} /> | <PlatformBadges items={['closed-source', 'free']} /> <SourceBadge url="https://www.memtest86.com/" /> |
+| [AIDA64](https://www.aida64.com/downloads) | System information, diagnostic, and benchmarking software providing detailed hardware and software information, monitoring, and reporting. | <PlatformBadges items={['windows', 'android', 'ios']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.aida64.com/" /> |
+| [HWiNFO](https://www.hwinfo.com/download/) | Professional system information, monitoring, and diagnostics software providing detailed hardware information and real-time sensor monitoring. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.hwinfo.com/" /> |
+| [Speccy](https://www.ccleaner.com/speccy) | System information tool that provides detailed information about hardware and software installed on a Windows PC. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.ccleaner.com/speccy" /> |
+| [Prime95](https://www.mersenne.org/download/) | Software for Mersenne-prime research that also provides CPU and memory torture testing for system stability testing. | <PlatformBadges items={['windows', 'linux', 'macos', 'freebsd']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.mersenne.org/download/" /> |
+| [Performance Monitor](https://learn.microsoft.com/en-us/troubleshoot/windows-server/support-tools/troubleshoot-issues-performance-monitor#what-is-performance-monitor-perfmon) | Windows Performance Monitor (PerfMon) is a built-in tool for monitoring system usage and performance metrics using Windows performance counters, with real-time monitoring, data collection, and reporting capabilities. | <PlatformBadges items={['windows']} /> | <SourceBadge url="https://learn.microsoft.com" /> |
+
 
 ## Software Diagnostic Tools
 
-| Tool | Supported platforms |
-| --- | --- |
-| [BlueScreenView](http://www.nirsoft.net/utils/blue_screen_view.html) | <PlatformBadges items={['windows']} /> |
-| [Windows Event Viewer](https://learn.microsoft.com/en-us/shows/inside/event-viewer) | <PlatformBadges items={['windows']} /> |
-| [WhoCrashed](https://www.resplendence.com/whocrashed) | <PlatformBadges items={['windows']} /> |
-| [Sysinternals Suite](https://learn.microsoft.com/en-us/sysinternals/) | <PlatformBadges items={['windows']} /> |
-| [Process Explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer) | <PlatformBadges items={['windows']} /> |
-| [Autoruns](https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns) | <PlatformBadges items={['windows']} /> |
-| [TCPView](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) | <PlatformBadges items={['windows']} /> |
-| [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon) | <PlatformBadges items={['windows']} /> |
-
-
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [BlueScreenView](https://www.nirsoft.net/utils/blue_screen_view.html) | Utility that scans Windows minidump files from blue-screen crashes and displays crash details and drivers or modules that may have caused the crash. | <PlatformBadges items={['windows', 'portable', 'free']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.nirsoft.net/utils/blue_screen_view.html" /> |
+| [Windows Event Viewer](https://learn.microsoft.com/en-us/shows/inside/event-viewer) | Windows tool for viewing system and application event logs and investigating events recorded by the operating system and applications. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/shows/inside/event-viewer" /> |
+| [WhoCrashed](https://www.resplendence.com/whocrashed) | Utility that analyzes Windows crash dumps to identify drivers that may have caused system crashes. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.resplendence.com/whocrashed" /> |
+| [Sysinternals Suite](https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) | Collection of Sysinternals troubleshooting utilities bundled into a single package. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite" /> |
+| [Process Explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer) | Advanced process viewer that shows processes, handles, DLLs, ownership information, and other process details. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer" /> |
+| [Process Monitor](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon) | Real-time monitoring tool for file system, Registry, process, thread, and DLL activity. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/procmon" /> |
+| [Autoruns](https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns) | Shows programs configured to start automatically when the system boots or a user logs in, including Registry and file locations used for auto-start configuration. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns" /> |
+| [Handle](https://learn.microsoft.com/en-us/sysinternals/downloads/handle) | Command-line utility that shows what files are open by which processes and provides information about open handles. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/handle" /> |
+| [ListDLLs](https://learn.microsoft.com/en-us/sysinternals/downloads/listdlls) | Command-line utility that lists the DLLs currently loaded by processes, including their locations and version information. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/listdlls" /> |
+| [PortMon](https://learn.microsoft.com/en-us/sysinternals/downloads/portmon) | Advanced monitoring tool for viewing serial and parallel port activity and associated I/O operations. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/portmon" /> |
+| [ProcDump](https://learn.microsoft.com/en-us/sysinternals/downloads/procdump) | Command-line utility for capturing process dumps, including during CPU spikes, hung windows, and unhandled exceptions. | <PlatformBadges items={['windows', 'linux', 'macos', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/procdump" /> |
+| [PsExec](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) | Command-line utility for executing processes on remote systems. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/psexec" /> |
+| [PsGetSid](https://learn.microsoft.com/en-us/sysinternals/downloads/psgetsid) | Command-line utility that displays the security identifier (SID) of a computer or user. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/psgetsid" /> |
+| [PsKill](https://learn.microsoft.com/en-us/sysinternals/downloads/pskill) | Command-line utility for terminating local or remote processes. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/pskill" /> |
+| [PsList](https://learn.microsoft.com/en-us/sysinternals/downloads/pslist) | Command-line utility that displays information about processes and threads. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/pslist" /> |
+| [PsService](https://learn.microsoft.com/en-us/sysinternals/downloads/psservice) | Command-line utility for viewing and controlling Windows services. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/psservice" /> |
+| [PsSuspend](https://learn.microsoft.com/en-us/sysinternals/downloads/pssuspend) | Command-line utility for suspending and resuming processes. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/pssuspend" /> |
+| [PsTools](https://learn.microsoft.com/en-us/sysinternals/downloads/pstools) | Suite of command-line utilities for process management, remote administration, rebooting computers, dumping event logs, and other system tasks. | <PlatformBadges items={['windows', 'cli']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/pstools" /> |
+| [ShellRunas](https://learn.microsoft.com/en-us/sysinternals/downloads/shellrunas) | Utility that lets you launch programs as a different user through a Windows shell context-menu entry. | <PlatformBadges items={['windows', 'gui']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/shellrunas" /> |
+| [VMMap](https://learn.microsoft.com/en-us/sysinternals/downloads/vmmap) | Process memory analysis utility for examining committed virtual memory types, working sets, and sources of process memory usage. | <PlatformBadges items={['windows', 'gui']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/vmmap" /> |
+| [TCPView](https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview) | Windows network monitoring utility that displays TCP and UDP endpoints and the processes that own them. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://learn.microsoft.com/en-us/sysinternals/downloads/tcpview" /> |
