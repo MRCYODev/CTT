@@ -10,8 +10,6 @@ import PlatformBadges from '@site/src/components/PlatformBadges';
 **Many of the commands applies to:** Windows 8.1, Windows 8.1 Enterprise Windows, 8.1 Pro Windows, 8 Windows, 8 Enterprise Windows, 8 Pro Windows, 7 Enterprise Windows, 7 Home Basic Windows, 7 Home Premium Windows, 7 Professional Windows, 7 Starter Windows, 7 Ultimate Windows Vista Enterprise 64-bit Edition, Windows Vista Ultimate 64-bit Edition, Windows Vista Business, Windows Vista Business 64-bit Edition, Windows Vista Enterprise, Windows Vista Ultimate, Windows 10, Windows 11.
 :::
 
-
-
 ## Disk and file-system issues
 
 ```

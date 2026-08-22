@@ -26,15 +26,12 @@ const sidebars: SidebarsConfig = {
             'Utilities for system maintenance, recovery, conversion, and other technician tasks.',
           collapsible: true,
           collapsed: true,
-
           link: {
             type: 'doc',
             id: 'tools/utilities/index',
           },
-
           items: [],
         },
-
         {
           type: 'category',
           label: 'Diagnostics',
@@ -42,43 +39,34 @@ const sidebars: SidebarsConfig = {
             'Hardware, software, system, and troubleshooting diagnostic tools.',
           collapsible: true,
           collapsed: true,
-
           link: {
             type: 'doc',
             id: 'tools/diagnostics/index',
           },
-
           items: [],
         },
-
         {
           type: 'category',
           label: 'Privacy & Security',
           collapsible: true,
           collapsed: true,
-
           link: {
             type: 'doc',
             id: 'tools/security/index',
           },
-
           items: [],
         },
-
         {
           type: 'category',
           label: 'Performance & Reference',
           collapsible: true,
           collapsed: true,
-
           link: {
             type: 'doc',
             id: 'tools/benchmark/index',
           },
-
           items: [],
         },
-
         {
           type: 'doc',
           id: 'tools/guides/index',
@@ -95,7 +83,6 @@ const sidebars: SidebarsConfig = {
       label: 'Optical Devices',
       collapsible: true,
       collapsed: true,
-
       items: [
         {
           type: 'doc',
@@ -113,78 +100,320 @@ const sidebars: SidebarsConfig = {
       label: 'Platforms',
       collapsible: true,
       collapsed: true,
-
       items: [
         {
           type: 'category',
-          label: 'Windows',
+          label: 'Operating Systems',
           collapsible: true,
           collapsed: true,
-
-          items: [
-            'platforms/windows/index',
-            'platforms/windows/commands',
-            'platforms/windows/repair',
-            'platforms/windows/networking',
-            'platforms/windows/troubleshooting',
-          ],
-        },
-
-        {
-          type: 'category',
-          label: 'Linux',
-          collapsible: true,
-          collapsed: true,
-
-          items: [
-            'platforms/linux/index',
-            'platforms/linux/commands',
-            'platforms/linux/repair',
-            'platforms/linux/networking',
-            'platforms/linux/troubleshooting',
-          ],
-        },
-
-        {
-          type: 'category',
-          label: 'Browser',
-          collapsible: true,
-          collapsed: true,
-
-          items: [
-            'platforms/browser/extensions',
-            'platforms/browser/settings',
-          ],
-        },
-
-        {
-          type: 'category',
-          label: 'Emulators',
-          collapsible: true,
-          collapsed: true,
-
+          link: {
+            type: 'doc',
+            id: 'platforms/operating-systems/index',
+          },
           items: [
             {
-              type: 'doc',
-              id: 'platforms/emulators/index',
+              type: 'category',
+              label: 'Windows',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/operating-systems/windows/index',
+              },
+              items: [
+                'platforms/operating-systems/windows/commands',
+                'platforms/operating-systems/windows/repair',
+                'platforms/operating-systems/windows/networking',
+                'platforms/operating-systems/windows/troubleshooting',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Linux',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/operating-systems/linux/index',
+              },
+              items: [
+                'platforms/operating-systems/linux/commands',
+                'platforms/operating-systems/linux/repair',
+                'platforms/operating-systems/linux/networking',
+                'platforms/operating-systems/linux/troubleshooting',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'macOS',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/operating-systems/macos/index',
+              },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'ChromeOS',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/operating-systems/chromeos/index',
+              },
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'BSD',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/operating-systems/bsd/index',
+              },
+              items: [
+                {
+                  type: 'doc',
+                  id: 'platforms/operating-systems/bsd/freebsd/index',
+                  label: 'FreeBSD',
+                },
+                {
+                  type: 'doc',
+                  id: 'platforms/operating-systems/bsd/openbsd/index',
+                  label: 'OpenBSD',
+                },
+                {
+                  type: 'doc',
+                  id: 'platforms/operating-systems/bsd/netbsd/index',
+                  label: 'NetBSD',
+                },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Other',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/operating-systems/other/index',
+              },
+              items: [],
             },
           ],
         },
 
         {
           type: 'category',
-          label: 'Android',
-          description: 'Android phone and carrier reference material.',
+          label: 'Mobile',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'platforms/mobile/index',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Android',
+              description: 'Android phone and carrier reference material.',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/mobile/android/index',
+              },
+              items: [
+                'platforms/mobile/android/android-mmi',
+                'platforms/mobile/android/diagnostics',
+                'platforms/mobile/android/gsm-ussd',
+                'platforms/mobile/android/repair',
+                'platforms/mobile/android/troubleshooting',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'iOS',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/mobile/ios/index',
+              },
+              items: [],
+            },
+          ],
+        },
+
+        {
+          type: 'category',
+          label: 'Browsers',
           collapsible: true,
           collapsed: true,
 
           items: [
-            'platforms/android/index',
-            'platforms/android/diagnostics',
-            'platforms/android/android-mmi',
-            'platforms/android/gsm-ussd',
-            'platforms/android/repair',
-            'platforms/android/troubleshooting',
+            {
+              type: 'doc',
+              id: 'platforms/browsers/index',
+            },
+
+            {
+              type: 'category',
+              label: 'Chrome',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'platforms/browsers/chrome/index',
+              ],
+            },
+
+            {
+              type: 'category',
+              label: 'Firefox',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'platforms/browsers/firefox/index',
+              ],
+            },
+
+            {
+              type: 'category',
+              label: 'Edge',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'platforms/browsers/edge/index',
+              ],
+            },
+
+            {
+              type: 'category',
+              label: 'Other',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'platforms/browsers/other/extensions',
+                'platforms/browsers/other/settings',
+              ],
+            },
+          ],
+        },
+
+        {
+          type: 'category',
+          label: 'Servers',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'platforms/servers/index',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Windows Server',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platforms/servers/windows-server/index'},
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Linux Server',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platforms/servers/linux-server/index'},
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Other',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platforms/servers/other/index'},
+              items: [],
+            },
+          ],
+        },
+
+        {
+          type: 'category',
+          label: 'Gaming',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'platforms/gaming/index',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Consoles',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platforms/gaming/consoles/index'},
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Handhelds',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platforms/gaming/handhelds/index'},
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Emulators',
+              collapsible: true,
+              collapsed: true,
+              link: {
+                type: 'doc',
+                id: 'platforms/gaming/emulators/index',
+              },
+              items: [],
+            },
+          ],
+        },
+
+        {
+          type: 'category',
+          label: 'Embedded',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'platforms/embedded/index',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Raspberry Pi',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platforms/embedded/raspberry-pi/index'},
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Routers',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platforms/embedded/routers/index'},
+              items: [],
+            },
+            {
+              type: 'category',
+              label: 'Other',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platforms/embedded/other/index'},
+              items: [],
+            },
           ],
         },
       ],

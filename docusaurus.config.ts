@@ -101,31 +101,53 @@ const config: Config = {
   // LOCAL SEARCH
   // ============================================================
 
-  plugins: [
+  // @easyops-cn/docusaurus-search-local is a theme (not a plugin).
+  // Keeping it in `themes` ensures the SearchBar and SearchPage are
+  // registered correctly with Docusaurus 3.x.
+  themes: [
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
-
       {
-        // Generate a hashed search index.
+        // Generate a hashed search index so browsers can cache it
+        // safely while still receiving a new index after docs change.
         hashed: true,
 
-        // Search language.
+        // Search documentation written in English.
         language: ['en'],
 
-        // Index documentation.
+        // Index docs and normal Docusaurus pages.
         indexDocs: true,
-
-        // Blog is disabled.
         indexBlog: false,
-
-        // Index normal Docusaurus pages.
         indexPages: true,
 
-        // Highlight matching search terms on the target page.
+        // Highlight matching terms after opening a result.
         highlightSearchTermsOnTargetPage: true,
 
-        // Use the dedicated search results page.
+        // Show the heading/path in search suggestions.
         explicitSearchResultPath: true,
+
+        // More useful results for a larger CTT knowledge base.
+        searchResultLimits: 12,
+        searchResultContextMaxLength: 100,
+
+        // Keep useful technical words such as "the", "for", etc.
+        // in the index where they can be relevant to troubleshooting
+        // and command/reference searches.
+        removeDefaultStopWordFilter: ['en'],
+
+        // Enable partial-word matching.
+        removeDefaultStemmer: true,
+
+        // Keyboard shortcut: Ctrl+K on Windows/Linux, Cmd+K on macOS.
+        searchBarShortcut: true,
+        searchBarShortcutHint: true,
+        searchBarShortcutKeymap: 'mod+k',
+
+        // Let the plugin place the search bar based on the navbar.
+        searchBarPosition: 'right',
+
+        // The docs use the normal /docs route.
+        docsRouteBasePath: '/docs',
       },
     ],
   ],
@@ -214,8 +236,8 @@ const config: Config = {
 
           items: [
             {
-              label: 'Windows commands',
-              to: '/docs/platforms/windows/commands',
+              label: 'Operating Systems',
+              to: '/docs/platforms/operating-systems/index',
             },
           ],
         },

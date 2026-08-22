@@ -79,11 +79,10 @@ export default function Home(): ReactNode {
                 <h2>Platforms</h2>
 
                 <p>
-                  Windows, Linux, and Android reference material, commands,
-                  repair information, networking, and troubleshooting.
+                  Operating systems, mobile devices, browsers, servers, gaming platforms, embedded devices, and related reference material.
                 </p>
 
-                <Link to="/docs/platforms/windows/commands">
+                <Link to="/docs/platforms/operating-systems/index">
                   Browse platforms →
                 </Link>
               </article>
