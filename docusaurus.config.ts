@@ -237,7 +237,7 @@ const config: Config = {
           items: [
             {
               label: 'Operating Systems',
-              to: '/docs/platforms/operating-systems/index',
+              to: '/docs/platforms/operating-systems/',
             },
           ],
         },

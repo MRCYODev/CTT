@@ -82,7 +82,7 @@ export default function Home(): ReactNode {
                   Operating systems, mobile devices, browsers, servers, gaming platforms, embedded devices, and related reference material.
                 </p>
 
-                <Link to="/docs/platforms/operating-systems/index">
+                <Link to="/docs/platforms/operating-systems/">
                   Browse platforms →
                 </Link>
               </article>
