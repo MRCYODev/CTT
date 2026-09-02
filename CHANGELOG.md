@@ -14,7 +14,7 @@
 - [LocalSend](/docs/tools/utilities/index.md#transfer)
 - [Warpinator](/docs/tools/utilities/index.md#transfer)
 
-- Added more information for **systeminfo** and **arp** at (Windows Commands)[/docs/platforms/operating-systems/windows/commands.md] 
+- Added more information for **systeminfo** and **arp** at [Windows Commands](/docs/platforms/operating-systems/windows/commands.md)
 
 ## 21/08/2026
 
