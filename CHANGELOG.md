@@ -1,5 +1,21 @@
 # Change Log
 
+## 02/09/2026
+
+### Added
+
+- [QDirStat](/docs/tools/utilities/index.md#disk-scan)
+- [SquirrelDisk](/docs/tools/utilities/index.md#disk-scan) 
+- [Parsec](/docs/tools/utilities/index.md#remote-access)
+- [ISO Image Writer](/docs/tools/utilities/index.md#create-a-bootable-usb)
+- [LibreOffice](/docs/tools/utilities/index.md#documents)
+- [ONLYOFFICE](/docs/tools/utilities/index.md#documents)
+- [Syncthing](/docs/tools/utilities/index.md#transfer)
+- [LocalSend](/docs/tools/utilities/index.md#transfer)
+- [Warpinator](/docs/tools/utilities/index.md#transfer)
+
+- Added more information for **systeminfo** and **arp** at [/docs/platforms/operating-systems/windows/commands.md] 
+
 ## 21/08/2026
 
 ### Added

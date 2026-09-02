@@ -71,11 +71,11 @@ it will not actually reset your OS and just try to repair itself.
 
 If you want to try and repair just use:
 
-**DISM /Online /Cleanup-Image /ScanHealth**
+**```DISM /Online /Cleanup-Image /ScanHealth```**
 
 If you just want to check without repairing use:
 
-**DISM /Online /Cleanup-Image /CheckHealth**
+**```DISM /Online /Cleanup-Image /CheckHealth```**
 
 
 </details>
@@ -130,9 +130,24 @@ tracert /?
 arp /?
 ```
 
+<details>
+<summary>Details</summary>
+
+The **[``arp``](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/arp)** command displays and modifies entries in the **Address Resolution Protocol (ARP)** cache. The ARP cache contains one or more tables that are used to store IP addresses and their resolved Ethernet or Token Ring physical addresses. There's a separate table for each Ethernet or Token Ring network adapter installed on your computer.
+</details>
+
+
 ```
 systeminfo
 ```
+
+<details>
+<summary>Details</summary>
+
+This command it show your hardware compoments, so you can do easly investigation on your computer. In simple words System Info.
+</details>
+
+
 
 ```
 netstat
