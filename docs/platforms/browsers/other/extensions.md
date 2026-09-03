@@ -4,49 +4,55 @@ sidebar_position: 1
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
 import SourceBadge from '@site/src/components/SourceBadge';
-import BrandLogo from '@site/src/components/BrandLogo';
 
 # Extensions
 
+A curated collection of useful browser extensions, web tools, and services for privacy, security, YouTube, Steam, and general web browsing. Each entry includes its official website, supported platforms, and available source or store links.
+
 ## Privacy and Web Security
 
-| Tool | Description | Supported platforms |
-| --- | --- | --- |
-| [uBlock Origin](https://ublockorigin.com/) | Content blocker for ads, trackers, malware domains, and other unwanted network requests. | <PlatformBadges items={['web']} /> |
-| [Privacy Badger](https://privacybadger.org/) | Browser extension that blocks invisible trackers and helps reduce third-party tracking. | <PlatformBadges items={['web']} /> |
-| [ClearURLs](https://docs.clearurls.xyz/) | Browser extension that removes tracking parameters from URLs. | <PlatformBadges items={['web']} /> |
-| [DecentralEyes](https://decentraleyes.org/) | | |
-| [AdGuard AdBlocker](https://adguard.com/en/welcome.html) | | |
-| [NoScript](https://noscript.net/) | | |
-| [CanvasBlocker](https://github.com/kkapsner/CanvasBlocker/) | | |
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [uBlock Origin](https://ublockorigin.com/) | Efficient, CPU- and memory-friendly content blocker for advertisements, trackers, pop-ups, malicious domains, and other unwanted network requests. | <PlatformBadges items={['chrome','firefox','edge','opera']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://ublockorigin.com/" github="https://github.com/gorhill/uBlock" /> <SourceBadge url="https://chromewebstore.google.com/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" /> <SourceBadge url="https://addons.mozilla.org/addon/ublock-origin/" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak" /> <SourceBadge url="https://addons.opera.com/extensions/details/ublock/" /> |
+| [Privacy Badger](https://privacybadger.org/) | Automatically learns to block invisible trackers and helps prevent companies from tracking your browsing activity. | <PlatformBadges items={['chrome','firefox','edge','opera']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://privacybadger.org/" github="https://github.com/EFForg/privacybadger" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/" /> |
+| [ClearURLs](https://docs.clearurls.xyz/) | Removes tracking parameters and other unnecessary elements from URLs to reduce tracking when following links. | <PlatformBadges items={['chrome','firefox']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://docs.clearurls.xyz/" github="https://github.com/ClearURLs/Addon" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/clearurls/" /> |
+| [DecentralEyes](https://decentraleyes.org/) | Locally emulates common Content Delivery Network resources to reduce third-party requests and improve privacy. | <PlatformBadges items={['chrome','firefox']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://decentraleyes.org/" github="https://github.com/Synzvato/decentraleyes" /> <SourceBadge url="https://chromewebstore.google.com/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/" /> |
+| [AdGuard AdBlocker](https://adguard.com/en/welcome.html) | Blocks advertisements and trackers while providing additional privacy and filtering features for web browsing. | <PlatformBadges items={['chrome','firefox','edge','opera']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://adguard.com/en/welcome.html" github="https://github.com/AdguardTeam/AdguardBrowserExtension" /> <SourceBadge url="https://chromewebstore.google.com/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/adguard-adblocker/" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/adguard-adblocker/pdffkfellgipmhklpdmokmckkkfcopbh" /> |
+| [NoScript](https://noscript.net/) | Gives users control over JavaScript and other active web content, helping protect against malicious scripts, tracking, and browser-based attacks. | <PlatformBadges items={['chrome','firefox']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://noscript.net/" github="https://github.com/hackademix/noscript" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/noscript/" /> |
+| [CanvasBlocker](https://github.com/kkapsner/CanvasBlocker/) | Helps prevent browser fingerprinting by controlling how websites access canvas and other fingerprinting-related JavaScript APIs. | <PlatformBadges items={['firefox']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://canvasblocker.kkapsner.de/" github="https://github.com/kkapsner/CanvasBlocker" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/canvasblocker/" /> |
 
-## Youtube
+## YouTube
 
-| Tool | Description | Supported platforms |
-| --- | --- | --- |
-| [DeArrow](https://dearrow.ajay.app/) | | |
-| [SponsorBlock](https://sponsor.ajay.app/) | Community-driven browser extension that skips sponsored segments in online videos. | <PlatformBadges items={['web']} /> |
-| [Enhancer for YouTube™](https://www.mrfdev.com/enhancer-for-youtube) | | |
-| [Return YouTube Dislike](https://returnyoutubedislike.com/) | | |
-| [BetterLyrics](https://betterlyrics.org/) | | |
-| [YouTube Video Finder](https://findyoutubevideo.thetechrobo.ca/) | | |
-| [Advanced Search for YouTube](https://playlists.at/youtube/search/) | | |
-| [Favoree](https://www.favoree.io/) | | |
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [DeArrow](https://dearrow.ajay.app/) | Uses community submissions to replace sensational or misleading YouTube titles and thumbnails with more descriptive alternatives. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://dearrow.ajay.app/" github="https://github.com/ajayyy/DeArrow" /> |
+| [SponsorBlock](https://sponsor.ajay.app/) | Community-driven extension that automatically skips sponsored segments and other user-submitted interruptions in YouTube videos. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://sponsor.ajay.app/" github="https://github.com/ajayyy/SponsorBlock" /> <SourceBadge url="https://chromewebstore.google.com/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/sponsorblock-for-youtube-/mbmgnelfcpoecdepckhlhegpcehmpmji" /> |
+| [Enhancer for YouTube™](https://www.mrfdev.com/enhancer-for-youtube) | Adds extensive YouTube customization and quality-of-life features, including playback controls, appearance options, and interface improvements. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.mrfdev.com/" /> |
+| [Return YouTube Dislike](https://returnyoutubedislike.com/) | Restores an estimated dislike count to YouTube videos using data collected from users and other available sources. | <PlatformBadges items={['chrome','firefox']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://returnyoutubedislike.com/" github="https://github.com/Anarios/return-youtube-dislike" /> <SourceBadge url="https://chromewebstore.google.com/detail/return-youtube-dislike/gebbhagfogifgggkldgodflihgfeippi" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/return-youtube-dislike/" /> |
+| [BetterLyrics](https://betterlyrics.org/) | Adds synchronized lyrics, translations, customization, and other lyric features to YouTube Music. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://betterlyrics.org/" github="https://github.com/better-lyrics/better-lyrics" /> <SourceBadge url="https://chromewebstore.google.com/detail/better-lyrics-lyrics-for/effdbpeggelllpfkjppbokhmmiinhlmg" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/better-lyrics/" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/better-lyrics-lyrics-for/mjfeaklppoegooljmjicjdbiccgjdlhd" /> |
+| [Better Lyrics Shaders](https://github.com/better-lyrics/shaders) | Adds customizable shaders and visual effects to Better Lyrics on YouTube Music. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge github="https://github.com/better-lyrics/shaders" /> <SourceBadge url="https://chromewebstore.google.com/detail/better-lyrics-shaders/mffpncjphfmkppebdoaehdlnagnlpfai" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/better-lyrics-shaders/" /> |
+
+### YouTube Tools
+
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [YouTube Video Finder](https://findyoutubevideo.thetechrobo.ca/) | Provides alternative tools for locating YouTube videos when the standard YouTube search does not find the desired result. | <PlatformBadges items={['web']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge github="https://github.com/TheTechRobo/youtubevideofinder/" url="https://findyoutubevideo.thetechrobo.ca/" /> |
+| [Advanced Search for YouTube](https://playlists.at/youtube/search/) | Provides additional search and filtering options for finding specific YouTube videos and channels more efficiently. | <PlatformBadges items={['web']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://playlists.at/youtube/search/" /> |
+| [Favoree](https://www.favoree.io/) | Helps discover and evaluate YouTube channels with channel information, recommendations, and additional discovery tools. | <PlatformBadges items={['web']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.favoree.io/" /> |
 
 ## Steam
 
-| Tool | Description | Supported platforms |
-| --- | --- | --- |
-| [Augmented Steam](https://augmentedsteam.com/) | | |
-| [SteamDB](https://steamdb.info/extension/) | | |
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [Augmented Steam](https://augmentedsteam.com/) | Enhances the Steam Store with historical pricing, reviews, third-party store comparisons, inventory tools, and other purchasing features. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://augmentedsteam.com/" github="https://github.com/IsThereAnyDeal/AugmentedSteam" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/augmented-steam/dnpjkgmekpilchdgolfifobohlohlioc" /> |
+| [SteamDB](https://steamdb.info/extension/) | Adds SteamDB information and useful features to Steam pages, including database details, owned and wished items, and additional Steam tools. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://steamdb.info/extension/" github="https://github.com/SteamDatabase/BrowserExtension" /> <SourceBadge url="https://chrome.google.com/webstore/detail/kdbmhfkmnlmbkgbabkdealhhbfhlmmon" /> <SourceBadge url="https://addons.mozilla.org/en-US/firefox/addon/steam-database/" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/steamdb/hjknpdomhlodgaebegjopkmfafjpbblg" /> |
 
 ## Other
 
-| Tool | Description | Supported platforms |
-| --- | --- | --- |
-| [Web Archives](https://github.com/dessant/web-archives#web-archives) | | |
-| [Search by Image](https://github.com/dessant/search-by-image#readme) | | |
-| [Dark Reader](https://darkreader.org/) | | |
-| [Stylus](https://add0n.com/stylus.html) | | |
-| [TWP - Translate Web Pages](https://github.com/FilipePS/Traduzir-paginas-web) | | |
-
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [Web Archives](https://github.com/dessant/web-archives#web-archives) | Provides quick access to archived and cached versions of web pages through supported web archive and cache services. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://github.com/dessant/web-archives" github="https://github.com/dessant/web-archives" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/web-archives/apcfghlggldjdjepjnahfdjgdcdekhda" /> |
+| [Search by Image](https://github.com/dessant/search-by-image#readme) | Performs reverse image searches using multiple supported search engines directly from images, web pages, or the browser context menu. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://github.com/dessant/search-by-image" github="https://github.com/dessant/search-by-image" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/search-by-image/hckehkfhdkpmdlonmjaagiodlpjbonmc" /> |
+| [Dark Reader](https://darkreader.org/) | Generates dark themes for websites to reduce eyestrain, with controls for brightness, contrast, sepia, and other visual settings. | <PlatformBadges items={['chrome','firefox','edge']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://darkreader.org/" github="https://github.com/darkreader/darkreader" /> <SourceBadge url="https://chromewebstore.google.com/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh" /> <SourceBadge url="https://addons.mozilla.org/firefox/addon/darkreader/" /> <SourceBadge url="https://microsoftedge.microsoft.com/addons/detail/dark-reader/ifoakfbpdcdoeenechcleahebpibofpc/" /> |
+| [Stylus](https://add0n.com/stylus.html) | Lets users install, create, and manage custom CSS styles that change the appearance and layout of websites. | <PlatformBadges items={['chrome','firefox']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://add0n.com/stylus.html" github="https://github.com/openstyles/stylus" /> |
+| [TWP - Translate Web Pages](https://github.com/FilipePS/Traduzir-paginas-web) | Translates web pages directly in the browser using supported translation services while keeping the original page layout. | <PlatformBadges items={['chrome','firefox']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://github.com/FilipePS/Traduzir-paginas-web" github="https://github.com/FilipePS/Traduzir-paginas-web" /> |

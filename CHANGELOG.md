@@ -1,5 +1,27 @@
 # Change Log
 
+## 03/09/2026
+
+## Added
+
+- [Rivatuner Statistics Server (RTSS)](/docs/tools/benchmark/index.md#performance-monitoring), Thanks to TKOD!.
+- [PC Part Picker](/docs/tools/guides/index.md#guides), Thanks to TKOD!.
+- [Wireshark](/docs/tools/diagnostics/index.md#software-diagnostic-tools)
+- [Angry IP Scanner](/docs/tools/diagnostics/index.md#software-diagnostic-tools)
+
+### New Section
+
+Big thanks to TKOD for the idea!.
+
+- [VirtualBox](/docs/tools/utilities/index.md#virtualization)
+- [QEMU](/docs/tools/utilities/index.md#virtualization)
+- [WinBoat](/docs/tools/utilities/index.md#virtualization)
+
+## Updated 
+
+- [Browser Extensions](/docs/platforms/browsers/other/extensions.md) Description, and some other things.
+
+
 ## 02/09/2026
 
 ### Added
@@ -14,7 +36,9 @@
 - [LocalSend](/docs/tools/utilities/index.md#transfer)
 - [Warpinator](/docs/tools/utilities/index.md#transfer)
 
-- Added more information for **systeminfo** and **arp** at [/docs/platforms/operating-systems/windows/commands.md] 
+### Updated 
+
+- Added more information for **systeminfo** and **arp** at [Windows Commands](/docs/platforms/operating-systems/windows/commands.md) 
 
 ## 21/08/2026
 

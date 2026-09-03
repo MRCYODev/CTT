@@ -42,6 +42,7 @@ Benchmarking and performance-testing software and reference results for CPUs, GP
 | --- | --- | --- | --- |
 | [MangoHud](https://github.com/flightlessmango/MangoHud) | Vulkan and OpenGL overlay for displaying FPS, frame time, CPU/GPU load, temperatures, clocks, and other performance statistics. | <PlatformBadges items={['linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://github.com/flightlessmango/MangoHud" github="https://github.com/flightlessmango/MangoHud" /> |
 | [Fraps](https://fraps.com/) | Windows application for displaying frame rates, benchmarking, and recording performance statistics for games and applications. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://fraps.com/" /> |
+| [Rivatuner Statistics Server (RTSS)](https://www.guru3d.com/download/rtss-rivatuner-statistics-server-download/) | Provides in-game hardware monitoring overlays, frame-rate limiting, and frame-time statistics. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.guru3d.com/download/rtss-rivatuner-statistics-server-download/" /> |
 
 ## Phone Specs
 

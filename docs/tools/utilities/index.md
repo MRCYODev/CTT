@@ -161,3 +161,11 @@ Tools for creating, extracting, and managing archives and compressed files.
 | [Syncthing](https://syncthing.net/downloads/) | Continuous file synchronization program that synchronizes files between two or more computers. | <PlatformBadges items={['windows', 'linux', 'macos', 'android', 'freebsd']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://syncthing.net/downloads/" github="https://github.com/syncthing/syncthing" /> |
 | [LocalSend](https://localsend.org/download) | Free, open-source app that securely shares files and messages with nearby devices over a local network without requiring an internet connection. | <PlatformBadges items={['windows', 'linux', 'macos', 'android', 'ios']} /> | <PlatformBadges items={['opensource', 'free']} /> <SourceBadge url="https://localsend.org/download" github="https://github.com/localsend/localsend" /> |
 | [Warpinator](https://github.com/linuxmint/warpinator) | Send and receive files across a local network. | <PlatformBadges items={['linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://github.com/linuxmint/warpinator" /> |
+
+## Virtualization
+
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [VirtualBox](https://www.virtualbox.org/) | A general-purpose virtualization platform for creating and running virtual machines on desktop operating systems. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://www.virtualbox.org/" github="https://github.com/virtualbox-org/virtualbox" /> |
+| [QEMU](https://www.qemu.org/) | A free and open-source machine emulator and virtualizer capable of running virtual machines and emulating different processor architectures. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://www.qemu.org/" github="https://github.com/qemu/qemu" /> |
+| [WinBoat](https://www.winboat.app/) | Runs Windows applications in containers on Linux with seamless desktop integration. | <PlatformBadges items={['linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://www.winboat.app/" github="https://github.com/TibixDev/winboat" /> |
