@@ -36,9 +36,13 @@ Big thanks to TKOD for the idea!.
 - [LocalSend](/docs/tools/utilities/index.md#transfer)
 - [Warpinator](/docs/tools/utilities/index.md#transfer)
 
+<<<<<<< HEAD
 ### Updated 
 
 - Added more information for **systeminfo** and **arp** at [Windows Commands](/docs/platforms/operating-systems/windows/commands.md) 
+=======
+- Added more information for **systeminfo** and **arp** at [Windows Commands](/docs/platforms/operating-systems/windows/commands.md)
+>>>>>>> 2a2c14681a246640af75ec2626f7ab720b818f07
 
 ## 21/08/2026
 
