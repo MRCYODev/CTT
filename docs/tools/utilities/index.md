@@ -169,3 +169,25 @@ Tools for creating, extracting, and managing archives and compressed files.
 | [VirtualBox](https://www.virtualbox.org/) | A general-purpose virtualization platform for creating and running virtual machines on desktop operating systems. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://www.virtualbox.org/" github="https://github.com/virtualbox-org/virtualbox" /> |
 | [QEMU](https://www.qemu.org/) | A free and open-source machine emulator and virtualizer capable of running virtual machines and emulating different processor architectures. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://www.qemu.org/" github="https://github.com/qemu/qemu" /> |
 | [WinBoat](https://www.winboat.app/) | Runs Windows applications in containers on Linux with seamless desktop integration. | <PlatformBadges items={['linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://www.winboat.app/" github="https://github.com/TibixDev/winboat" /> |
+
+## Media Players
+
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [VLC](https://www.videolan.org/vlc/) | A versatile media player that supports a wide range of audio and video formats, streaming protocols, and subtitles. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://www.videolan.org/vlc/" github="https://github.com/videolan/vlc" /> |
+| [MPV](https://mpv.io/) | A lightweight, command-line-oriented media player with broad format support and extensive customization through scripts and configuration. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://mpv.io/" github="https://github.com/mpv-player/mpv" /> |
+| [MPC-HC](https://github.com/clsid2/mpc-hc) | A lightweight media player for Windows with broad audio and video format support and extensive playback options. | <PlatformBadges items={['windows']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://github.com/clsid2/mpc-hc"/> |
+| [Haruna](https://haruna.kde.org/) | A modern, lightweight media player for KDE that provides a simple interface with powerful playback controls and mpv integration. | <PlatformBadges items={['linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://haruna.kde.org/" gitlab="https://invent.kde.org/multimedia/haruna" /> |
+
+## Video Editing
+
+| Tool | Description | Supported platforms | Source |
+| --- | --- | --- | --- |
+| [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve) | A professional video editing and post-production suite combining editing, color grading, visual effects, motion graphics, and audio production. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['closed-source']} /> <SourceBadge url="https://www.blackmagicdesign.com/products/davinciresolve" /> |
+| [Kdenlive](https://kdenlive.org/) | A powerful non-linear video editor with multi-track editing, effects, transitions, color correction, and support for a wide range of formats. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://kdenlive.org/" github="https://github.com/KDE/kdenlive" /> |
+| [Shotcut](https://www.shotcut.org/) | A free, open-source, cross-platform video editor with support for a wide range of formats, filters, effects, and editing workflows. | <PlatformBadges items={['windows','macos','linux']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://www.shotcut.org/" github="https://github.com/mltframework/shotcut" /> |
+| [OpenCut](https://opencut.app/) | An open-source, web-based video editor designed as a free alternative to proprietary editing tools, with a familiar timeline-based workflow. | <PlatformBadges items={['web']} /> | <PlatformBadges items={['opensource']} /> <SourceBadge url="https://opencut.app/" github="https://github.com/OpenCut-app/OpenCut" /> |
+
+:::note
+Also good software include [**`Final Cut Pro`**](https://www.apple.com/final-cut-pro/) for MacOS, [**`VEGAS Pro`**](https://www.vegascreativesoftware.com/vegas-pro/) for Windows, and [**`Adobe Premiere Pro`**](https://www.adobe.com/products/premiere.html), but I don't think they deserve to be on this list.
+:::

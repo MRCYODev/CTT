@@ -1,5 +1,21 @@
 # Change Log
 
+## 04/09/2026
+
+## Added
+
+### Media Players
+- [VLC](/docs/tools/utilities/index.md#media-players)
+- [MPV](/docs/tools/utilities/index.md#media-players)
+- [MPC-HC](/docs/tools/utilities/index.md#media-players)
+- [Haruna](/docs/tools/utilities/index.md#media-players)
+
+### Video Editing
+- [DaVinci Resolve](/docs/tools/utilities/index.md#video-editing)
+- [Kdenlive](/docs/tools/utilities/index.md#video-editing)
+- [Shotcut](/docs/tools/utilities/index.md#video-editing)
+- [OpenCut](/docs/tools/utilities/index.md#video-editing)
+
 ## 03/09/2026
 
 ## Added
