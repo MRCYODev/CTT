@@ -5367,7 +5367,6 @@ html[data-tech-theme="galaxy"] body {
 }
 
 html[data-tech-theme="galaxy"] #__docusaurus {
-  background: transparent !important;
   color: #eef1ff !important;
   position: relative;
   isolation: isolate;
