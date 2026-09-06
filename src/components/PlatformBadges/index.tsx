@@ -910,6 +910,7 @@ export default function PlatformBadges({
             key={item}
             title={badge.label}
             aria-label={badge.label}
+            data-platform={item}
           >
             <svg
               aria-hidden="true"

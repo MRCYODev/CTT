@@ -14,7 +14,7 @@ const config: Config = {
   tagline:
     'The Open Source Knowledge base for fixing, configuring, securing, understanding technology and much more...',
 
-  favicon: 'img/documenation/favicon.ico',
+  favicon: 'img/favicon.ico',
 
   // ============================================================
   // FUTURE FLAGS
@@ -158,6 +158,12 @@ const config: Config = {
 
     themeConfig: {
 
+    // Show the page index down to h4 for faster navigation on mobile and desktop.
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 4,
+    },
+
     // ----------------------------------------------------------
     // COLOR MODE
     // ----------------------------------------------------------
@@ -173,14 +179,21 @@ const config: Config = {
     // ----------------------------------------------------------
 
     navbar: {
-      title: 'CTT',
-
+      logo:{
+          alt: 'CTT Logo',
+          src: '/img/logo.png',
+          target: '_self',
+          href: "https://ctt.mrcyo.com",
+          width: 34,
+          height: 34,
+      },
+      
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'technicianSidebar',
           position: 'left',
-          label: 'Knowledge Base',
+          label: 'Get Started',
         },
 
         // Local search

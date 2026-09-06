@@ -79,3 +79,44 @@
     min-height: 1.25rem;
   }
 }
+
+/* CTT platform badge colors */
+.badge[data-platform='windows'] .icon { color: #00a4ef; fill: currentColor; }
+.badge[data-platform='macos'] .icon { color: #d9d9df; fill: currentColor; }
+.badge[data-platform='linux'] .icon { color: #f2c94c; fill: currentColor; }
+.badge[data-platform='android'] .icon { color: #3ddc84; fill: currentColor; }
+.badge[data-platform='ios'] .icon { color: #d9d9df; fill: currentColor; }
+.badge[data-platform='chromeos'] .icon { color: #4285f4; fill: currentColor; }
+.badge[data-platform='ubuntu'] .icon { color: #e95420; fill: currentColor; }
+.badge[data-platform='debian'] .icon { color: #d70a53; fill: currentColor; }
+.badge[data-platform='fedora'] .icon { color: #51a2da; fill: currentColor; }
+.badge[data-platform='arch'] .icon { color: #1793d1; fill: currentColor; }
+.badge[data-platform='freebsd'] .icon { color: #ab2b28; fill: currentColor; }
+.badge[data-platform='openbsd'] .icon { color: #f2ca30; fill: currentColor; }
+.badge[data-platform='netbsd'] .icon { color: #f58220; fill: currentColor; }
+.badge[data-platform='raspberry-pi'] .icon { color: #c51a4a; fill: currentColor; }
+.badge[data-platform='steamos'] .icon { color: #66c0f4; fill: currentColor; }
+
+.badge[data-platform='chrome'] .icon { color: #4285f4; fill: currentColor; }
+.badge[data-platform='firefox'] .icon { color: #ff7139; fill: currentColor; }
+.badge[data-platform='edge'] .icon { color: #0ea5e9; fill: currentColor; }
+.badge[data-platform='safari'] .icon { color: #4aa3ff; fill: currentColor; }
+.badge[data-platform='opera'] .icon { color: #ff1b2d; fill: currentColor; }
+.badge[data-platform='brave'] .icon { color: #fb542b; fill: currentColor; }
+.badge[data-platform='vivaldi'] .icon { color: #ef3939; fill: currentColor; }
+.badge[data-platform='tor'] .icon { color: #7d4698; fill: currentColor; }
+.badge[data-platform='librewolf'] .icon { color: #00acff; fill: currentColor; }
+
+.badge[data-platform='github'] .icon { color: #f0f0f0; fill: currentColor; }
+.badge[data-platform='gitlab'] .icon { color: #fc6d26; fill: currentColor; }
+.badge[data-platform='bitbucket'] .icon { color: #2684ff; fill: currentColor; }
+.badge[data-platform='codeberg'] .icon { color: #2185d0; fill: currentColor; }
+.badge[data-platform='gitea'] .icon { color: #609926; fill: currentColor; }
+.badge[data-platform='forgejo'] .icon { color: #fb923c; fill: currentColor; }
+.badge[data-platform='sourceforge'] .icon { color: #ff6600; fill: currentColor; }
+
+.badge[data-platform='opensource'] .icon { color: #4ade80; fill: currentColor; }
+.badge[data-platform='closed-source'] .icon { color: #f59e0b; fill: currentColor; }
+.badge[data-platform='free'] .icon { color: #22c55e; fill: currentColor; }
+.badge[data-platform='paid'] .icon { color: #a78bfa; fill: currentColor; }
+.badge[data-platform='freemium'] .icon { color: #38bdf8; fill: currentColor; }
