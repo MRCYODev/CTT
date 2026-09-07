@@ -81,7 +81,7 @@ Visit CTT:
 ## 🖼️ Preview
 
 <p align="center">
-  <img src="static/img/documenation/ctt_homepage.png" alt="CTT homepage preview">
+  <img src="static/img/ctt_homepage.png" alt="CTT homepage preview">
 </p>
 
 ---
