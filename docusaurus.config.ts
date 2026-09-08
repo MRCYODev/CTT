@@ -168,7 +168,7 @@ const config: Config = {
     // COLOR MODE
     // ----------------------------------------------------------
 
-    
+
     colorMode: {
       respectPrefersColorScheme: false,
       disableSwitch: false,
@@ -184,10 +184,10 @@ const config: Config = {
           src: '/img/logo.png',
           target: '_self',
           href: "https://ctt.mrcyo.com",
-          width: 34,
-          height: 34,
+          width: 48,
+          height: 48,
       },
-      
+
       items: [
         {
           type: 'docSidebar',
@@ -236,10 +236,13 @@ const config: Config = {
               label: 'Utilities',
               to: '/docs/tools/utilities/',
             },
-
             {
               label: 'Guides',
               to: '/docs/tools/guides/',
+            },
+            {
+              label: 'Networking',
+              to: '/docs/tools/network/',
             },
           ],
         },

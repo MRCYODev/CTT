@@ -1,0 +1,914 @@
+/* ============================================================
+   AMOLED
+   ============================================================ */
+
+html[data-tech-theme='amoled'] {
+  --ifm-background-color: #000000;
+  --ifm-background-surface-color: #050505;
+
+  --ifm-color-content: #f5f5f5;
+  --ifm-color-content-secondary: #bdbdbd;
+
+  --ifm-color-primary: #7db7ff;
+  --ifm-color-primary-dark: #5ca3ff;
+  --ifm-color-primary-darker: #3f93ff;
+  --ifm-color-primary-darkest: #247fe8;
+  --ifm-color-primary-light: #98c7ff;
+  --ifm-color-primary-lighter: #b4d6ff;
+  --ifm-color-primary-lightest: #d5e7ff;
+
+  --ctt-border: #202020;
+  --ctt-surface: #050505;
+  --ctt-surface-secondary: #101010;
+  --ctt-muted: #a5a5a5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ============================================================
+   HALLOWEEN
+   ============================================================ */
+
+html[data-tech-theme='halloween'] {
+  --ifm-background-color: #100b12;
+  --ifm-background-surface-color: #19101d;
+
+  --ifm-color-content: #fff4df;
+  --ifm-color-content-secondary: #d7c6b0;
+
+  --ifm-color-primary: #ff7518;
+  --ifm-color-primary-dark: #e85f08;
+  --ifm-color-primary-darker: #d65300;
+  --ifm-color-primary-darkest: #b74400;
+  --ifm-color-primary-light: #ff8e3d;
+  --ifm-color-primary-lighter: #ffa967;
+  --ifm-color-primary-lightest: #ffc497;
+
+  --ctt-border: #4a273d;
+  --ctt-surface: #19101d;
+  --ctt-surface-secondary: #251629;
+  --ctt-muted: #cbb9c9;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 117, 24, 0.13);
+}
+
+html[data-tech-theme='halloween'] .navbar {
+  box-shadow: 0 1px 0 #ff7518;
+}
+
+
+/* ============================================================
+   CHRISTMAS
+   Green + red + snow
+   ============================================================ */
+
+html[data-tech-theme='christmas'] {
+  --ifm-background-color: #f5f8f5;
+  --ifm-background-surface-color: #ffffff;
+
+  --ifm-color-content: #17351f;
+  --ifm-color-content-secondary: #496052;
+
+  --ifm-color-primary: #b21f2d;
+  --ifm-color-primary-dark: #9e1b27;
+  --ifm-color-primary-darker: #8c1823;
+  --ifm-color-primary-darkest: #74121c;
+  --ifm-color-primary-light: #c53542;
+  --ifm-color-primary-lighter: #d2505b;
+  --ifm-color-primary-lightest: #e27b83;
+
+  --ctt-border: #d5dfd7;
+  --ctt-surface: #ffffff;
+  --ctt-surface-secondary: #edf4ef;
+  --ctt-muted: #55705d;
+
+  --docusaurus-highlighted-code-line-bg: rgba(178, 31, 45, 0.10);
+}
+
+html[data-theme='dark'][data-tech-theme='christmas'] {
+  --ifm-background-color: #07120b;
+  --ifm-background-surface-color: #0d1d12;
+
+  --ifm-color-content: #f2fff5;
+  --ifm-color-content-secondary: #b8d0bd;
+
+  --ifm-color-primary: #ff4b5c;
+  --ifm-color-primary-dark: #ef3548;
+  --ifm-color-primary-darker: #db2639;
+  --ifm-color-primary-darkest: #bd1c2d;
+  --ifm-color-primary-light: #ff6c79;
+  --ifm-color-primary-lighter: #ff8c96;
+  --ifm-color-primary-lightest: #ffb8bf;
+
+  --ctt-border: #21442c;
+  --ctt-surface: #0d1d12;
+  --ctt-surface-secondary: #12291a;
+  --ctt-muted: #abc4b1;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 75, 92, 0.13);
+}
+
+
+/* ============================================================
+   CHRISTMAS LIGHTS
+   ============================================================ */
+
+html[data-tech-theme='christmas'] .navbar {
+  position: relative;
+}
+
+html[data-tech-theme='christmas'] .navbar::before {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 2px;
+
+  background: #183b22;
+
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.25);
+
+  z-index: 10;
+}
+
+html[data-tech-theme='christmas'] .navbar::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 8px;
+
+  pointer-events: none;
+  z-index: 11;
+
+  background:
+    radial-gradient(circle at 4% 50%, #ff3548 0 3px, transparent 4px),
+    radial-gradient(circle at 12% 50%, #3dcc72 0 3px, transparent 4px),
+    radial-gradient(circle at 20% 50%, #ffd447 0 3px, transparent 4px),
+    radial-gradient(circle at 28% 50%, #4ea1ff 0 3px, transparent 4px),
+    radial-gradient(circle at 36% 50%, #ff3548 0 3px, transparent 4px),
+    radial-gradient(circle at 44% 50%, #3dcc72 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 50%, #ffd447 0 3px, transparent 4px),
+    radial-gradient(circle at 60% 50%, #4ea1ff 0 3px, transparent 4px),
+    radial-gradient(circle at 68% 50%, #ff3548 0 3px, transparent 4px),
+    radial-gradient(circle at 76% 50%, #3dcc72 0 3px, transparent 4px),
+    radial-gradient(circle at 84% 50%, #ffd447 0 3px, transparent 4px),
+    radial-gradient(circle at 92% 50%, #4ea1ff 0 3px, transparent 4px);
+
+  animation: christmas-lights-glow 2.6s ease-in-out infinite;
+}
+
+@keyframes christmas-lights-glow {
+  0%,
+  100% {
+    opacity: 0.78;
+    filter: brightness(0.92);
+  }
+
+  25% {
+    opacity: 1;
+    filter: brightness(1.15);
+  }
+
+  50% {
+    opacity: 0.82;
+    filter: brightness(0.96);
+  }
+
+  75% {
+    opacity: 1;
+    filter: brightness(1.18);
+  }
+}
+
+
+/* ============================================================
+   CHRISTMAS SNOW
+   ============================================================ */
+
+html[data-tech-theme='christmas'] .main-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+html[data-tech-theme='christmas'] .main-wrapper::before,
+html[data-tech-theme='christmas'] .main-wrapper::after {
+  content: '';
+
+  position: fixed;
+  inset: -150px 0 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  background-repeat: repeat;
+
+  will-change: transform;
+}
+
+
+/* Distant snow */
+
+html[data-tech-theme='christmas'] .main-wrapper::before {
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.90) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,255,255,.68) 0 1.3px, transparent 2px),
+    radial-gradient(circle, rgba(255,255,255,.48) 0 .8px, transparent 1.5px);
+
+  background-size:
+    90px 120px,
+    150px 180px,
+    230px 260px;
+
+  background-position:
+    10px 0,
+    50px -30px,
+    100px -60px;
+
+  opacity: 0.55;
+
+  animation: christmas-snow-far 18s linear infinite;
+}
+
+
+/* Foreground snow */
+
+html[data-tech-theme='christmas'] .main-wrapper::after {
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.96) 0 2px, transparent 3px),
+    radial-gradient(circle, rgba(255,255,255,.85) 0 1.6px, transparent 3px),
+    radial-gradient(circle, rgba(255,255,255,.70) 0 1.2px, transparent 2.5px);
+
+  background-size:
+    180px 220px,
+    260px 310px,
+    120px 190px;
+
+  background-position:
+    20px -50px,
+    80px -120px,
+    120px -80px;
+
+  opacity: 0.72;
+
+  animation: christmas-snow-near 11s linear infinite;
+}
+
+@keyframes christmas-snow-far {
+  from {
+    transform: translate3d(0, -120px, 0);
+  }
+
+  to {
+    transform: translate3d(45px, 110vh, 0);
+  }
+}
+
+@keyframes christmas-snow-near {
+  from {
+    transform: translate3d(-35px, -150px, 0);
+  }
+
+  to {
+    transform: translate3d(70px, 110vh, 0);
+  }
+}
+
+html[data-tech-theme='christmas'] .navbar,
+html[data-tech-theme='christmas'] .theme-doc-sidebar-container,
+html[data-tech-theme='christmas'] .container,
+html[data-tech-theme='christmas'] .footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Christmas cards */
+
+html[data-tech-theme='christmas'] .card,
+html[data-tech-theme='christmas'] .pagination-nav__link {
+  border-color: var(--ctt-border);
+  background: var(--ctt-surface);
+}
+
+html[data-tech-theme='christmas'] .card:hover,
+html[data-tech-theme='christmas'] .pagination-nav__link:hover {
+  border-color: #b21f2d;
+
+  box-shadow:
+    0 6px 22px rgba(178, 31, 45, 0.10);
+}
+
+
+/* ============================================================
+   AMOLED
+   ============================================================ */
+
+html[data-tech-theme='amoled'] {
+  --ifm-background-color: #000000;
+  --ifm-background-surface-color: #050505;
+
+  --ifm-color-content: #f5f5f5;
+  --ifm-color-content-secondary: #bdbdbd;
+
+  --ifm-color-primary: #7db7ff;
+  --ifm-color-primary-dark: #5ca3ff;
+  --ifm-color-primary-darker: #3f93ff;
+  --ifm-color-primary-darkest: #247fe8;
+  --ifm-color-primary-light: #98c7ff;
+  --ifm-color-primary-lighter: #b4d6ff;
+  --ifm-color-primary-lightest: #d5e7ff;
+
+  --ctt-border: #202020;
+  --ctt-surface: #050505;
+  --ctt-surface-secondary: #101010;
+  --ctt-muted: #a5a5a5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+}
+
+html[data-tech-theme='amoled'] body,
+html[data-tech-theme='amoled'] .navbar,
+html[data-tech-theme='amoled'] .footer {
+  background: #000000;
+}
+
+html[data-tech-theme='amoled'] .card,
+html[data-tech-theme='amoled'] .pagination-nav__link {
+  background: #050505;
+  border-color: #202020;
+}
+
+
+/* ============================================================
+   GALAXY
+   Deep space + smooth multi-layer star animation
+   Dark-only theme
+   ============================================================ */
+
+html[data-tech-theme='galaxy'] {
+  color-scheme: dark;
+
+  --ifm-background-color: #05060d;
+  --ifm-background-surface-color: #0a0c18;
+
+  --ifm-color-content: #eef1ff;
+  --ifm-color-content-secondary: #b7bdd8;
+
+  --ifm-color-primary: #8ea7ff;
+  --ifm-color-primary-dark: #7894ff;
+  --ifm-color-primary-darker: #6684ff;
+  --ifm-color-primary-darkest: #526fff;
+  --ifm-color-primary-light: #a8baff;
+  --ifm-color-primary-lighter: #bdcaff;
+  --ifm-color-primary-lightest: #d8e0ff;
+
+  --ctt-border: #202641;
+  --ctt-surface: #0a0c18;
+  --ctt-surface-secondary: #101426;
+  --ctt-muted: #969fbd;
+
+  --docusaurus-highlighted-code-line-bg: rgba(142, 167, 255, 0.12);
+}
+
+/*
+ * Galaxy is intentionally dark-only.
+ * Keep the same palette whether Docusaurus reports light or dark mode.
+ */
+html[data-tech-theme='galaxy'][data-theme='light'],
+html[data-tech-theme='galaxy'][data-theme='dark'] {
+  color-scheme: dark;
+
+  --ifm-background-color: #05060d;
+  --ifm-background-surface-color: #0a0c18;
+
+  --ifm-color-content: #eef1ff;
+  --ifm-color-content-secondary: #b7bdd8;
+
+  --ifm-color-primary: #8ea7ff;
+  --ifm-color-primary-dark: #7894ff;
+  --ifm-color-primary-darker: #6684ff;
+  --ifm-color-primary-darkest: #526fff;
+  --ifm-color-primary-light: #a8baff;
+  --ifm-color-primary-lighter: #bdcaff;
+  --ifm-color-primary-lightest: #d8e0ff;
+
+  --ctt-border: #202641;
+  --ctt-surface: #0a0c18;
+  --ctt-surface-secondary: #101426;
+  --ctt-muted: #969fbd;
+
+  --docusaurus-highlighted-code-line-bg: rgba(142, 167, 255, 0.12);
+}
+
+/* Deep-space backdrop */
+html[data-tech-theme='galaxy'] body {
+  position: relative;
+  min-height: 100%;
+  overflow-x: clip;
+  background: #05060d;
+}
+
+/*
+ * One continuous fixed galaxy layer.
+ * Background gradients and distant stars live on the same layer so
+ * there is no horizontal seam between document sections.
+ */
+html[data-tech-theme='galaxy'] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(92, 77, 220, 0.14),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(72, 98, 255, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 85% 65%,
+      rgba(151, 92, 255, 0.06),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.80) 0 0.7px,
+      transparent 1.3px
+    ),
+    radial-gradient(
+      circle,
+      rgba(180, 195, 255, 0.55) 0 0.7px,
+      transparent 1.4px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.35) 0 0.6px,
+      transparent 1.2px
+    );
+
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat, repeat;
+  background-size:
+    cover,
+    cover,
+    cover,
+    89px 107px,
+    137px 151px,
+    193px 211px;
+  background-position:
+    center,
+    center,
+    center,
+    17px 31px,
+    73px 103px,
+    121px 51px;
+
+  opacity: 1;
+}
+
+/* Foreground stars */
+html[data-tech-theme='galaxy'] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.95) 0 1px,
+      rgba(185, 201, 255, 0.55) 1px,
+      transparent 2.4px
+    ),
+    radial-gradient(
+      circle,
+      rgba(157, 176, 255, 0.85) 0 0.8px,
+      transparent 2px
+    );
+
+  background-repeat: repeat;
+  background-size:
+    173px 191px,
+    251px 269px;
+  background-position:
+    41px 61px,
+    117px 29px;
+
+  opacity: 0.48;
+  animation: none;
+}
+
+/* Keep website above stars */
+html[data-tech-theme='galaxy'] .navbar,
+html[data-tech-theme='galaxy'] .main-wrapper,
+html[data-tech-theme='galaxy'] .footer,
+html[data-tech-theme='galaxy'] .theme-doc-sidebar-container,
+html[data-tech-theme='galaxy'] #__docusaurus {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-tech-theme='galaxy'] #__docusaurus {
+  isolation: isolate;
+}
+
+/* Galaxy UI */
+html[data-tech-theme='galaxy'] .navbar {
+  background: rgba(7, 8, 17, 0.86);
+  border-bottom: 1px solid rgba(142, 167, 255, 0.14);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+html[data-tech-theme='galaxy'] .menu {
+  background: rgba(5, 6, 13, 0.78);
+}
+
+html[data-tech-theme='galaxy'] .card,
+html[data-tech-theme='galaxy'] .pagination-nav__link {
+  background: rgba(10, 12, 24, 0.82);
+  border-color: rgba(142, 167, 255, 0.16);
+}
+
+html[data-tech-theme='galaxy'] .card:hover,
+html[data-tech-theme='galaxy'] .pagination-nav__link:hover {
+  border-color: rgba(142, 167, 255, 0.36);
+
+  box-shadow:
+    0 0 28px rgba(101, 124, 255, 0.08);
+}
+
+html[data-tech-theme='galaxy'] a {
+  transition:
+    color 160ms ease,
+    text-shadow 160ms ease;
+}
+
+html[data-tech-theme='galaxy'] a:hover {
+  color: #bdcaff;
+  text-shadow:
+    0 0 12px rgba(142, 167, 255, 0.28);
+}
+
+/* Galaxy always uses the dark color scheme for native controls. */
+html[data-tech-theme='galaxy'] select,
+html[data-tech-theme='galaxy'] input,
+html[data-tech-theme='galaxy'] textarea,
+html[data-tech-theme='galaxy'] button {
+  color-scheme: dark;
+}
+
+/* ============================================================
+   CUSTOM
+   Suprise red / crimson palette moved here
+   ============================================================ */
+
+html[data-tech-theme='custom'] {
+  --ifm-background-color: #11090b;
+  --ifm-background-surface-color: #1c0d10;
+
+  --ifm-color-content: #f7e9eb;
+  --ifm-color-content-secondary: #d1afb5;
+
+  --ifm-color-primary: #ff3347;
+  --ifm-color-primary-dark: #ed263b;
+  --ifm-color-primary-darker: #d91e32;
+  --ifm-color-primary-darkest: #b91629;
+
+  --ifm-color-primary-light: #ff5969;
+  --ifm-color-primary-lighter: #ff7583;
+  --ifm-color-primary-lightest: #ffadb6;
+
+  --ctt-border: #4b252b;
+  --ctt-surface: #1c0d10;
+  --ctt-surface-secondary: #281216;
+  --ctt-muted: #d1afb5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 51, 71, 0.14);
+}
+
+html[data-theme='dark'][data-tech-theme='custom'] {
+  --ifm-background-color: #11090b;
+  --ifm-background-surface-color: #1c0d10;
+
+  --ifm-color-content: #f7e9eb;
+  --ifm-color-content-secondary: #d1afb5;
+
+  --ifm-color-primary: #ff3347;
+  --ifm-color-primary-dark: #ed263b;
+  --ifm-color-primary-darker: #d91e32;
+  --ifm-color-primary-darkest: #b91629;
+
+  --ifm-color-primary-light: #ff5969;
+  --ifm-color-primary-lighter: #ff7583;
+  --ifm-color-primary-lightest: #ffadb6;
+
+  --ctt-border: #4b252b;
+  --ctt-surface: #1c0d10;
+  --ctt-surface-secondary: #281216;
+  --ctt-muted: #d1afb5;
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 51, 71, 0.16);
+}
+
+/* ============================================================
+   UNIVERSAL THEME STYLING
+   ============================================================ */
+
+/* ============================================================
+   DEFAULT THEME — SITE-WIDE STYLING
+   ============================================================ */
+
+html[data-tech-theme='default'] body {
+  color: var(--ifm-color-content);
+  background: var(--ifm-background-color);
+}
+
+html[data-tech-theme='default'] .main-wrapper,
+html[data-tech-theme='default'] main {
+  background: var(--ifm-background-color);
+}
+
+html[data-tech-theme='default'] .navbar {
+  background: #151a22;
+  border-bottom: 1px solid #30333a;
+}
+
+html[data-tech-theme='default'] .navbar__title,
+html[data-tech-theme='default'] .navbar__link {
+  color: #ffffff;
+}
+
+html[data-tech-theme='default'] .navbar__link:hover {
+  color: #5daee9;
+}
+
+html[data-tech-theme='default'] .theme-doc-sidebar-container,
+html[data-tech-theme='default'] .menu {
+  background: #f8f9fb;
+}
+
+html[data-tech-theme='default'] .menu__link {
+  color: #4b5563;
+}
+
+html[data-tech-theme='default'] .menu__link:hover {
+  color: #1261a0;
+  background: #eef3f8;
+}
+
+html[data-tech-theme='default'] .menu__link--active {
+  color: #1261a0;
+  background: rgba(18, 97, 160, 0.10);
+}
+
+html[data-tech-theme='default'] .breadcrumbs__link,
+html[data-tech-theme='default'] .table-of-contents__link {
+  color: #68707d;
+}
+
+html[data-tech-theme='default'] .breadcrumbs__link:hover,
+html[data-tech-theme='default'] .table-of-contents__link:hover,
+html[data-tech-theme='default'] .table-of-contents__link--active {
+  color: #1261a0;
+}
+
+html[data-tech-theme='default'] table {
+  border-color: #d9dce1;
+  background: #ffffff;
+}
+
+html[data-tech-theme='default'] table th {
+  background: #f5f6f8;
+  color: #1f2937;
+}
+
+html[data-tech-theme='default'] table td {
+  color: #1f2937;
+  border-color: #d9dce1;
+}
+
+html[data-tech-theme='default'] table tr:nth-child(2n) {
+  background: #fafbfc;
+}
+
+html[data-tech-theme='default'] code {
+  background: #f5f6f8;
+  border-color: #d9dce1;
+  color: #1261a0;
+}
+
+html[data-tech-theme='default'] blockquote {
+  border-left-color: #1261a0;
+  background: rgba(18, 97, 160, 0.06);
+  color: #68707d;
+}
+
+html[data-tech-theme='default'] .pagination-nav__link,
+html[data-tech-theme='default'] .card {
+  background: #ffffff;
+  border-color: #d9dce1;
+}
+
+html[data-tech-theme='default'] .pagination-nav__link:hover,
+html[data-tech-theme='default'] .card:hover {
+  border-color: #1261a0;
+}
+
+html[data-tech-theme='default'] .footer {
+  background: #151a22;
+  color: #c7ced8;
+}
+
+html[data-tech-theme='default'] .footer__title {
+  color: #ffffff;
+}
+
+html[data-tech-theme='default'] .footer__link-item {
+  color: #c7ced8;
+}
+
+html[data-tech-theme='default'] .footer__link-item:hover {
+  color: #5daee9;
+}
+
+html[data-tech-theme] body {
+  color: var(--ifm-color-content);
+  background-color: var(--ifm-background-color);
+}
+
+html[data-tech-theme] p,
+html[data-tech-theme] li,
+html[data-tech-theme] td,
+html[data-tech-theme] th {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] h1,
+html[data-tech-theme] h2,
+html[data-tech-theme] h3,
+html[data-tech-theme] h4,
+html[data-tech-theme] h5,
+html[data-tech-theme] h6 {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] a {
+  color: var(--ifm-color-primary);
+}
+
+html[data-tech-theme] a:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+html[data-tech-theme] .navbar {
+  background: var(--ifm-background-surface-color);
+  border-bottom: 1px solid var(--ctt-border);
+}
+
+/* ============================================================
+   DEFAULT THEME NAVBAR
+   ============================================================ */
+
+html[data-tech-theme='default'] .navbar {
+  background: #151a22;
+  border-bottom: 1px solid #30333a;
+}
+
+html[data-tech-theme='default'] .navbar__title,
+html[data-tech-theme='default'] .navbar__link {
+  color: #ffffff;
+}
+
+html[data-tech-theme='default'] .navbar__link:hover {
+  color: #5daee9;
+}
+
+html[data-tech-theme] .navbar__title,
+html[data-tech-theme] .navbar__link {
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] .navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+html[data-tech-theme] .menu {
+  background: var(--ifm-background-color);
+}
+
+html[data-tech-theme] .menu__link {
+  color: var(--ifm-color-content-secondary);
+}
+
+html[data-tech-theme] .menu__link:hover {
+  color: var(--ifm-color-content);
+  background: var(--ifm-background-surface-color);
+}
+
+html[data-tech-theme] .menu__link--active {
+  color: var(--ifm-color-primary);
+
+  background: color-mix(
+    in srgb,
+    var(--ifm-color-primary) 12%,
+    transparent
+  );
+}
+
+
+/* ============================================================
+   BREADCRUMBS / TOC
+   ============================================================ */
+
+html[data-tech-theme] .breadcrumbs__link,
+html[data-tech-theme] .table-of-contents__link {
+  color: var(--ifm-color-content-secondary);
+}
+
+html[data-tech-theme] .breadcrumbs__link:hover,
+html[data-tech-theme] .table-of-contents__link:hover,
+html[data-tech-theme] .table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+}
+
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+html[data-tech-theme] table {
+  border-color: var(--ctt-border);
+}
+
+html[data-tech-theme] table th {
+  background: var(--ctt-surface-secondary);
+  color: var(--ifm-color-content);
+}
+
+html[data-tech-theme] table td {
+  color: var(--ifm-color-content);
+  border-color: var(--ctt-border);
+}
+
+html[data-tech-theme] table tr:nth-child(2n) {
+  background: color-mix(
+    in srgb,
+    var(--ifm-color-primary) 4%,
+    transparent
+  );
+}
+
+
+/* ============================================================
+   INLINE CODE
+   ============================================================ */
+
+html[data-tech-theme] code {
+  background: var(--ctt-surface-secondary);
+  border: 1px solid var(--ctt-border);
+  color: var(--ifm-color-primary);
+}
+
+html[data-tech-theme] pre code {
+  background: transparent;
+  border: 0;
+  color: inherit;
+}
+
+

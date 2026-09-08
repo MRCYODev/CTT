@@ -1,5 +1,15 @@
 # Change Log
 
+## 08/09/2026
+
+## Added
+
+New Windows Commands.
+
+## Fixed
+
+Updated some css issues for the website.
+
 ## 04/09/2026
 
 ## Added

@@ -7,148 +7,556 @@ import PlatformBadges from '@site/src/components/PlatformBadges';
 # Windows Commands
 
 :::note
-**Many of the commands applies to:** Windows 8.1, Windows 8.1 Enterprise Windows, 8.1 Pro Windows, 8 Windows, 8 Enterprise Windows, 8 Pro Windows, 7 Enterprise Windows, 7 Home Basic Windows, 7 Home Premium Windows, 7 Professional Windows, 7 Starter Windows, 7 Ultimate Windows Vista Enterprise 64-bit Edition, Windows Vista Ultimate 64-bit Edition, Windows Vista Business, Windows Vista Business 64-bit Edition, Windows Vista Enterprise, Windows Vista Ultimate, Windows 10, Windows 11.
+This page contains commonly useful Windows Command Prompt commands for troubleshooting, system maintenance, hardware information, and networking.
+
+The descriptions and command behavior are based on the official [Microsoft Learn Windows Commands reference](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands).
 :::
 
 ## Disk and file-system issues
 
-```
+[Microsoft Learn - `chkdsk`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/chkdsk)
+
+```cmd
 chkdsk /f
 ```
-:::tip
-Why do we use /f parameter, we use it because we want to start the proccess of scanning, to find corrupted files.
-:::
-Description: Checks the file system and file system metadata of a volume for logical and physical errors. If used without parameters, chkdsk displays only the status of the volume and doesn't fix any errors. If used with the **/f, /r, /x,** or **/b** parameters, it fixes errors on the volume.
 
-![Windows servicing mount diagram](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/images/servicing_mount.png)
+:::tip
+**Why use `/f`?**  
+The `/f` parameter tells `chkdsk` to fix logical file-system errors that it finds on the volume.
+:::
+
+<details>
+<summary>Details</summary>
+
+`chkdsk` checks the file system and file-system metadata of a volume for logical and physical errors.
+
+When used without parameters, it only reports the current status of the volume. Parameters such as `/f`, `/r`, `/x`, and `/b` allow it to perform different repair operations.
+
+For example:
+
+```cmd
+chkdsk C: /f
+```
+
+This checks the `C:` drive and attempts to fix logical file-system errors.
+
+:::warning
+`chkdsk` may need to schedule the check for the next restart if the volume is currently in use.
+:::
+
+</details>
 
 ---
 
-:::warning
-SFC scans protected Windows system files and attempts to repair corrupted files.
-:::
+[Microsoft Learn - `sfc`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/sfc)
 
-```
+```cmd
 sfc /scannow
 ```
+
 :::tip
-Why do we use /scannow parameter, we use it because we want to start the proccess of scanning, to find corrupted files.
+**Why use `/scannow`?**  
+The `/scannow` parameter scans all protected Windows system files and attempts to repair files that are corrupted or have been modified incorrectly.
 :::
 
-:::note
-Description: System File Checker, aka sfc, It scans and verifies the integrity of all protected system files and replaces incorrect versions with correct versions. If this command discovers that a protected file has been overwritten, it retrieves the correct version of the file from the ***`systemroot\`*** folder, and then replaces the incorrect file.
-:::
+<details>
+<summary>Details</summary>
 
+`SFC` stands for **System File Checker**.
+
+It scans and verifies the integrity of protected Windows system files. If it finds an incorrect or corrupted file, Windows attempts to replace it with the correct version from the Windows component store.
+
+You can run:
+
+```cmd
+sfc /scannow
 ```
+
+to perform a complete scan and repair.
+
+:::warning
+You normally need to run Command Prompt as an administrator when using `sfc`.
+:::
+
+</details>
+
+---
+
+[Microsoft Learn - `diskpart`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart)
+
+```cmd
 diskpart
 ```
 
 <details>
 <summary>Details</summary>
 
-The specific command allows you to manage the computer's drives such as (disks, partitions, volumes, and virtual hard disks).
+`diskpart` is a command-line tool for managing disks, partitions, volumes, and virtual hard disks.
 
-Although for any of the following commands to work you'll need to first give an object focus (meaning that any commands you enter will work only on the focused object).
+Before most DiskPart commands can be used, you need to select an object and give it **focus**. Commands you enter will then operate on the object that currently has focus.
 
-However some commands change the focus automatically (like creating a new partition).
+For example:
+
+```cmd
+diskpart
+list disk
+select disk 1
+```
+
+You can then use commands such as:
+
+```cmd
+list partition
+list volume
+detail disk
+```
+
+:::warning
+DiskPart can make destructive changes to disks and partitions. Be careful when selecting disks and using commands such as `clean`, `delete`, and `format`.
+:::
 
 </details>
 
-```
+---
+
+[Microsoft Learn - DISM](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image)
+
+```cmd
 DISM /Online /Cleanup-Image /RestoreHealth
 ```
 
 <details>
 <summary>Details</summary>
 
+`DISM` (**Deployment Image Servicing and Management**) is used to service and repair Windows images.
 
-This command is mostly used to check the integrity of the windows system image (the files that make up the windows OS, like the system DLLs and components in WinSxS).
+The `/RestoreHealth` option scans the Windows component store for corruption and attempts to repair problems it finds.
 
-What it does: It checks and searches for any corrupted or missing system files, it repairs them or replaces them by using clean copies from Windows Update or from a local source. 
+For a quick check without performing a repair:
 
-The command will not touch anything installed or not unless it belongs to a core Windows component (like microsoft edge coming back after it is used)
-it will not actually reset your OS and just try to repair itself.
+```cmd
+DISM /Online /Cleanup-Image /CheckHealth
+```
 
-If you want to try and repair just use:
+To perform a more thorough scan:
 
-**```DISM /Online /Cleanup-Image /ScanHealth```**
+```cmd
+DISM /Online /Cleanup-Image /ScanHealth
+```
 
-If you just want to check without repairing use:
+To repair the image:
 
-**```DISM /Online /Cleanup-Image /CheckHealth```**
+```cmd
+DISM /Online /Cleanup-Image /RestoreHealth
+```
 
+Microsoft also recommends using `sfc /scannow` after DISM when troubleshooting Windows system-file corruption.
+
+:::warning
+DISM may use Windows Update as a repair source. If Windows Update cannot provide the required files, a different repair source may be required.
+:::
 
 </details>
 
 ## Network and connectivity issues
 
-```
+[Microsoft Learn - `ipconfig`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig)
+
+```cmd
 ipconfig
 ```
 
+<details>
+<summary>Details</summary>
+
+`ipconfig` displays the current TCP/IP configuration of network adapters and can also be used to refresh DHCP and DNS information.
+
+### `ipconfig /all`
+
+```cmd
+ipconfig /all
+```
+
+Displays the full TCP/IP configuration for all network adapters.
+
+Useful when you need to check information such as:
+
+- IPv4 and IPv6 addresses
+- Subnet masks
+- Default gateways
+- DNS servers
+- DHCP information
+- MAC addresses
+
+### `ipconfig /displaydns`
+
+```cmd
+ipconfig /displaydns
+```
+
+Displays the contents of the local DNS resolver cache.
+
+Useful when troubleshooting DNS problems or checking which DNS records Windows currently has cached.
+
+### `ipconfig /flushdns`
+
+```cmd
+ipconfig /flushdns
+```
+
+Clears the local DNS resolver cache.
+
+Useful when Windows is using outdated or incorrect DNS information.
+
+### `ipconfig /registerdns`
+
+```cmd
+ipconfig /registerdns
+```
+
+Manually starts DNS registration for the computer.
+
+Useful on networks that use dynamic DNS.
+
+### `ipconfig /release`
+
+```cmd
+ipconfig /release
+```
+
+Releases the current DHCP-assigned IPv4 configuration.
+
+Useful when troubleshooting DHCP or IP-address problems.
+
+### `ipconfig /renew`
+
+```cmd
+ipconfig /renew
+```
+
+Requests a new DHCP configuration.
+
+Useful when a computer is having trouble obtaining or refreshing an IPv4 address.
+
+### `ipconfig /release6`
+
+```cmd
+ipconfig /release6
+```
+
+Releases the current DHCPv6 configuration.
+
+### `ipconfig /renew6`
+
+```cmd
+ipconfig /renew6
+```
+
+Renews the DHCPv6 configuration.
+
+### `ipconfig /showclassid`
+
+```cmd
+ipconfig /showclassid "Ethernet"
+```
+
+Displays the DHCP class ID configured for a network adapter.
+
+### `ipconfig /setclassid`
+
+```cmd
+ipconfig /setclassid "Ethernet" TEST
+```
+
+Sets the DHCP class ID for a network adapter.
+
+</details>
+
 ---
 
-```
+[Microsoft Learn - `netsh winsock`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-winsock)
+
+```cmd
 netsh winsock reset
 ```
 
 <details>
 <summary>Details</summary>
 
-This command restores the Winsock catalog back to its default clean state. It fixes internet connection failures caused by corrupted network settings, bad malware removal or leftover and persistent data from removed VPNs and firewalls.
+`netsh winsock reset` resets the Winsock catalog to a clean state.
+
+Winsock is responsible for providing applications with access to Windows networking services. A corrupted Winsock configuration can cause applications to lose network connectivity.
+
+This command can be useful when troubleshooting persistent connection problems caused by corrupted Winsock settings.
+
+:::warning
+You normally need to restart Windows after resetting Winsock for the changes to take effect.
+:::
 
 </details>
 
+---
 
-```
+[Microsoft Learn - `netsh`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh)
+
+```cmd
 netsh int ip reset
 ```
+
 <details>
 <summary>Details</summary>
 
-This command is as simply as it just tries to reset the TCP/IP in case you have any connection issues
+This command resets the TCP/IP configuration back toward its default state.
+
+It can be useful when troubleshooting network problems caused by corrupted or incorrect TCP/IP configuration.
+
+For example:
+
+```cmd
+netsh int ip reset
+```
+
+You can also specify a log file:
+
+```cmd
+netsh int ip reset resetlog.txt
+```
+
+:::warning
+`netsh` is still available, but Microsoft recommends using PowerShell for the most robust and up-to-date Windows networking automation.
+:::
 
 </details>
 
-```
+---
+
+[Microsoft Learn - `ping`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ping)
+
+```cmd
 ping
 ```
 
+<details>
+<summary>Details</summary>
+
+`ping` tests IP-level connectivity to another computer by sending ICMP echo requests and waiting for replies.
+
+For example:
+
+```cmd
+ping 192.168.1.1
 ```
+
+You can also test a hostname:
+
+```cmd
+ping example.com
+```
+
+If the IP address works but the hostname does not, the problem may be related to DNS or name resolution.
+
+</details>
+
+---
+
+[Microsoft Learn - `nslookup`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/nslookup)
+
+```cmd
 nslookup
-```
-
-```
-hostname
-```
-
-```
-tracert /?
-```
-
-```
-arp /?
 ```
 
 <details>
 <summary>Details</summary>
 
-The **[``arp``](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/arp)** command displays and modifies entries in the **Address Resolution Protocol (ARP)** cache. The ARP cache contains one or more tables that are used to store IP addresses and their resolved Ethernet or Token Ring physical addresses. There's a separate table for each Ethernet or Token Ring network adapter installed on your computer.
+`nslookup` is used to diagnose DNS infrastructure and query DNS records.
+
+For example:
+
+```cmd
+nslookup example.com
+```
+
+This can be useful when you want to check whether a hostname resolves correctly and which DNS server is responding.
+
+You can also query a specific DNS server:
+
+```cmd
+nslookup example.com 1.1.1.1
+```
+
 </details>
 
+---
 
+[Microsoft Learn - `hostname`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/hostname)
+
+```cmd
+hostname
 ```
+
+<details>
+<summary>Details</summary>
+
+Displays the host name of the computer.
+
+For example:
+
+```cmd
+hostname
+```
+
+This is useful when you need to quickly find the computer's hostname from Command Prompt.
+
+</details>
+
+---
+
+[Microsoft Learn - `tracert`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tracert)
+
+```cmd
+tracert example.com
+```
+
+<details>
+<summary>Details</summary>
+
+`tracert` displays the path taken by network traffic to a destination.
+
+It works by sending packets with progressively increasing TTL values and recording the routers encountered along the way.
+
+For example:
+
+```cmd
+tracert example.com
+```
+
+This is useful when troubleshooting routing problems or finding where traffic stops responding.
+
+</details>
+
+---
+
+[Microsoft Learn - `arp`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/arp)
+
+```cmd
+arp -a
+```
+
+<details>
+<summary>Details</summary>
+
+The `arp` command displays and modifies entries in the **Address Resolution Protocol (ARP)** cache.
+
+The ARP cache contains mappings between IP addresses and physical network addresses such as MAC addresses.
+
+To display the current ARP cache:
+
+```cmd
+arp -a
+```
+
+To delete an ARP entry:
+
+```cmd
+arp -d 192.168.1.10
+```
+
+To add a static ARP entry:
+
+```cmd
+arp -s 192.168.1.10 00-AA-00-4F-2A-9C
+```
+
+</details>
+
+---
+
+[Microsoft Learn - `systeminfo`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo)
+
+```cmd
 systeminfo
 ```
 
 <details>
 <summary>Details</summary>
 
-This command it show your hardware compoments, so you can do easly investigation on your computer. In simple words System Info.
+`systeminfo` displays detailed configuration information about a computer and its operating system.
+
+It can display information such as:
+
+- Windows version
+- System manufacturer
+- System model
+- Processor
+- Installed memory
+- Network information
+- Windows installation information
+
+This makes it useful when gathering basic system information during troubleshooting.
+
+You can also save the output in different formats:
+
+```cmd
+systeminfo /fo list
+```
+
+```cmd
+systeminfo /fo csv
+```
+
 </details>
 
+---
 
+[Microsoft Learn - `netstat`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netstat)
 
-```
+```cmd
 netstat
 ```
+
+<details>
+<summary>Details</summary>
+
+`netstat` displays active network connections and listening ports.
+
+Without parameters, it displays active TCP connections.
+
+To display listening ports and active connections:
+
+```cmd
+netstat -a
+```
+
+To display connections together with their process IDs:
+
+```cmd
+netstat -o
+```
+
+To display addresses and ports numerically:
+
+```cmd
+netstat -n
+```
+
+You can combine parameters:
+
+```cmd
+netstat -ano
+```
+
+This is particularly useful when investigating which ports are being used and which processes own network connections.
+
+</details>
+
+---
+
+## Microsoft reference
+
+The commands on this page are based on Microsoft's official Windows Command Prompt documentation.
+
+**Full command reference:**
+
+[Microsoft Learn - Windows Commands](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
+
+Microsoft maintains the complete **Command-line reference A-Z** there, including commands that are not currently covered on this page.

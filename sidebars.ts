@@ -58,7 +58,7 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
-          label: 'Performance & Reference',
+          label: 'Benchmark',
           collapsible: true,
           collapsed: true,
           link: {
@@ -68,8 +68,26 @@ const sidebars: SidebarsConfig = {
           items: [],
         },
         {
-          type: 'doc',
-          id: 'tools/guides/index',
+          type: 'category',
+          label: 'Guides',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'tools/guides/index',
+          },
+          items: [],
+        },
+        {
+          type: 'category',
+          label: 'Network',
+          collapsible: true,
+          collapsed: true,
+          link: {
+            type: 'doc',
+            id: 'tools/network/index',
+          },
+          items: [],
         },
       ],
     },
@@ -122,6 +140,7 @@ const sidebars: SidebarsConfig = {
               },
               items: [
                 'platforms/operating-systems/windows/commands',
+                'platforms/operating-systems/windows/commands-backup',
                 'platforms/operating-systems/windows/repair',
                 'platforms/operating-systems/windows/networking',
                 'platforms/operating-systems/windows/troubleshooting',
