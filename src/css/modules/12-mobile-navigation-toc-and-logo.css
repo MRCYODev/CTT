@@ -748,3 +748,285 @@ html {
     font-weight: 700 !important;
   }
 }
+
+/* ========================================================================
+   CTT — MOBILE TOC FIXED POSITION
+   ------------------------------------------------------------------------
+   Keep the TOC directly under the mobile navbar while the document scrolls.
+   The small JS placeholder preserves the original space in the document.
+   ======================================================================== */
+@media screen and (max-width: 996px) {
+  html .theme-doc-toc-mobile.ctt-mobile-toc-fixed {
+    position: fixed !important;
+    top: var(--ctt-mobile-toc-top, var(--ifm-navbar-height, 60px)) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    z-index: 90 !important;
+  }
+
+  html .theme-doc-toc-mobile.ctt-mobile-toc-fixed > div,
+  html .theme-doc-toc-mobile.ctt-mobile-toc-fixed > div > div,
+  html .theme-doc-toc-mobile.ctt-mobile-toc-fixed .table-of-contents {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@supports (width: 100dvw) {
+  @media screen and (max-width: 996px) {
+    html .theme-doc-toc-mobile.ctt-mobile-toc-fixed {
+      width: 100dvw !important;
+    }
+  }
+}
+
+/* ========================================================================
+   CTT — MOBILE TOC FIXED POSITION
+   ------------------------------------------------------------------------
+   Keep the TOC directly under the mobile navbar while the document scrolls.
+   Root.tsx reserves the collapsed button space in the document flow.
+   ======================================================================== */
+@media screen and (max-width: 996px) {
+  html .theme-doc-toc-mobile.ctt-mobile-toc-fixed {
+    position: fixed !important;
+    top: var(--ctt-mobile-toc-top, var(--ifm-navbar-height, 60px)) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    z-index: 90 !important;
+  }
+
+  html .theme-doc-toc-mobile.ctt-mobile-toc-fixed > div,
+  html .theme-doc-toc-mobile.ctt-mobile-toc-fixed > div > div,
+  html .theme-doc-toc-mobile.ctt-mobile-toc-fixed .table-of-contents {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@supports (width: 100dvw) {
+  @media screen and (max-width: 996px) {
+    html .theme-doc-toc-mobile.ctt-mobile-toc-fixed {
+      width: 100dvw !important;
+    }
+  }
+}
+
+/* ============================================================
+   CTT — Mobile content centering
+   Keep the document content centered inside the phone viewport.
+   The fixed "On this page" bar stays full-width above it.
+   ============================================================ */
+@media screen and (max-width: 996px) {
+  html[data-tech-theme] .theme-doc-markdown {
+    width: calc(100% - 2rem) !important;
+    max-width: 42rem !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  html[data-tech-theme] .theme-doc-markdown > * {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Resource cards follow the centered document column. */
+  html[data-tech-theme] .theme-doc-markdown .markdown,
+  html[data-tech-theme] .theme-doc-markdown .markdown table {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ============================================================
+   CTT — Mobile card separation
+   Keep the resource table itself invisible so only each card has a border.
+   ============================================================ */
+@media screen and (max-width: 700px) {
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ),
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table,
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody > tr {
+    border: 1px solid var(--ctt-border, var(--ifm-color-emphasis-300)) !important;
+  }
+}
+
+/* ============================================================
+   CTT — Mobile resource cards: keep cards separate
+   The generic mobile table rules use a wide scrolling table. Resource
+   tables are cards on phones, so they must opt out of that behavior.
+   ============================================================ */
+@media screen and (max-width: 700px) {
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border-collapse: separate !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.9rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody > tr {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+    border: 1px solid var(--ctt-border, var(--ifm-color-emphasis-300)) !important;
+    border-radius: 14px !important;
+    background: var(--ctt-surface, var(--ifm-background-surface-color)) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* CTT — Mobile resource cards: remove table-cell lines
+   Each resource row is its own card. The cells must not draw their own
+   borders, otherwise the table grid shows through the gaps between cards.
+*/
+@media screen and (max-width: 700px) {
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody > tr > td,
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody > tr > th {
+    border: 0 !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+    background: transparent !important;
+  }
+
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody > tr {
+    border: 1px solid var(--ctt-border, var(--ifm-color-emphasis-300)) !important;
+  }
+}
+
+/* ============================================================
+   CTT — Mobile resource cards: isolate each card
+   The resource list is a table underneath, and some browsers still
+   paint table borders through the gaps. Remove every table-level edge
+   and draw the card outline on the block itself instead.
+   ============================================================ */
+@media screen and (max-width: 700px) {
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ),
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table,
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody {
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    background-image: none !important;
+  }
+
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody > tr {
+    position: relative !important;
+    border: 0 !important;
+    outline: 0 !important;
+    background: var(--ctt-surface, var(--ifm-background-surface-color)) !important;
+  }
+
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody > tr::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border: 1px solid var(--ctt-border, var(--ifm-color-emphasis-300));
+    border-radius: 14px;
+    pointer-events: none;
+  }
+
+  html[data-tech-theme] .markdown .table-wrapper:has(
+    > table > thead > tr > th:nth-child(4):last-child
+  ) > table > tbody > tr > td {
+    position: relative;
+    z-index: 1;
+  }
+}

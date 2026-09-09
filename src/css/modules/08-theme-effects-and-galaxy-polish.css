@@ -634,6 +634,28 @@ html[data-tech-theme="galaxy"] textarea:focus {
     0 8px 26px rgba(64, 80, 185, 0.17) !important;
 }
 
+/* Native option popups do not inherit the glass control styling. Explicitly
+   provide a dark palette so Galaxy's menu remains readable on Windows and
+   other platforms that render the popup outside the page's CSS backdrop. */
+html[data-tech-theme="galaxy"] select,
+html[data-tech-theme="galaxy"] .picker select {
+  color-scheme: dark !important;
+  background-color: #0b1024 !important;
+  color: #eef1ff !important;
+}
+
+html[data-tech-theme="galaxy"] select option,
+html[data-tech-theme="galaxy"] .picker select option {
+  background-color: #0b1024 !important;
+  color: #eef1ff !important;
+}
+
+html[data-tech-theme="galaxy"] select option:checked,
+html[data-tech-theme="galaxy"] .picker select option:checked {
+  background-color: #26335c !important;
+  color: #ffffff !important;
+}
+
 
 /* ------------------------------------------------------------------------
    Keep Galaxy effects above/below the correct layers
@@ -741,4 +763,3 @@ html[data-tech-theme="galaxy"] .container {
     background: #101426 !important;
   }
 }
-

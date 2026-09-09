@@ -1,19 +1,16 @@
 /*
- * CTT Theme Effects
- *
- * The canvas is a fixed visual layer only. It never participates in
- * document layout and it never changes the navbar's position rules.
+ * Theme effects are a fixed, non-interactive canvas. The document remains
+ * above it, so seasonal decoration can never intercept controls or links.
  */
-
 .ctt-theme-effects-layer {
   position: fixed;
   inset: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  z-index: 1;
+  overflow: hidden;
   pointer-events: none;
   user-select: none;
-  overflow: hidden;
-  z-index: 0;
 }
 
 .ctt-theme-effects {
@@ -24,14 +21,33 @@
   user-select: none;
 }
 
-/* Site content stays above the effect canvas. */
+/* A separate top layer keeps the candle string visible above mobile bars. */
+.ctt-theme-garland-layer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 101;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ctt-theme-garland {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* The real UI remains above the canvas without altering Docusaurus layout. */
 html.ctt-theme-effects-active #__docusaurus > .main-wrapper,
 html.ctt-theme-effects-active #__docusaurus > .footer {
   position: relative;
   z-index: 2;
 }
 
-/* Only set z-index on the navbar; preserve Docusaurus's sticky/fixed position. */
 html.ctt-theme-effects-active .navbar {
   z-index: 100;
 }
@@ -40,7 +56,7 @@ html.ctt-theme-effects-active .theme-doc-sidebar-container {
   z-index: 3;
 }
 
-/* Menus, dialogs, search and other floating UI always win. */
+/* Menus, dialogs, and temporary controls must always be foremost. */
 html.ctt-theme-effects-active .navbar-sidebar,
 html.ctt-theme-effects-active .modal,
 html.ctt-theme-effects-active .dropdown,
@@ -54,21 +70,74 @@ html.ctt-theme-effects-active [role='dialog'] {
   background-color: #15192a !important;
 }
 
-
-/* Disable old CSS-based animated layers while Canvas is active. */
+/* Canvas replaces the legacy repeating layers only when it is running. */
 html.ctt-theme-effects-active[data-tech-theme='galaxy'] body::before,
 html.ctt-theme-effects-active[data-tech-theme='galaxy'] body::after,
 html.ctt-theme-effects-active[data-tech-theme='christmas'] .main-wrapper::before,
 html.ctt-theme-effects-active[data-tech-theme='christmas'] .main-wrapper::after,
 html.ctt-theme-effects-active[data-tech-theme='christmas'] .navbar::before,
-html.ctt-theme-effects-active[data-tech-theme='christmas'] .navbar::after {
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .navbar::after,
+html.ctt-theme-effects-active[data-tech-theme='halloween'] body::after,
+html.ctt-theme-effects-active[data-tech-theme='halloween'] .hero--primary::before {
   content: none !important;
   display: none !important;
   animation: none !important;
 }
 
+/* Keep the same single-layer stack during hydration and theme switching. */
+html[data-tech-theme='christmas'] .navbar::before,
+html[data-tech-theme='christmas'] .navbar::after,
+html[data-tech-theme='christmas'] .main-wrapper::before,
+html[data-tech-theme='christmas'] .main-wrapper::after,
+html[data-tech-theme='halloween'] body::after,
+html[data-tech-theme='halloween'] .hero--primary::before {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+}
+
+/* Let the canvas be visible while preserving cards, navigation, and text. */
+html.ctt-theme-effects-active[data-tech-theme='christmas'] #__docusaurus,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .main-wrapper,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] main,
+html.ctt-theme-effects-active[data-tech-theme='halloween'] #__docusaurus,
+html.ctt-theme-effects-active[data-tech-theme='halloween'] .main-wrapper,
+html.ctt-theme-effects-active[data-tech-theme='halloween'] main {
+  background: transparent !important;
+}
+
+html[data-tech-theme='christmas'] #__docusaurus,
+html[data-tech-theme='christmas'] .main-wrapper,
+html[data-tech-theme='christmas'] main,
+html[data-tech-theme='halloween'] #__docusaurus,
+html[data-tech-theme='halloween'] .main-wrapper,
+html[data-tech-theme='halloween'] main {
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+
+/* Keep Halloween's floating layer purely visual; no blend-mode surprises. */
+html[data-tech-theme='halloween'] .ctt-theme-effects-layer {
+  mix-blend-mode: normal;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .ctt-theme-effects-layer {
-    display: none;
+    display: none !important;
+  }
+
+  .ctt-theme-garland-layer {
+    display: none !important;
+  }
+
+  /* Restore a quiet, static Christmas fallback when motion is reduced. */
+  html[data-tech-theme='christmas'] .main-wrapper::before,
+  html[data-tech-theme='christmas'] .main-wrapper::after,
+  html[data-tech-theme='christmas'] .navbar::before,
+  html[data-tech-theme='christmas'] .navbar::after {
+    content: '' !important;
+    display: block !important;
+    animation: none !important;
   }
 }

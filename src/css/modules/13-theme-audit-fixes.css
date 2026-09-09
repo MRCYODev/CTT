@@ -1,0 +1,101 @@
+/* ========================================================================
+   Theme audit fixes
+   ------------------------------------------------------------------------
+   Cross-theme guardrails kept in one final layer so a theme cannot inherit
+   a conflicting mobile width or an unreadable native select popup.
+   ======================================================================== */
+
+/* Native option menus are rendered outside a control's painted background
+   on some browsers. Give every picker a concrete themed surface instead of
+   relying on a transparent option background. */
+html[data-tech-theme] select[aria-label='Choose color theme'] {
+  color-scheme: dark !important;
+  background-color: var(
+    --ctt-surface,
+    var(--ifm-background-surface-color)
+  ) !important;
+  color: var(--ifm-font-color-base) !important;
+}
+
+html[data-tech-theme] select[aria-label='Choose color theme'] option {
+  background-color: var(
+    --ctt-surface,
+    var(--ifm-background-surface-color)
+  ) !important;
+  color: var(--ifm-font-color-base) !important;
+}
+
+html[data-tech-theme] select[aria-label='Choose color theme'] option:checked {
+  background-color: var(
+    --ctt-surface-secondary,
+    var(--ifm-color-emphasis-200)
+  ) !important;
+  color: var(--ifm-font-color-base) !important;
+}
+
+/* Navigation is UI, never decoration. Establish one predictable stack for
+   the fixed navbar and compact T.O.C., then raise the actual navbar content
+   above any theme canvas or legacy pseudo-element. */
+html[data-tech-theme] .navbar {
+  isolation: isolate;
+  z-index: 1200 !important;
+}
+
+html[data-tech-theme] .navbar__inner,
+html[data-tech-theme] .navbar__brand,
+html[data-tech-theme] .navbar__items,
+html[data-tech-theme] .navbar__item,
+html[data-tech-theme] .navbar__title,
+html[data-tech-theme] .navbar__link,
+html[data-tech-theme] .navbar button {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-tech-theme] .navbar__title,
+html[data-tech-theme] .navbar__link,
+html[data-tech-theme] .navbar__item {
+  color: var(--ifm-font-color-base) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.48);
+}
+
+@media screen and (max-width: 996px) {
+  html[data-tech-theme] .theme-doc-toc-mobile {
+    z-index: 1100 !important;
+  }
+}
+
+/* `100vw` includes the scrollbar gutter. On compact layouts that made the
+   page a scrollbar-width wider than the visible viewport. Use percentage
+   sizing for layout boxes and let fixed UI span with left/right anchors. */
+@media screen and (max-width: 996px) {
+  html[data-tech-theme],
+  html[data-tech-theme] body,
+  html[data-tech-theme] #__docusaurus,
+  html[data-tech-theme] .main-wrapper,
+  html[data-tech-theme] main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  html[data-tech-theme] body {
+    overflow-x: clip !important;
+  }
+
+  html[data-tech-theme] .navbar,
+  html[data-tech-theme] .navbar-sidebar,
+  html[data-tech-theme] .navbar-sidebar__backdrop {
+    left: 0 !important;
+    right: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
+  html[data-tech-theme] .theme-doc-toc-mobile {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+}

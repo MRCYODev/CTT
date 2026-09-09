@@ -1,5 +1,11 @@
 # Change Log
 
+## 09/09/2026
+
+## Updated
+
+Fixed some CSS issues.
+
 ## 08/09/2026
 
 ## Added

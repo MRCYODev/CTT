@@ -114,10 +114,6 @@ html[data-theme='dark'][data-tech-theme='christmas'] {
    CHRISTMAS LIGHTS
    ============================================================ */
 
-html[data-tech-theme='christmas'] .navbar {
-  position: relative;
-}
-
 html[data-tech-theme='christmas'] .navbar::before {
   content: '';
 
@@ -912,3 +908,122 @@ html[data-tech-theme] pre code {
 }
 
 
+
+/* ============================================================
+   CHRISTMAS — WINTER NIGHT
+   ============================================================ */
+
+html[data-tech-theme='christmas'],
+html[data-tech-theme='christmas'] body {
+  --ctt-christmas-red: #ef3340;
+  --ctt-christmas-green: #16823b;
+  --ctt-christmas-gold: #ffd166;
+  --ctt-christmas-ice: #bfe7ff;
+}
+
+html[data-tech-theme='christmas'][data-theme='dark'] body {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(31, 77, 67, 0.38), transparent 42%),
+    radial-gradient(circle at 12% 18%, rgba(239, 51, 64, 0.10), transparent 28%),
+    linear-gradient(180deg, #06111a 0%, #07140e 48%, #040a08 100%) !important;
+}
+
+html[data-tech-theme='christmas'][data-theme='dark'] .main-wrapper {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(104, 171, 210, 0.10), transparent 28%),
+    linear-gradient(180deg, rgba(5, 17, 25, 0.82), rgba(4, 12, 9, 0.92)) !important;
+}
+
+/* Frosted Christmas surfaces. */
+html[data-tech-theme='christmas'][data-theme='dark'] .navbar,
+html[data-tech-theme='christmas'][data-theme='dark'] .theme-doc-sidebar-container {
+  background: rgba(6, 16, 14, 0.90) !important;
+  border-color: rgba(190, 225, 210, 0.20) !important;
+}
+
+html[data-tech-theme='christmas'][data-theme='dark'] .card,
+html[data-tech-theme='christmas'][data-theme='dark'] .pagination-nav__link {
+  background:
+    linear-gradient(145deg, rgba(15, 31, 24, 0.96), rgba(7, 19, 15, 0.96)) !important;
+  border: 1px solid rgba(190, 225, 210, 0.26) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+html[data-tech-theme='christmas'][data-theme='dark'] .card:hover,
+html[data-tech-theme='christmas'][data-theme='dark'] .pagination-nav__link:hover {
+  border-color: var(--ctt-christmas-red) !important;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.34),
+    0 0 18px rgba(239, 51, 64, 0.14);
+}
+
+/* Small candy-cane accent under the navbar. */
+html[data-tech-theme='christmas'][data-theme='dark'] .navbar {
+  border-bottom: 1px solid rgba(239, 51, 64, 0.55) !important;
+}
+
+/* Snowy bottom edge for the page without adding another moving layer. */
+html[data-tech-theme='christmas'][data-theme='dark'] .main-wrapper::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 8% 100%, rgba(255,255,255,.92) 0 18px, transparent 19px),
+    radial-gradient(ellipse at 26% 100%, rgba(255,255,255,.78) 0 14px, transparent 15px),
+    radial-gradient(ellipse at 48% 100%, rgba(255,255,255,.88) 0 20px, transparent 21px),
+    radial-gradient(ellipse at 72% 100%, rgba(255,255,255,.76) 0 16px, transparent 17px),
+    radial-gradient(ellipse at 92% 100%, rgba(255,255,255,.9) 0 18px, transparent 19px);
+  opacity: .72;
+}
+
+@media (max-width: 996px) {
+  html[data-tech-theme='christmas'][data-theme='dark'] .main-wrapper::after {
+    height: 16px;
+  }
+}
+
+
+/* ============================================================
+   CHRISTMAS — CANVAS SNOW + CANDLE LIGHTS
+   ============================================================ */
+
+/* Let the animated canvas be visible through the winter-night page. */
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .main-wrapper {
+  background: transparent !important;
+}
+
+/* Keep the actual document surfaces readable while the snow moves behind them. */
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .theme-doc-markdown,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .theme-doc-breadcrumbs,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .pagination-nav,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .theme-doc-footer {
+  position: relative;
+  z-index: 3;
+}
+
+/* Remove the old repeated CSS snow while the randomized canvas field is running. */
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .main-wrapper::before,
+html.ctt-theme-effects-active[data-tech-theme='christmas'] .main-wrapper::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* A festive winter-night base that does not cover the animated canvas. */
+html[data-tech-theme='christmas'][data-theme='dark'] body {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(38, 92, 77, 0.30), transparent 42%),
+    radial-gradient(circle at 12% 20%, rgba(220, 38, 52, 0.08), transparent 28%),
+    linear-gradient(180deg, #07131c 0%, #06120d 52%, #030806 100%) !important;
+}
+
+/* Frosted, readable Christmas surfaces. */
+html[data-tech-theme='christmas'][data-theme='dark'] .theme-doc-markdown,
+html[data-tech-theme='christmas'][data-theme='dark'] .theme-doc-footer {
+  position: relative;
+  z-index: 3;
+}

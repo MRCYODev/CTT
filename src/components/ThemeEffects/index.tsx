@@ -22,6 +22,8 @@ type Snowflake = {
   phase: number;
   opacity: number;
   wobble: number;
+  rotation: number;
+  spin: number;
 };
 
 type Ember = {
@@ -40,6 +42,36 @@ type ChristmasLight = {
   flickerSpeed: number;
   color: string;
   size: number;
+  brightness: number;
+  targetBrightness: number;
+  nextFlickerAt: number;
+  visibility: number;
+  targetVisibility: number;
+  nextVisibilityAt: number;
+};
+
+type HalloweenPumpkin = {
+  xRatio: number;
+  yRatio: number;
+  size: number;
+  phase: number;
+};
+
+type HalloweenCat = {
+  xRatio: number;
+  yRatio: number;
+  size: number;
+  phase: number;
+};
+
+type HalloweenState = {
+  pumpkins: HalloweenPumpkin[];
+  cats: HalloweenCat[];
+  nextStrikeAt: number;
+  strikeUntil: number;
+  strikeStartedAt: number;
+  strikeXRatio: number;
+  strikePoints: Array<{x: number; y: number}>;
 };
 
 type ShootingStar = {
@@ -55,7 +87,7 @@ type ShootingStar = {
 const STAR_COUNT = 180;
 const SNOW_COUNT = 85;
 const EMBER_COUNT = 42;
-const LIGHT_COLORS = ['#ff5252', '#4ed878', '#ffd55a', '#5aa7ff'];
+const LIGHT_COLORS = ['#ef3340', '#22c55e', '#ffd166', '#3b82f6'];
 const SHOOTING_STAR_CHANCE_PER_FRAME = 0.0035;
 const MAX_SHOOTING_STARS = 2;
 
@@ -89,17 +121,34 @@ function createStars(width: number, height: number): Star[] {
   }));
 }
 
-function createSnow(width: number, height: number): Snowflake[] {
-  return Array.from({length: SNOW_COUNT}, () => ({
+function createSnowflake(width: number, y: number): Snowflake {
+  return {
     x: Math.random() * width,
-    y: Math.random() * height,
+    y,
     radius: randomBetween(0.8, 3.0),
-    speed: randomBetween(0.45, 1.65),
-    drift: randomBetween(-0.25, 0.25),
+    speed: randomBetween(28, 108),
+    drift: randomBetween(-14, 14),
     phase: Math.random() * Math.PI * 2,
     opacity: randomBetween(0.32, 0.88),
     wobble: randomBetween(0.45, 1.7),
-  }));
+    rotation: Math.random() * Math.PI * 2,
+    spin: randomBetween(-0.9, 0.9),
+  };
+}
+
+function createSnow(width: number, height: number): Snowflake[] {
+  const count = Math.max(
+    SNOW_COUNT,
+    Math.min(150, Math.round((width * height) / 15000)),
+  );
+
+  return Array.from({length: count}, () =>
+    createSnowflake(width, randomBetween(-height * 0.2, height)),
+  );
+}
+
+function recycleSnowflake(flake: Snowflake, width: number) {
+  Object.assign(flake, createSnowflake(width, randomBetween(-90, -12)));
 }
 
 function createEmbers(width: number, height: number): Ember[] {
@@ -114,16 +163,196 @@ function createEmbers(width: number, height: number): Ember[] {
   }));
 }
 
-function createLights(width: number): ChristmasLight[] {
+function createLights(width: number, time: number): ChristmasLight[] {
   const count = Math.max(14, Math.floor(width / 92));
 
   return Array.from({length: count}, (_, index) => ({
     xRatio: (index + 0.5) / count,
     phase: Math.random() * Math.PI * 2,
-    flickerSpeed: randomBetween(0.0008, 0.0022),
+    flickerSpeed: randomBetween(3.2, 5.8),
     color: LIGHT_COLORS[index % LIGHT_COLORS.length],
-    size: randomBetween(3.2, 4.8),
+    size: randomBetween(4.2, 5.8),
+    brightness: randomBetween(0.45, 0.9),
+    targetBrightness: randomBetween(0.45, 0.95),
+    nextFlickerAt: time + randomBetween(1400, 4200),
+    visibility: randomBetween(0.72, 1),
+    targetVisibility: randomBetween(0.72, 1),
+    nextVisibilityAt: time + randomBetween(2400, 6800),
   }));
+}
+
+function randomEdgeRatio(): number {
+  return Math.random() < 0.5
+    ? randomBetween(0.04, 0.20)
+    : randomBetween(0.80, 0.96);
+}
+
+function createHalloweenState(width = 1024): HalloweenState {
+  const compact = width < 640;
+  const pumpkinSlots = compact
+    ? [0.08, 0.92]
+    : [0.04, 0.10, 0.90, 0.96];
+  const catSlots = compact ? [0.07, 0.93] : [0.08, 0.92];
+
+  return {
+    pumpkins: pumpkinSlots.map((xRatio, index) => ({
+      xRatio,
+      yRatio: compact ? 0.995 : 0.99 + (index % 2) * 0.005,
+      size: randomBetween(19, compact ? 27 : 32),
+      phase: Math.random() * Math.PI * 2,
+    })),
+    cats: catSlots.map((xRatio) => ({
+      xRatio,
+      yRatio: 0.995,
+      size: randomBetween(24, compact ? 29 : 35),
+      phase: Math.random() * Math.PI * 2,
+    })),
+    nextStrikeAt: randomBetween(1800, 5200),
+    strikeUntil: 0,
+    strikeStartedAt: 0,
+    strikeXRatio: randomEdgeRatio(),
+    strikePoints: [],
+  };
+}
+
+function drawPumpkin(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  size: number,
+  time: number,
+  phase: number,
+) {
+  const pulse = 0.82 + Math.sin(time * 0.002 + phase) * 0.10;
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.shadowBlur = 12 * pulse;
+  ctx.shadowColor = '#ff7518';
+  ctx.fillStyle = '#d95b12';
+  ctx.beginPath();
+  ctx.ellipse(-size * 0.30, 0, size * 0.36, size * 0.48, 0, 0, Math.PI * 2);
+  ctx.ellipse(0, 0, size * 0.40, size * 0.52, 0, 0, Math.PI * 2);
+  ctx.ellipse(size * 0.30, 0, size * 0.36, size * 0.48, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.shadowBlur = 0;
+
+  ctx.fillStyle = '#4d3210';
+  ctx.fillRect(-size * 0.08, -size * 0.58, size * 0.16, size * 0.20);
+
+  ctx.fillStyle = '#140d12';
+  ctx.beginPath();
+  ctx.moveTo(-size * 0.27, -size * 0.08);
+  ctx.lineTo(-size * 0.07, -size * 0.22);
+  ctx.lineTo(-size * 0.04, 0);
+  ctx.lineTo(-size * 0.24, 0.02);
+  ctx.closePath();
+  ctx.moveTo(size * 0.27, -size * 0.08);
+  ctx.lineTo(size * 0.07, -size * 0.22);
+  ctx.lineTo(size * 0.04, 0);
+  ctx.lineTo(size * 0.24, 0.02);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(-size * 0.25, size * 0.16);
+  ctx.quadraticCurveTo(0, size * 0.38, size * 0.25, size * 0.16);
+  ctx.quadraticCurveTo(0, size * 0.54, -size * 0.25, size * 0.16);
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawBlackCat(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  size: number,
+  time: number,
+  phase: number,
+) {
+  const tail = Math.sin(time * 0.0012 + phase) * size * 0.16;
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.fillStyle = '#09070b';
+  ctx.strokeStyle = '#24152d';
+  ctx.lineWidth = Math.max(2, size * 0.06);
+  ctx.shadowBlur = 7;
+  ctx.shadowColor = 'rgba(255, 117, 24, 0.28)';
+  ctx.beginPath();
+  ctx.ellipse(0, size * 0.20, size * 0.30, size * 0.42, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.shadowBlur = 0;
+  ctx.beginPath();
+  ctx.arc(0, -size * 0.20, size * 0.27, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(-size * 0.22, -size * 0.36);
+  ctx.lineTo(-size * 0.28, -size * 0.70);
+  ctx.lineTo(-size * 0.03, -size * 0.50);
+  ctx.closePath();
+  ctx.moveTo(size * 0.22, -size * 0.36);
+  ctx.lineTo(size * 0.28, -size * 0.70);
+  ctx.lineTo(size * 0.03, -size * 0.50);
+  ctx.closePath();
+  ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(size * 0.24, size * 0.36);
+  ctx.bezierCurveTo(size * 0.70, size * 0.20, size * 0.70 + tail, -size * 0.08, size * 0.46 + tail, -size * 0.20);
+  ctx.stroke();
+  ctx.fillStyle = '#ffb52e';
+  ctx.beginPath();
+  ctx.arc(-size * 0.09, -size * 0.22, size * 0.035, 0, Math.PI * 2);
+  ctx.arc(size * 0.09, -size * 0.22, size * 0.035, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawHalloweenLightning(
+  ctx: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  state: HalloweenState,
+  time: number,
+) {
+  if (time >= state.nextStrikeAt) {
+    state.strikeStartedAt = time;
+    state.strikeUntil = time + randomBetween(120, 220);
+    state.nextStrikeAt = time + randomBetween(3200, 8200);
+    state.strikeXRatio = randomEdgeRatio();
+
+    const points: Array<{x: number; y: number}> = [
+      {x: width * state.strikeXRatio, y: 0},
+    ];
+    let y = height * 0.04;
+    let currentX = points[0].x;
+    while (y < height * 0.58) {
+      currentX += randomBetween(-28, 28);
+      y += randomBetween(38, 72);
+      points.push({x: currentX, y});
+    }
+    state.strikePoints = points;
+  }
+
+  if (time < state.strikeUntil && state.strikePoints.length > 1) {
+    const duration = Math.max(120, state.strikeUntil - state.strikeStartedAt);
+    const elapsed = Math.max(0, time - state.strikeStartedAt);
+    const progress = Math.min(1, elapsed / duration);
+    const alpha = Math.max(0, Math.sin(progress * Math.PI) * 0.72);
+    ctx.fillStyle = `rgba(225,235,255,${alpha * 0.10})`;
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.save();
+    ctx.shadowBlur = 18;
+    ctx.shadowColor = 'rgba(220,235,255,0.9)';
+    ctx.strokeStyle = `rgba(235,242,255,${alpha})`;
+    ctx.lineWidth = 2.2;
+    ctx.beginPath();
+    ctx.moveTo(state.strikePoints[0].x, state.strikePoints[0].y);
+    for (let i = 1; i < state.strikePoints.length; i += 1) {
+      ctx.lineTo(state.strikePoints[i].x, state.strikePoints[i].y);
+    }
+    ctx.stroke();
+    ctx.restore();
+  }
 }
 
 function spawnShootingStar(width: number, height: number): ShootingStar {
@@ -280,13 +509,72 @@ function wireSagAt(xRatio: number, time: number): number {
   );
 }
 
+function drawRoundedRect(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  radius: number,
+) {
+  if (typeof ctx.roundRect === 'function') {
+    ctx.roundRect(x, y, width, height, radius);
+    return;
+  }
+
+  const corner = Math.min(radius, width / 2, height / 2);
+  ctx.moveTo(x + corner, y);
+  ctx.lineTo(x + width - corner, y);
+  ctx.quadraticCurveTo(x + width, y, x + width, y + corner);
+  ctx.lineTo(x + width, y + height - corner);
+  ctx.quadraticCurveTo(x + width, y + height, x + width - corner, y + height);
+  ctx.lineTo(x + corner, y + height);
+  ctx.quadraticCurveTo(x, y + height, x, y + height - corner);
+  ctx.lineTo(x, y + corner);
+  ctx.quadraticCurveTo(x, y, x + corner, y);
+}
+
+function drawSnowflake(ctx: CanvasRenderingContext2D, flake: Snowflake) {
+  if (flake.radius < 2.05) {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255,255,255,${flake.opacity})`;
+    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+    ctx.fill();
+    return;
+  }
+
+  const armLength = flake.radius * 1.85;
+  ctx.save();
+  ctx.translate(flake.x, flake.y);
+  ctx.rotate(flake.rotation);
+  ctx.strokeStyle = `rgba(244,250,255,${flake.opacity})`;
+  ctx.lineWidth = Math.max(0.5, flake.radius * 0.26);
+  ctx.lineCap = 'round';
+
+  for (let arm = 0; arm < 6; arm += 1) {
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(armLength, 0);
+    ctx.moveTo(armLength * 0.55, 0);
+    ctx.lineTo(armLength * 0.32, -armLength * 0.2);
+    ctx.moveTo(armLength * 0.55, 0);
+    ctx.lineTo(armLength * 0.32, armLength * 0.2);
+    ctx.stroke();
+    ctx.rotate(Math.PI / 3);
+  }
+
+  ctx.restore();
+}
+
 function drawChristmas(
   ctx: CanvasRenderingContext2D,
+  garlandCtx: CanvasRenderingContext2D | null,
   snow: Snowflake[],
   lights: ChristmasLight[],
   width: number,
   height: number,
   time: number,
+  deltaSeconds: number,
   wireBaseY: number,
 ) {
   ctx.clearRect(0, 0, width, height);
@@ -295,23 +583,34 @@ function drawChristmas(
      particle field to avoid a repeating CSS texture. */
   for (const flake of snow) {
     const sway =
-      Math.sin(time * 0.001 * flake.wobble + flake.phase) * 0.16;
+      Math.sin(time * 0.001 * flake.wobble + flake.phase) * 15;
 
-    flake.y += flake.speed;
-    flake.x += flake.drift + sway;
+    flake.y += flake.speed * deltaSeconds;
+    flake.x += (flake.drift + sway) * deltaSeconds;
+    flake.rotation += flake.spin * deltaSeconds;
 
     if (flake.y > height + 8) {
-      flake.y = -8;
-      flake.x = Math.random() * width;
+      recycleSnowflake(flake, width);
     }
 
     if (flake.x < -8) flake.x = width + 8;
     if (flake.x > width + 8) flake.x = -8;
 
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(255,255,255,${flake.opacity})`;
-    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
-    ctx.fill();
+    drawSnowflake(ctx, flake);
+  }
+
+  /* Keep lights above the navbar surface while snow remains behind content. */
+  if (garlandCtx) {
+    garlandCtx.clearRect(0, 0, width, height);
+    garlandCtx.save();
+    if (wireBaseY < 50) {
+      /* Compact layouts put the garland inside the navbar. Clip its glow at
+         the navbar's lower edge so the T.O.C. bar below stays untouched. */
+      garlandCtx.beginPath();
+      garlandCtx.rect(0, 0, width, Math.min(height, wireBaseY + 26));
+      garlandCtx.clip();
+    }
+    ctx = garlandCtx;
   }
 
   /* Christmas string: a gently sagging wire hung just below the
@@ -333,26 +632,91 @@ function drawChristmas(
     }
   }
 
-  ctx.strokeStyle = 'rgba(24, 53, 30, 0.98)';
-  ctx.lineWidth = 2;
+  ctx.strokeStyle = 'rgba(16, 44, 24, 0.98)';
+  ctx.lineWidth = 3;
   ctx.stroke();
+
+  /* Pine garland: simple hand-drawn branches, berries and bows. */
+  const garlandStep = Math.max(54, width / 16);
+  for (let x = -garlandStep; x <= width + garlandStep; x += garlandStep) {
+    const ratio = Math.max(0, Math.min(1, x / width));
+    const y = wireBaseY + wireSagAt(ratio, time) + 5;
+
+    ctx.strokeStyle = 'rgba(22, 82, 39, 0.95)';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(x - 15, y + 7);
+    ctx.lineTo(x + 3, y - 1);
+    ctx.lineTo(x + 19, y + 8);
+    ctx.stroke();
+
+    ctx.strokeStyle = 'rgba(35, 111, 54, 0.88)';
+    ctx.lineWidth = 1.5;
+    for (let branch = -1; branch <= 1; branch += 1) {
+      ctx.beginPath();
+      ctx.moveTo(x + branch * 7, y + 4);
+      ctx.lineTo(x + branch * 7 - 9, y - 5);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x + branch * 7, y + 4);
+      ctx.lineTo(x + branch * 7 + 9, y - 5);
+      ctx.stroke();
+    }
+
+    if (Math.floor((x + garlandStep) / garlandStep) % 4 === 0) {
+      ctx.fillStyle = '#c91f36';
+      ctx.beginPath();
+      ctx.arc(x - 3, y + 8, 3.1, 0, Math.PI * 2);
+      ctx.arc(x + 3, y + 8, 3.1, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#f3c969';
+      ctx.fillRect(x - 1.2, y + 5, 2.4, 6);
+    }
+  }
 
   for (const light of lights) {
     const x = width * light.xRatio;
     const socketY = wireBaseY + wireSagAt(light.xRatio, time) + 2;
-    const bulbLength = light.size * 2.1;
-    const bulbY = socketY + bulbLength * 0.72;
+    const bulbLength = light.size * 3.05;
+    const bulbTop = socketY + light.size * 0.75;
+    const bulbBottom = socketY + bulbLength;
+    const bulbY = (bulbTop + bulbBottom) / 2;
 
-    /* Each bulb has its own slower, independent "candle" flicker. */
-    const wave =
-      Math.sin(time * light.flickerSpeed + light.phase) * 0.5 +
-      Math.sin(time * light.flickerSpeed * 1.73 + light.phase * 0.7) *
-        0.23;
+    /* Each bulb has an independent, slower rhythm so the string feels
+       pleasantly irregular instead of strobing as one unit. */
+    if (time >= light.nextFlickerAt) {
+      light.targetBrightness = randomBetween(0.30, 1);
+      light.nextFlickerAt = time + randomBetween(1400, 4800);
+    }
 
-    const brightness = Math.max(0, Math.min(1, 0.58 + wave));
+    /* Occasionally let an individual bulb fade almost away, then return at
+       a different time, like a real incandescent string. */
+    if (time >= light.nextVisibilityAt) {
+      light.targetVisibility = Math.random() < 0.35
+        ? randomBetween(0.08, 0.28)
+        : randomBetween(0.72, 1);
+      light.nextVisibilityAt = time + randomBetween(2600, 7600);
+    }
+
+    const blend = 1 - Math.exp(-light.flickerSpeed * deltaSeconds);
+    const visibilityBlend = 1 - Math.exp(-1.35 * deltaSeconds);
+    light.brightness += (light.targetBrightness - light.brightness) * blend;
+    light.visibility +=
+      (light.targetVisibility - light.visibility) * visibilityBlend;
+
+    const brightness = Math.max(0.12, Math.min(1, light.brightness));
+    const visibility = Math.max(0.08, Math.min(1, light.visibility));
+    ctx.save();
+    ctx.globalAlpha = visibility;
 
     /* Warm glow */
-    const glowRadius = light.size * (5.5 + brightness * 2.5);
+    const compactGarland = wireBaseY < 50;
+    const glowRadius = light.size * (
+      compactGarland
+        ? 2.8 + brightness * 1.2
+        : 5.5 + brightness * 2.5
+    );
 
     const glow = ctx.createRadialGradient(
       x,
@@ -370,7 +734,10 @@ function drawChristmas(
         .padStart(2, '0')}`,
     );
 
-    glow.addColorStop(0.5, `${light.color}26`);
+    glow.addColorStop(
+      0.5,
+      `${light.color}${Math.floor(38 * visibility).toString(16).padStart(2, '0')}`,
+    );
     glow.addColorStop(1, `${light.color}00`);
 
     ctx.fillStyle = glow;
@@ -378,50 +745,91 @@ function drawChristmas(
     ctx.arc(x, bulbY, glowRadius, 0, Math.PI * 2);
     ctx.fill();
 
-    /* Black/green socket */
+    /* Ribbed, dark-green socket above the opaque C7-style bulb. */
     ctx.fillStyle = '#152019';
-    ctx.fillRect(
-      x - light.size * 0.75,
+    ctx.beginPath();
+    drawRoundedRect(
+      ctx,
+      x - light.size * 0.62,
       socketY - 1,
-      light.size * 1.5,
-      light.size * 1.2,
+      light.size * 1.24,
+      light.size * 1.15,
+      light.size * 0.2,
     );
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(217, 238, 220, 0.28)';
+    ctx.lineWidth = 0.65;
+    for (let ridge = 0; ridge < 2; ridge += 1) {
+      const ridgeY = socketY + light.size * (0.25 + ridge * 0.34);
+      ctx.beginPath();
+      ctx.moveTo(x - light.size * 0.48, ridgeY);
+      ctx.lineTo(x + light.size * 0.48, ridgeY);
+      ctx.stroke();
+    }
 
-    /* Candle-style bulb */
-    ctx.beginPath();
-    ctx.ellipse(
-      x,
+    /* Full opaque C7/candle profile: narrow neck, rounded shoulders, soft tip. */
+    const bulbWidth = light.size * 0.94;
+    const bulbNeck = light.size * 0.42;
+    const bodyGradient = ctx.createLinearGradient(
+      x - bulbWidth,
       bulbY,
-      light.size * 0.82,
-      bulbLength * 0.72,
-      0,
-      0,
-      Math.PI * 2,
+      x + bulbWidth,
+      bulbY,
     );
+    bodyGradient.addColorStop(0, `${light.color}b0`);
+    bodyGradient.addColorStop(0.45, light.color);
+    bodyGradient.addColorStop(1, `${light.color}cc`);
 
-    ctx.fillStyle = brightness > 0.34
-      ? light.color
-      : `${light.color}78`;
-
-    ctx.fill();
-
-    /* Small bright hot spot */
+    ctx.fillStyle = bodyGradient;
     ctx.beginPath();
-    ctx.fillStyle = `rgba(255,255,255,${0.26 + brightness * 0.30})`;
-    ctx.arc(
-      x - light.size * 0.28,
-      bulbY - light.size * 0.75,
-      light.size * 0.25,
-      0,
-      Math.PI * 2,
+    ctx.moveTo(x - bulbNeck, bulbTop);
+    ctx.bezierCurveTo(
+      x - bulbWidth,
+      bulbTop + bulbLength * 0.16,
+      x - bulbWidth,
+      bulbBottom - bulbLength * 0.28,
+      x - bulbWidth * 0.34,
+      bulbBottom - bulbLength * 0.06,
     );
+    ctx.quadraticCurveTo(x, bulbBottom, x + bulbWidth * 0.34, bulbBottom - bulbLength * 0.06);
+    ctx.bezierCurveTo(
+      x + bulbWidth,
+      bulbBottom - bulbLength * 0.28,
+      x + bulbWidth,
+      bulbTop + bulbLength * 0.16,
+      x + bulbNeck,
+      bulbTop,
+    );
+    ctx.closePath();
     ctx.fill();
+
+    /* Glass highlight gives the opaque bulb an incandescent finish. */
+    ctx.strokeStyle = `rgba(255,255,255,${0.20 + brightness * 0.32})`;
+    ctx.lineWidth = Math.max(0.7, light.size * 0.18);
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(x - bulbWidth * 0.34, bulbTop + bulbLength * 0.25);
+    ctx.bezierCurveTo(
+      x - bulbWidth * 0.50,
+      bulbTop + bulbLength * 0.42,
+      x - bulbWidth * 0.30,
+      bulbTop + bulbLength * 0.61,
+      x - bulbWidth * 0.14,
+      bulbTop + bulbLength * 0.68,
+    );
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  if (garlandCtx) {
+    garlandCtx.restore();
   }
 }
 
 function drawHalloween(
   ctx: CanvasRenderingContext2D,
   embers: Ember[],
+  state: HalloweenState,
   width: number,
   height: number,
   time: number,
@@ -473,10 +881,36 @@ function drawHalloween(
     );
     ctx.fill();
   }
+
+  /* Ground decorations: pumpkins and black cats stay subtle and out of the way. */
+  for (const pumpkin of state.pumpkins) {
+    drawPumpkin(
+      ctx,
+      width * pumpkin.xRatio,
+      height * pumpkin.yRatio,
+      pumpkin.size,
+      time,
+      pumpkin.phase,
+    );
+  }
+
+  for (const cat of state.cats) {
+    drawBlackCat(
+      ctx,
+      width * cat.xRatio,
+      height * cat.yRatio,
+      cat.size,
+      time,
+      cat.phase,
+    );
+  }
+
+  drawHalloweenLightning(ctx, width, height, state, time);
 }
 
 export default function ThemeEffects(): React.ReactElement | null {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const garlandCanvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationFrameRef = useRef<number | null>(null);
   const [theme, setTheme] = useState<EffectTheme>(() => getTheme());
 
@@ -527,16 +961,26 @@ export default function ThemeEffects(): React.ReactElement | null {
     }
 
     const ctx = canvas.getContext('2d');
+    const garlandCanvas = garlandCanvasRef.current;
+    const garlandCtx = theme === 'christmas'
+      ? garlandCanvas?.getContext('2d') ?? null
+      : null;
 
-    if (!ctx) {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+
+    /* Re-assert the marker when the canvas effect is (re)mounted. */
+    document.documentElement.classList.toggle(
+      'ctt-theme-effects-active',
+      !prefersReducedMotion,
+    );
+
+    if (!ctx || (theme === 'christmas' && !garlandCtx)) {
       return;
     }
 
-    const reducedMotionQuery = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    );
-
-    if (reducedMotionQuery.matches) {
+    if (prefersReducedMotion) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       return;
     }
@@ -547,17 +991,26 @@ export default function ThemeEffects(): React.ReactElement | null {
     let shootingStars: ShootingStar[] = [];
     let snow: Snowflake[] = [];
     let embers: Ember[] = [];
+    let halloweenState: HalloweenState = createHalloweenState();
     let lights: ChristmasLight[] = [];
-    /* Where the garland hangs from, in viewport pixels. Measured
-       from the real navbar so the lights are drawn just below it
-       instead of underneath its opaque background, where a fixed
-       y-position previously hid them completely. */
+    /* Where the garland hangs from, in viewport pixels. Desktop lights sit
+       just below the navbar; on mobile they stay inside the navbar band so
+       they never cover the separate "On this page" bar. */
     let wireBaseY = 60;
 
     const measureWireBaseY = () => {
       const navbar = document.querySelector<HTMLElement>('.navbar');
       const bottom = navbar?.getBoundingClientRect().bottom;
-      wireBaseY = bottom && bottom > 0 ? bottom + 10 : 60;
+      if (!bottom || bottom <= 0) {
+        wireBaseY = 60;
+        return;
+      }
+
+      /* Docusaurus switches to its compact navbar/T.O.C. layout at 996px,
+         so use that same breakpoint to keep bulbs out of "On this page". */
+      wireBaseY = window.innerWidth <= 996
+        ? Math.max(8, bottom - 26)
+        : bottom + 2;
     };
 
     const resize = () => {
@@ -574,18 +1027,27 @@ export default function ThemeEffects(): React.ReactElement | null {
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
+      if (garlandCanvas && garlandCtx) {
+        garlandCanvas.width = Math.floor(width * dpr);
+        garlandCanvas.height = Math.floor(height * dpr);
+        garlandCanvas.style.width = `${width}px`;
+        garlandCanvas.style.height = `${height}px`;
+        garlandCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
       if (theme === 'galaxy') {
         stars = createStars(width, height);
       }
 
       if (theme === 'christmas') {
         snow = createSnow(width, height);
-        lights = createLights(width);
+        lights = createLights(width, performance.now());
         measureWireBaseY();
       }
 
       if (theme === 'halloween') {
         embers = createEmbers(width, height);
+        halloweenState = createHalloweenState(width);
       }
     };
 
@@ -596,6 +1058,8 @@ export default function ThemeEffects(): React.ReactElement | null {
       }
     };
 
+    let previousFrameTime: number | null = null;
+
     const frame = (time: number) => {
       if (document.hidden) {
         animationFrameRef.current =
@@ -603,22 +1067,30 @@ export default function ThemeEffects(): React.ReactElement | null {
         return;
       }
 
+      const deltaSeconds = previousFrameTime === null
+        ? 1 / 60
+        : Math.min(0.05, Math.max(0, (time - previousFrameTime) / 1000));
+      previousFrameTime = time;
+
       if (theme === 'galaxy') {
         drawGalaxy(ctx, stars, shootingStars, width, height, time);
       } else if (theme === 'christmas') {
         drawChristmas(
           ctx,
+          garlandCtx,
           snow,
           lights,
           width,
           height,
           time,
+          deltaSeconds,
           wireBaseY,
         );
       } else if (theme === 'halloween') {
         drawHalloween(
           ctx,
           embers,
+          halloweenState,
           width,
           height,
           time,
@@ -655,11 +1127,8 @@ export default function ThemeEffects(): React.ReactElement | null {
         window.removeEventListener('scroll', handleScroll);
       }
 
-      document.documentElement.classList.remove(
-        'ctt-theme-effects-active',
-      );
-
       ctx.clearRect(0, 0, width, height);
+      garlandCtx?.clearRect(0, 0, width, height);
     };
   }, [theme]);
 
@@ -668,11 +1137,15 @@ export default function ThemeEffects(): React.ReactElement | null {
   }
 
   return (
-    <div className="ctt-theme-effects-layer" aria-hidden="true">
-      <canvas
-        ref={canvasRef}
-        className="ctt-theme-effects"
-      />
-    </div>
+    <>
+      <div className="ctt-theme-effects-layer" aria-hidden="true">
+        <canvas ref={canvasRef} className="ctt-theme-effects" />
+      </div>
+      {theme === 'christmas' && (
+        <div className="ctt-theme-garland-layer" aria-hidden="true">
+          <canvas ref={garlandCanvasRef} className="ctt-theme-garland" />
+        </div>
+      )}
+    </>
   );
 }

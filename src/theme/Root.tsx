@@ -25,6 +25,42 @@ function collapseMobileToc(): void {
   }
 }
 
+function syncMobileTocLayout(): void {
+  const toc = document.querySelector<HTMLElement>('.theme-doc-toc-mobile');
+  const mobile = window.matchMedia('(max-width: 996px)').matches;
+
+  if (!mobile) {
+    document.querySelectorAll<HTMLElement>('[data-ctt-toc-placeholder]').forEach((placeholder) => {
+      placeholder.remove();
+    });
+    toc?.classList.remove('ctt-mobile-toc-fixed');
+    return;
+  }
+
+  if (!toc) return;
+
+  // Docusaurus owns the TOC markup. We only reserve its original collapsed
+  // height, while the visible TOC is fixed directly below the navbar.
+  let placeholder = document.querySelector<HTMLElement>('[data-ctt-toc-placeholder]');
+  if (!placeholder) {
+    placeholder = document.createElement('div');
+    placeholder.setAttribute('data-ctt-toc-placeholder', 'true');
+    placeholder.setAttribute('aria-hidden', 'true');
+    toc.parentElement?.insertBefore(placeholder, toc);
+  }
+
+  const button = toc.querySelector<HTMLElement>('button');
+  const reservedHeight = button?.getBoundingClientRect().height || 48;
+  placeholder.style.height = `${Math.ceil(reservedHeight)}px`;
+  placeholder.style.width = '100%';
+  placeholder.style.pointerEvents = 'none';
+
+  const navbar = document.querySelector<HTMLElement>('.navbar');
+  const navbarHeight = navbar?.getBoundingClientRect().height || 60;
+  toc.style.setProperty('--ctt-mobile-toc-top', `${Math.ceil(navbarHeight)}px`);
+  toc.classList.add('ctt-mobile-toc-fixed');
+}
+
 function getTocEntries(): Array<{link: HTMLAnchorElement; heading: HTMLElement}> {
   const toc = document.querySelector('.theme-doc-toc-mobile');
   if (!toc) return [];
@@ -167,6 +203,7 @@ function installMobileTocInteractions(): () => void {
     if (scrollFrame) return;
     scrollFrame = window.requestAnimationFrame(() => {
       scrollFrame = 0;
+      syncMobileTocLayout();
       syncMobileTocActiveHeading();
     });
   };
