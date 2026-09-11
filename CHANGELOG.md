@@ -1,5 +1,23 @@
 # Change Log
 
+## 11/09/2026
+
+## Update
+
+- GSM/USSD/MMI Codes moved to [Troubleshooting](/docs/platforms/mobile/android/troubleshooting.md#troubleshooting)
+- Updated Website Image
+
+## Added
+
+- New Servers list at [Windows Time/Clock Syncrhronization](/docs/platforms/operating-systems/windows/repair.md#add-more-servers-to-the-list) 
+
+## 10/09/2026
+
+## Added
+
+- [Windows Index](/docs/platforms/operating-systems/windows/index.md)
+- New Repair [Windows Time/Clock Syncrhronization](/docs/platforms/operating-systems/windows/repair.md#timeclock-synchronization) Guide
+
 ## 09/09/2026
 
 ## Updated

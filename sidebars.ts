@@ -140,7 +140,6 @@ const sidebars: SidebarsConfig = {
               },
               items: [
                 'platforms/operating-systems/windows/commands',
-                'platforms/operating-systems/windows/commands-backup',
                 'platforms/operating-systems/windows/repair',
                 'platforms/operating-systems/windows/networking',
                 'platforms/operating-systems/windows/troubleshooting',
@@ -246,9 +245,7 @@ const sidebars: SidebarsConfig = {
                 id: 'platforms/mobile/android/index',
               },
               items: [
-                'platforms/mobile/android/android-mmi',
                 'platforms/mobile/android/diagnostics',
-                'platforms/mobile/android/gsm-ussd',
                 'platforms/mobile/android/repair',
                 'platforms/mobile/android/troubleshooting',
               ],

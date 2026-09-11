@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 import PlatformBadges from '@site/src/components/PlatformBadges';
@@ -171,8 +171,6 @@ ipconfig
 
 `ipconfig` displays the current TCP/IP configuration of network adapters and can also be used to refresh DHCP and DNS information.
 
-### `ipconfig /all`
-
 ```cmd
 ipconfig /all
 ```
@@ -188,8 +186,6 @@ Useful when you need to check information such as:
 - DHCP information
 - MAC addresses
 
-### `ipconfig /displaydns`
-
 ```cmd
 ipconfig /displaydns
 ```
@@ -197,8 +193,6 @@ ipconfig /displaydns
 Displays the contents of the local DNS resolver cache.
 
 Useful when troubleshooting DNS problems or checking which DNS records Windows currently has cached.
-
-### `ipconfig /flushdns`
 
 ```cmd
 ipconfig /flushdns
@@ -208,8 +202,6 @@ Clears the local DNS resolver cache.
 
 Useful when Windows is using outdated or incorrect DNS information.
 
-### `ipconfig /registerdns`
-
 ```cmd
 ipconfig /registerdns
 ```
@@ -217,8 +209,6 @@ ipconfig /registerdns
 Manually starts DNS registration for the computer.
 
 Useful on networks that use dynamic DNS.
-
-### `ipconfig /release`
 
 ```cmd
 ipconfig /release
@@ -228,8 +218,6 @@ Releases the current DHCP-assigned IPv4 configuration.
 
 Useful when troubleshooting DHCP or IP-address problems.
 
-### `ipconfig /renew`
-
 ```cmd
 ipconfig /renew
 ```
@@ -238,15 +226,11 @@ Requests a new DHCP configuration.
 
 Useful when a computer is having trouble obtaining or refreshing an IPv4 address.
 
-### `ipconfig /release6`
-
 ```cmd
 ipconfig /release6
 ```
 
 Releases the current DHCPv6 configuration.
-
-### `ipconfig /renew6`
 
 ```cmd
 ipconfig /renew6
@@ -254,15 +238,11 @@ ipconfig /renew6
 
 Renews the DHCPv6 configuration.
 
-### `ipconfig /showclassid`
-
 ```cmd
 ipconfig /showclassid "Ethernet"
 ```
 
 Displays the DHCP class ID configured for a network adapter.
-
-### `ipconfig /setclassid`
 
 ```cmd
 ipconfig /setclassid "Ethernet" TEST
